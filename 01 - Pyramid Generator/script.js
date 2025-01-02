@@ -21,6 +21,7 @@ function padRow()
 
 }
 const call = padRow();
+console.log(call);
 
 // A for loop has three main components: 
 // 1. Iterator: initialized and used to keep track of the current loop iteration
