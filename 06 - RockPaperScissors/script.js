@@ -41,16 +41,16 @@ let playerScore = 0;
 
 // console.log("Computer chose: " + getRandomComputerResult());
 
- /* Step 2: Round Winner Determination
-  * 
-  * Game Mechanics:
-  * - Multiple rounds to reach 3 points
-  * - Determine round winner based on game rules
-  * 
-  * Return Value:
-  * - true: Player wins round
-  * - false: Player loses or ties round
-  */
+/* Step 2: Round Winner Determination
+* 
+* Game Mechanics:
+* - Multiple rounds to reach 3 points
+* - Determine round winner based on game rules
+* 
+* Return Value:
+* - true: Player wins round
+* - false: Player loses or ties round
+*/
 
 function hasPlayerWonTheRound(playerChoice, computerChoice) // (string, string) -> (bool)
 {
