@@ -13,12 +13,16 @@ Generate random index using Math.random() and Math.floor()
 Return randomly selected array element
 */
 
+console.log()
+
 function getRandomComputerResult() // (void) -> (string)
     { 
     const options = ["Rock", "Paper", "Scissors"]; // min_i = 0 max_i = 2
 
-    return options[Math.floor(Math.random() * options.length)];
+    computerChoice = options[Math.floor(Math.random() * options.length)];
 
+    return computerChoice; // string
+    
     // Generate random index: 
     // 1. Math.random() → decimal between 0-1 (takes no arguments)
     // 2. * options.length → scale to array size
@@ -31,7 +35,11 @@ function getRandomComputerResult() // (void) -> (string)
     Math.floor() -- (0 to 2)
     */
     }
-  console.log(getRandomComputerResult());
+
+let computerScore = 0;
+let playerScore = 0;
+
+// console.log("Computer chose: " + getRandomComputerResult());
 
  /* Step 2: Round Winner Determination
   * 
@@ -60,7 +68,7 @@ function hasPlayerWonTheRound(playerChoice, computerChoice) // (string, string) 
     }
 }
 
-console.log(hasPlayerWonTheRound("Paper",getRandomComputerResult())) // (str, str) -> (bool)
+// console.log("Player has won? True or false? : " + hasPlayerWonTheRound("Rock",getRandomComputerResult())) // (str, str) -> (bool)
 
 /* Step 3: Round Results
  * Implement getRoundResults() function
@@ -77,7 +85,26 @@ console.log(hasPlayerWonTheRound("Paper",getRandomComputerResult())) // (str, st
 function getRoundResults(userOption) // (string) -> (string)
 { 
     const computerResult = getRandomComputerResult(); 
+
+    //console.log("User Option: " + userOption);
+    //console.log("Computer Option: " + computerResult);
+
+    if (hasPlayerWonTheRound(userOption, computerResult)) {
+        playerScore++;
+        return "Player wins! " + userOption + " beats " + computerResult;
+    }
+
+    else if (userOption == computerResult) {
+        return "It's a tie! Both chose " + userOption;
+    }
+
+    else {   
+        computerScore++;
+        return "Computer wins! " + computerResult + " beats " + userOption;
+    }
 }
 
 console.log(getRoundResults("Rock"));
 console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
+
+console.log()

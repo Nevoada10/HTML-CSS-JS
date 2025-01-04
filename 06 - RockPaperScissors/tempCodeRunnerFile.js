@@ -1,0 +1,2 @@
+mputerChoice == "Scissors"){
+        return true;
