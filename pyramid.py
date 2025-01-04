@@ -1,35 +1,35 @@
-from typing import List
+"""
+Pyramid Generation Module
 
-def main (height: int):
-    pyramid = create_pyramid(height) # Pyramid is a list, where each element is a string
-    print_full_pyramid(pyramid)
+This module provides a Pyramid class for creating and drawing pyramids in different positions:
+"""
 
-def create_pyramid(height: int) -> List[str]:
-    pyramid = []
-    for i in range(1, height + 1):
-        pyramid.append("#" * i)
-    return pyramid
+from typing import List # Type hinting
 
-def print_half_plus_one_ascending(pyramid: List[str]) -> int:
-    for element in pyramid:
-        print(element)
-    return 0
 
-def print_half_minus_one_descending(pyramid: List[str]) -> int:
-    for element in pyramid[-2::-1]:
-        print(element)
-    return 0
+class Pyramid:
+    def __init__(self, height: int, angle: int) -> None:
+        self.height = height # or number of rows
+        self.angle = angle
+        self.matrix = []
 
-def print_half_descending(pyramid: List[str]) -> int:
-    for element in pyramid[::-1]:
-        print(element)
-    return 0
+    def draw_centered(self) -> List[str]:
+        maxCounter = 2 * self.height - 1
+        for row in range(1, self.height+1):  
+            counter = 2 * row - 1
+            m = int((maxCounter - counter) // 2)  
+            print("." * m + "#" * counter + "." * m)
+    
+    def draw_a_rectangular_triangle(self) -> List[str]:
+        for row in range(1, self.height+1):  
+            counter = row
+            print("#" * counter)
 
-def print_full_pyramid(pyramid: List[str]) -> int:
-    print_half_plus_one_ascending(pyramid)
-    print_half_minus_one_descending(pyramid)
-    return 0
+    def draw_rotated(self,angle: int) -> List[str]:
+        for row in range(1, self.height+1):
+            counter = row
 
-if __name__ == "__main__":
-    main(8)
 
+
+pyramid = Pyramid(5)
+pyramid.draw_centered()
