@@ -15,20 +15,8 @@
  * - Computes the arithmetic mean of those scores
  * - Returns the calculated average
  * 
- * Scoring Calculation:
- * Average = (Sum of all scores) ÷ (Total number of scores)
- * 
- * Function Requirements:
- * - Input: Array of numbers representing test scores
- * - Output: A single number representing the class average
- * 
  * Example:
  * getAverage([85, 90, 92, 88, 95]) → 90
- * 
- * Problem-Solving Hints:
- * - Use a loop to sum all scores
- * - Utilize array's length property for total score count
- * - Handle potential edge cases (empty array)
  */
 
 function getAverage(scores) // ([int]) -> float
@@ -61,34 +49,17 @@ console.log(getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95]));
  * - Returns a string representing the student's academic performance
  * 
  * Grading Scale:
- * - 100       → "A++"  (Exceptional Excellence)
- * - 90 - 99   → "A"    (Outstanding Performance)
- * - 80 - 89   → "B"    (Strong Achievement)
- * - 70 - 79   → "C"    (Satisfactory Comprehension)
- * - 60 - 69   → "D"    (Marginal Understanding)
+ * - 100       → "A++" 
+ * - 90 - 99   → "A"   
+ * - 80 - 89   → "B"    
+ * - 70 - 79   → "C"  
+ * - 60 - 69   → "D"    
  * - 0 - 59    → "F"    (Needs Significant Improvement)
- * 
- * Function Requirements:
- * - Input: Number (test score between 0-100)
- * - Output: String (corresponding letter grade)
- * 
- * Problem-Solving Strategy:
- * - Utilize conditional statements (if/else if/else)
- * - Apply comparison operators (>, <, >=, <=)
- * - Ensure comprehensive score range coverage
  * 
  * Example:
  * getGrade(95)  → "A"
- * getGrade(100) → "A++"
- * getGrade(75)  → "C"
- * getGrade(45)  → "F"
- * 
- * 🚨 Edge Case Considerations:
- * - Handle scores outside the 0-100 range
- * - Provide clear, meaningful feedback
  */
-
-function getGrade(score) 
+function getGrade(score) // (int) -> str
 {
     if (score == 100){
         return "A++";
@@ -125,33 +96,14 @@ console.log(getGrade(56));
  * Your Mission:
  * Implement the `hasPassingGrade` function that:
  * - Takes a student's numeric score as input
- * - Utilizes the previously created `getGrade` function
- * - Determines if the student has achieved a passing grade
- * 
- * Passing Grade Criteria:
- * - Any grade that is NOT "F" is considered passing
- * 
- * Function Requirements:
- * - Input: Number (test score)
- * - Output: Boolean 
- *   - `true` if student passes
- *   - `false` if student fails
+ * - Determines if the student has achieved a passing grade (Any grade that is NOT "F" is considered passing)
  * 
  * Problem-Solving Strategy:
  * - Leverage the existing `getGrade` function
- * - Use simple comparison to check grade status
- * - Provide clear, concise boolean result
  * 
  * Example Scenarios:
  * hasPassingGrade(95)  → true  (Grade: "A")
- * hasPassingGrade(65)  → true  (Grade: "D")
  * hasPassingGrade(50)  → false (Grade: "F")
- * hasPassingGrade(100) → true  (Grade: "A++")
- * 
- * 🚨 Key Insights:
- * - Academic success is more than just a number
- * - This function provides a quick assessment tool
- * - Encourages students to aim higher than the minimum
  */
 
 function hasPassingGrade(score)
