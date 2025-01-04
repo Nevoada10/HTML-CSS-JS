@@ -31,5 +31,5 @@ class Pyramid:
 
 
 
-pyramid = Pyramid(5)
+pyramid = Pyramid(5,0)
 pyramid.draw_centered()
