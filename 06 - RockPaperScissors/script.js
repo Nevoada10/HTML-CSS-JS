@@ -39,7 +39,7 @@ function getRandomComputerResult() // (void) -> (string)
 let computerScore = 0;
 let playerScore = 0;
 
-// console.log("Computer chose: " + getRandomComputerResult());
+//console.log("Computer chose: " + getRandomComputerResult());
 
 /* Step 2: Round Winner Determination
 * 
@@ -68,7 +68,7 @@ function hasPlayerWonTheRound(playerChoice, computerChoice) // (string, string) 
     }
 }
 
-// console.log("Player has won? True or false? : " + hasPlayerWonTheRound("Rock",getRandomComputerResult())) // (str, str) -> (bool)
+//console.log("Player has won? True or false? : " + hasPlayerWonTheRound("Rock",getRandomComputerResult())) // (str, str) -> (bool)
 
 /* Step 3: Round Results
  * Implement getRoundResults() function
