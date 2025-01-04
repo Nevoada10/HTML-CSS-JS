@@ -118,7 +118,7 @@ console.log(hasPassingGrade(87));
 /** Part 4
  * 📝 Personalized Student Performance Messaging
  * 
- * Objective: Craft Meaningful Academic Feedback
+ * Objective: Craft Academic Feedback
  * 
  * As an educator, you want to provide clear, personalized 
  * communication about a student's academic performance.
@@ -130,16 +130,8 @@ console.log(hasPassingGrade(87));
  * - Communicates academic standing with clarity
  * 
  * Message Generation Requirements:
- * - Calculate class average using [getAverage](cci:1://file:///Users/urielnevessilva/PycharmProjects/HTML-CSS-JS/02%20-%20GradebookApp/gradebook.js:33:0-43:1)
- * - Determine student's grade using [getGrade](cci:1://file:///Users/urielnevessilva/PycharmProjects/HTML-CSS-JS/02%20-%20GradebookApp/gradebook.js:90:0-110:1)
- * - Create a supportive, informative message
- * 
- * Message Formats:
- * Passing Scenario:
- * "Class average: X. Your grade: Y. You passed the course."
- * 
- * Failing Scenario:
- * "Class average: X. Your grade: Y. You failed the course."
+ * - Calculate class average using [getAverage]
+ * - Determine student's grade using [getGrade]
  * 
  * Function Requirements:
  * - Input: 
@@ -148,18 +140,23 @@ console.log(hasPassingGrade(87));
  * - Output: String (personalized performance message)
  * 
  * Problem-Solving Strategy:
- * - Utilize existing [getAverage](cci:1://file:///Users/urielnevessilva/PycharmProjects/HTML-CSS-JS/02%20-%20GradebookApp/gradebook.js:33:0-43:1) and [getGrade](cci:1://file:///Users/urielnevessilva/PycharmProjects/HTML-CSS-JS/02%20-%20GradebookApp/gradebook.js:90:0-110:1) functions
- * - Use template literals for clean string construction
- * - Provide clear, concise feedback
+ * - Utilize existing [getAverage] and [getGrade] functions
  * 
  * Example Scenarios:
  * studentMsg([80, 90, 70], 85)  
  *   → "Class average: 80. Your grade: B. You passed the course."
  * studentMsg([75, 80, 55], 50)  
  *   → "Class average: 70. Your grade: F. You failed the course."
- * 
- * 🚨 Key Insights:
- * - Feedback is an opportunity for growth
- * - Clear communication supports student learning
- * - Every message is a chance to motivate
- */
+*/ 
+
+function studentMsg(totalScores, studentScore) {
+    if (getGrade(studentScore) == "F"){
+        return ("Class average: " + getAverage(totalScores) + ". Your grade: " + getGrade(studentScore) + ". You failed the course.");
+    }
+    else {
+        return ("Class average: " + getAverage(totalScores) + ". Your grade: " + getGrade(studentScore) + ". You passed the course.");
+    }
+}
+
+console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
+console.log(studentMsg([45, 87, 98, 100, 86, 94, 67, 88, 94, 95], 100));
