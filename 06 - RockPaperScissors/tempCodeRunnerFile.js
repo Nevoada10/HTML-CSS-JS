@@ -1,2 +1,0 @@
-mputerChoice == "Scissors"){
-        return true;

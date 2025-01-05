@@ -146,22 +146,49 @@ function showResults(userOption) // (str) -> (void)
     playerScoreSpanElement.innerText = playerScore;
     computerScoreSpanElement.innerText = computerScore;
 
+    // Step 5: Determine Game Winner
+    // - Check if either player or computer has reached 3 points in showResults function
+    // - If player wins, update winnerMsgElement with "Player has won the game!"
+    // - If computer wins, update winnerMsgElement with "Computer has won the game!"
+    // - Display resetGameBtn and hide optionsContainer when there is a winner
 
+    if (playerScore == 3) {
+        winnerMsgElement.innerText = "Player has won the game!";
+    }
+    else if (computerScore == 3) {
+        winnerMsgElement.innerText = "Computer has won the game!";
+    }
+
+    // Displays the play again button.
+    resetGameBtn.style.display = "block";  
+
+
+    // Hide the options container by setting its display style to "none"
+    // This effectively removes the options from being visible on the page
+    // It is useful when we want to prevent further user interactions
+    // after a game has concluded or in other scenarios where the options
+    // should not be available to the user.
+    optionsContainer.style.display = "none"; 
 };
-
 
 const rockBtn = document.getElementById("rock-btn");
 const paperBtn = document.getElementById("paper-btn");
 const scissorsBtn = document.getElementById("scissors-btn");
 
+// When the rock button is clicked, call the showResults function and pass the argument "Rock".
+// This will run the game logic for the round.
 rockBtn.addEventListener("click", function () {
   showResults("Rock");
 });
 
+// When the paper button is clicked, call the showResults function and pass the argument "Paper".
+// This will run the game logic for the round.
 paperBtn.addEventListener("click", function () {
   showResults("Paper");
 });
 
+// When the scissors button is clicked, call the showResults function and pass the argument "Scissors".
+// This will run the game logic for the round.
 scissorsBtn.addEventListener("click", function () {
   showResults("Scissors");
 });
