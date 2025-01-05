@@ -1,7 +1,7 @@
 // =================================================================================
-// File Type: JavaScript                                                           |
-// Rock, Paper & Scissors game                                                           |
-// Author: Uriel Neves Silva ( https://github.com/Nevoada10 )                      |
+// File Type: JavaScript                                                           
+// Rock, Paper & Scissors game                                                          
+// Author: Uriel Neves Silva ( https://github.com/Nevoada10 )                      
 // =================================================================================
 
 /* Step 1: Computer Choice Generator
@@ -52,18 +52,13 @@ let playerScore = 0;
 
 function hasPlayerWonTheRound(playerChoice, computerChoice) // (str, str) -> (bool)
 {
-    if (playerChoice == "Rock" && computerChoice == "Scissors"){
-        return true;
-    }
-    else if (playerChoice == "Paper" && computerChoice == "Rock"){
-        return true;
-    }
-    else if (playerChoice == "Scissors" && computerChoice == "Paper"){
-        return true;
-    }
-    else { // If the player doesn't win, it handles LOSES or TIES.
-        return false;
-    }
+const winningCombos = {
+    "Rock": "Scissors",    // When Rock is played, it beats Scissors
+    "Paper": "Rock",       // When Paper is played, it beats Rock
+    "Scissors": "Paper"    // When Scissors are played, they beat Paper
+    };
+
+    return winningCombos[playerChoice] === computerChoice;
 }
 
 //console.log("Player has won? True or false? : " + hasPlayerWonTheRound("Rock",getRandomComputerResult())) // (str, str) -> (bool)
@@ -152,24 +147,42 @@ function showResults(userOption) // (str) -> (void)
     // - If computer wins, update winnerMsgElement with "Computer has won the game!"
     // - Display resetGameBtn and hide optionsContainer when there is a winner
 
-    if (playerScore == 3) {
-        winnerMsgElement.innerText = "Player has won the game!";
+    if (playerScore === 3 || computerScore === 3) { // 
+        winnerMsgElement.innerText = playerScore === 3 
+            ? "Player has won the game!" 
+            : "Computer has won the game!";
+        
+        resetGameBtn.style.display = "block";  
+        optionsContainer.style.display = "none";
     }
-    else if (computerScore == 3) {
-        winnerMsgElement.innerText = "Computer has won the game!";
-    }
-
-    // Displays the play again button.
-    resetGameBtn.style.display = "block";  
-
-
-    // Hide the options container by setting its display style to "none"
-    // This effectively removes the options from being visible on the page
-    // It is useful when we want to prevent further user interactions
-    // after a game has concluded or in other scenarios where the options
-    // should not be available to the user.
-    optionsContainer.style.display = "none"; 
+  ; 
 };
+
+// Step 6: Reset game state
+// 1. Set player and computer scores to 0
+// 2. Update score display elements
+// 3. Hide reset button
+// 4. Show game options container
+// 5. Clear winner and round result messages
+
+function updateScoreDisplay(){
+    playerScoreSpanElement.innerText = playerScore;  // Updates the playerScoreSpanElement and computerScoreSpanElement to display the new scores.
+    computerScoreSpanElement.innerText = computerScore; // and computerScoreSpanElement to display the new scores.
+}
+
+function resetGame() // (void) -> (void) 
+{
+    // Resets the player and computer scores to 0.
+    playerScore = computerScore = 0;
+    updateScoreDisplay();
+    resetGameBtn.style.display = "none"; // Hides the resetGameBtn button.
+    optionsContainer.style.display = "flex"; // Shows the optionsContainer so the player can play again.
+    optionsContainer.style.justifyContent = "center"; // Centers the game options.
+    winnerMsgElement.innerText = "";  // Clears the content for the winnerMsgElement 
+    roundResultsMsg.innerText = ""; // and roundResultsMsg elements.
+}
+
+resetGameBtn.addEventListener("click", resetGame);
 
 const rockBtn = document.getElementById("rock-btn");
 const paperBtn = document.getElementById("paper-btn");
