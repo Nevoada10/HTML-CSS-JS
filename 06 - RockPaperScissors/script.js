@@ -13,8 +13,6 @@ Generate random index using Math.random() and Math.floor()
 Return randomly selected array element
 */
 
-console.log()
-
 function getRandomComputerResult() // (void) -> (string)
     { 
     const options = ["Rock", "Paper", "Scissors"]; // min_i = 0 max_i = 2
@@ -122,10 +120,6 @@ function getRoundResults(userOption) // (string) -> (string)
 *  
 */
 
-const playerScoreSpanElement = document.getElementById("player-score"); 
-const computerScoreSpanElement = document.getElementById("computer-score");
-const roundResultsMsg = document.getElementById("results-msg");
-
 /* 
 The document.getElementById() method returns the element in HTML by ID, and assigns
 the variable playerScoreSpanElement as it's pointer. So playerScoreSpanElement 
@@ -135,6 +129,9 @@ If we would like to change
 the display text of an HTML element, we need to use the innerText property.
 */
 
+const playerScoreSpanElement = document.getElementById("player-score"); 
+const computerScoreSpanElement = document.getElementById("computer-score");
+const roundResultsMsg = document.getElementById("results-msg");
 const winnerMsgElement = document.getElementById("winner-msg");
 const optionsContainer = document.querySelector(".options-container");
 const resetGameBtn = document.getElementById("reset-game-btn");
@@ -143,19 +140,30 @@ const resetGameBtn = document.getElementById("reset-game-btn");
 function showResults(userOption) // (str) -> (void)
 {   
     // Get the latest round result, otherwise it wouldn't update the HTML elements.
-    let roundResult = getRoundResults(userOption);
+    roundResultsMsg.innerText = getRoundResults(userOption);
 
     // Update player and computer scores.
     playerScoreSpanElement.innerText = playerScore;
     computerScoreSpanElement.innerText = computerScore;
 
-    // Get the latest round result and update the message.
-    roundResultsMsg.innerText = roundResult
+
 };
 
-showResults();
 
-console.log()
+const rockBtn = document.getElementById("rock-btn");
+const paperBtn = document.getElementById("paper-btn");
+const scissorsBtn = document.getElementById("scissors-btn");
 
+rockBtn.addEventListener("click", function () {
+  showResults("Rock");
+});
+
+paperBtn.addEventListener("click", function () {
+  showResults("Paper");
+});
+
+scissorsBtn.addEventListener("click", function () {
+  showResults("Scissors");
+});
 
 // =================================================================================
