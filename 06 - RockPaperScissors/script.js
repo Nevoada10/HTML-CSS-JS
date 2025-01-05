@@ -153,8 +153,9 @@ function showResults(userOption) // (str) -> (void)
     roundResultsMsg.innerText = roundResult
 };
 
-showResults("Rock");
+showResults();
 
 console.log()
+
 
 // =================================================================================
