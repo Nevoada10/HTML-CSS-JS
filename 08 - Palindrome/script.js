@@ -3,8 +3,7 @@
 // Palindrome Checker  (Certificate Project 6)
 // Author: Nevoada ( https://github.com/Nevoada10 )
 // =================================================================================
-// This is a simple script that checks if a given string is a palindrome
-// and displays the result using html, css and javascript.
+// This is a script that checks if a given string is a palindrome using html, css and javascript.
 // =================================================================================
 
 function checkPalindrome() { // (str) -> (void)
@@ -19,7 +18,7 @@ function checkPalindrome() { // (str) -> (void)
     // -> If the input is empty (true), it displays an alert message.
     if (!textInput.value.trim()) { 
         alert("Please input a value");
-        pass // skip the rest of the function to not display an empty result
+        return; // skip the rest of the function to not display an empty result
     }
     // convert the string to lowercase - (equivalent to Join + Filter in Python )
     // remove non alphanumeric (upper and lower letters and numbers) characters 
