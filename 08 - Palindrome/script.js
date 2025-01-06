@@ -38,6 +38,8 @@ function checkPalindrome() { // (str) -> (void)
         resultElement.textContent = `${textInput.value} is a palindrome.`;
     }
 
+    const themes = {pink: "pink-style", blue: "blue-style"};
+
     if (cleanedText === 'pink') {
         const blueStylesheet = document.getElementById('blue-style');
         const pinkStylesheet = document.getElementById('pink-style');
@@ -57,6 +59,7 @@ function checkPalindrome() { // (str) -> (void)
         return;
     }
 }
+
 
 function handleEnterKey(event) {
     // Check if the pressed key is Enter (key code 13)

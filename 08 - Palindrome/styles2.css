@@ -12,11 +12,11 @@ This is an alternative stylesheet that styles the html page
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(45deg, #ff6b9e 0%, #ff4d8a 100%);
-    display: flex;
+    flex-direction: column;
+    display: flex; 
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     color: white;
 }
 
@@ -27,8 +27,16 @@ body {
     box-shadow: 0 8px 32px 0 rgba(255, 75, 138, 0.37);
     backdrop-filter: blur(4px);
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
+    margin-bottom: 0px;
+    font-style: normal;
+    color: inherit;
+}
+
+/* Add margin-top to the second paragraph */
+.container p:nth-of-type(2) {
+    margin-top: 40px;
 }
 
 input {
@@ -59,7 +67,7 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
     color: #ffffff;
- word-wrap: break-word;  /* Allows long words to break */
+    word-wrap: break-word;  /* Allows long words to break */
     overflow-wrap: break-word;  /* Modern alternative */
     max-width: 100%;
     white-space: normal;  /* Prevents text from staying on one line */
