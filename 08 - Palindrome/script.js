@@ -7,35 +7,60 @@
 // and displays the result using html, css and javascript.
 // =================================================================================
 
-function checkPalindrome() { // Create a function called checkPalindrome
-    // Get the text input element and the element that displays the result
-    // Let the user input a string
+function checkPalindrome() { // (str) -> (void)
 
-    const textInput = document.getElementById('text-input');  // The text input element is used to get the input from the user
-    const resultElement = document.getElementById('result');  // The result element is used to display the result of the check
+    // Assign variables that points respectively to the input element and the result element
+    const textInput = document.getElementById('text-input');  
+    const resultElement = document.getElementById('result');  
 
-    // Check if the input is empty
-    if (!textInput.value.trim()) { // If you remove the whitespace with trim(), and you check if the input is empty, 
-        // Alert the user and return nothing
+    // Check if the input is empty, in this order...
+    // 1. trim() removes any possible whitespace remaining in the input. Ex: "--" or "\n -> "-"
+    // 2. !=textInput.value checks if the value is not "" (empty string), null or undefined.
+    // -> If the input is empty (true), it displays an alert message.
+    if (!textInput.value.trim()) { 
         alert("Please input a value");
-        return;
+        pass // skip the rest of the function to not display an empty result
+    }
+    // convert the string to lowercase - (equivalent to Join + Filter in Python )
+    // remove non alphanumeric (upper and lower letters and numbers) characters 
+    const cleanedText = textInput.value.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''); // (str) -> (str)
+   
+    // Reverse the string, in this order, left to right
+    // We need to do all of this because reverse() only works with arrays
+    // 1. split('') splits the string into an array of characters (str) -> (array)
+    // 2. reverse() reverses the array (array) -> (array)
+    // 3. join('') joins the reversed array into a stringc (array) -> (str)
+    const reversedText = cleanedText.split('').reverse().join('');
+
+    resultElement.textContent = `${textInput.value} is not a palindrome.`;
+
+    if (cleanedText === reversedText) {
+        resultElement.textContent = `${textInput.value} is a palindrome.`;
     }
 
-    // Remove all non-alphanumeric characters and convert the string to lowercase
-    // This is done to simplify the comparison
-    const cleanedText = textInput.value.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    if (cleanedText === 'pink') {
+        const blueStylesheet = document.getElementById('blue-style');
+        const pinkStylesheet = document.getElementById('pink-style');
 
-    // Split the cleaned text into an array of characters
-    // Reverse the array
-    // Join the reversed array back into a string
-    // Compare the cleaned text with the reversed string
-    // If the two strings are equal, the cleaned text is a palindrome
-    const isPalindrome = cleanedText === cleanedText.split('').reverse().join('');
+        blueStylesheet.disabled = true;
+        pinkStylesheet.disabled = false;
+        resultElement.textContent = "Ooh, PINK theme activated! 💖";
+        return;
 
-    // Display the result
-    // If the cleaned text is a palindrome, display a success message
-    // If the cleaned text is not a palindrome, display an error message
-    resultElement.textContent = isPalindrome 
-        ? `"${textInput.value}" is a palindrome!` 
-        : `"${textInput.value}" is not a palindrome.`;
+    } else if (cleanedText === 'blue') {
+        const blueStylesheet = document.getElementById('blue-style');
+        const pinkStylesheet = document.getElementById('pink-style');
+
+        pinkStylesheet.disabled = true;
+        blueStylesheet.disabled = false;
+        resultElement.textContent = "Ooh, BLUE theme activated! 💖";
+        return;
+    }
+}
+
+function handleEnterKey(event) {
+    // Check if the pressed key is Enter (key code 13)
+    if (event.keyCode === 13 || event.key === 'Enter') {
+        checkPalindrome();
+    }
 }
