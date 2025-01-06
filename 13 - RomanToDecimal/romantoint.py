@@ -6,7 +6,7 @@
 
 from typing import List
 
-def main():
+def main() -> None:
     while True:
         try: 
             n= input("Type a number or 'q' to quit: ")
