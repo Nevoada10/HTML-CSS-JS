@@ -34,15 +34,19 @@ function intToRoman() { // (str) -> (int)
     I: 1
     };
     
-    if (decimalInput.value < 1) {
-        romanOutput.textContent = "Please enter a number greater than or equal to 1";
+    if (decimalInput.value < 1 || decimalInput.value > 3999) {
+        romanOutput.textContent = "Please enter a number between 1 and 3999";
     }
-    else if (decimalInput.value > 3999) {
-        romanOutput.textContent = "Please enter a number less than or equal to 3999";
-    }
+    else {
+        let result = "";
+        let num = parseInt(decimalInput.value);
 
+        for (const key in romanToInt) {
+            while (num >= romanToInt[key]) {
+                result += key;
+                num -= romanToInt[key];
+            }
+        }
+        romanOutput.textContent = result;
+    }
 };
-
-
-1582
-
