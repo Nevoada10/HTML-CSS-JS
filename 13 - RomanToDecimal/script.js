@@ -13,21 +13,31 @@ function romanToInt() { // (str) -> (int)
     console.log(`Type of romanInput: ${typeof romanInput}`)
 
     // Check if the input is empty, in this order...
-    // 1. trim() removes any possible whitespace remaining in the input. Ex: "--" or "\n -> "-"
-    // 2. !=romanInput.value checks if the value is not "" (empty string), null or undefined.
-    // -> If the input is empty (true), it displays an alert message.
+    // trim() removes any possible whitespace remaining in the input. Ex: "--" or "\n -> "-"
     if (!romanInput.value.trim()) { 
-        alert("Please input a value");
+        decimalOutput.textContent = "Please enter a valid number";
         return; // skip the rest of the function to not display an empty result
     }
+    else if (romanInput.value < 1) {
+        decimalOutput.textContent = "Please enter a number greater than or equal to 1";
+    }
 
-    // Create a dictionary to map Roman numerals to their corresponding decimal values
+    else if (romanInput.value > 3999) {
+        decimalOutput.textContent = "Please enter a number less than or equal to 3999";
+    }
+    else{
+       
+        const roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        
+    }
+
+    let sum = 0;
+    let prevValue = 0;
+
+     // Create a dictionary to map Roman numerals to their corresponding decimal values
     const roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
-    let result = 0;
-    let prev_value = 0;
-
-
-
+    for (let index = romanInput.value.length - 1; index < 0; index++ )
+        console.log(romanInput.value[index]);
 
 }
