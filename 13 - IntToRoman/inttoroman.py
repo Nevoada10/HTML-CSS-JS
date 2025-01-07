@@ -71,8 +71,10 @@ def int_to_roman(num: int) -> str:
     # Sorted (iterable, key=function(), reverse=bool )
     # In our case sorted() returns (sorted list in descending order because of reverse=True)
     # So, key in the loop below is an element of the list
+
+    descendingKeys = sorted(romanDict.keys(), reverse=True)
     
-    for key in sorted(romanDict.keys(), reverse=True): # -> (sorted descending list)
+    for key in descendingKeys: # -> (sorted descending list)
         while key <= num:
             num -= key
             result += romanDict[key]

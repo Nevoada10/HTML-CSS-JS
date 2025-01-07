@@ -1,52 +1,51 @@
-// =================================================================================
-// File Type: JavaScript
-// Roman to Integer (Certificate Project 7)
-// Author: Nevoada ( https://github.com/Nevoada10 )
-// =================================================================================
-// This is a script that converts int to Roman numerals to integers using html, css and javascript.
-// =================================================================================
+/* File Type: JavaScript
+* Integer to Roman
+* Author: Uriel Neves Silva ( https://github.com/Nevoada10 )
+*/
 
-function intToRoman() { // (str) -> (int)
-    // Creates pointers to the input and output fields
-    const decimalInput = document.getElementById("number");
-    const romanOutput = document.getElementById("output"); 
+// This is a simple script that converts integers to roman numerals
 
-    // Check if the input is empty, in this order...
-    // trim() removes any possible whitespace remaining in the input. Ex: "--" or "\n -> "-"
-    if (!decimalInput.value.trim()) { 
-        romanOutput.textContent = "Please enter a valid number";
-        return; // skip the rest of the function to not display an empty result
-    }
+function convertToRoman() { // (str) -> (int) -> (str)
 
-    const romanToInt = {
-    M: 1000,
-    CM: 900,
-    D: 500,
-    CD: 400,
-    C: 100,
-    XC: 90,
-    L: 50,
-    XL: 40,
-    X: 10,
-    IX: 9,
-    V: 5,
-    IV: 4,
-    I: 1
-    };
+    // Pointers to input and output HTML elements
+    let userInput = document.getElementById("number"); // text input
+    let output = document.getElementById("output");   // p element
+
+    let intNumber = userInput.value;
+
+    //Remove whitespaces and check if the input is empty
+    if (intNumber.trim() == "") { 
+        output.textContent = "Please enter a valid number";
+        return;}
+
+    // (str) -> (int)
+    intNumber = parseInt(intNumber); 
+
+    // Entry validation
+    if (intNumber < 1) { 
+        output.textContent ="Please enter a number greater than or equal to 1";
+        return;}
+    if (intNumber > 3999){ 
+        output.textContent ="Please enter a number less than or equal to 3999";
+        return;}
+
+    // Main logic
+    let romanDict = {1000: "M", 900: "CM", 500: "D", 400: "CD", 100: "C", 90: "XC", 50: "L", 40: "XL", 10: "X", 9: "IX", 5: "V", 4: "IV", 1: "I"}
     
-    if (decimalInput.value < 1 || decimalInput.value > 3999) {
-        romanOutput.textContent = "Please enter a number between 1 and 3999";
-    }
-    else {
-        let result = "";
-        let num = parseInt(decimalInput.value);
+    let result = "";
+    const descendingKeys = Object.keys(romanDict).sort((a, b) => b - a).map(Number);  //[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+        
+    // We are going to iterate through the keys in dictionary in descending order
+    // If the key is less than or equal to the number, we will add the value to the left of the result
+    // We will subtract the key from the number.
 
-        for (const key in romanToInt) {
-            while (num >= romanToInt[key]) {
-                result += key;
-                num -= romanToInt[key];
-            }
+    for (let i = 0; i < descendingKeys.length; i++) {
+        let key = descendingKeys[i];
+        while (key <= intNumber) {
+            result += romanDict[key];
+            intNumber -= key;
         }
-        romanOutput.textContent = result;
     }
+    output.textContent = result;
+    return result;
 };

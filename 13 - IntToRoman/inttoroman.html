@@ -1,7 +1,7 @@
 <!--
 ================================================================================
 File Type: HTML
-Roman to Integer (Certificate Project 7)
+Integer to Roman (Certificate Project 7)
 Author: Nevoada ( https://github.com/Nevoada10 )
 ================================================================================
 
@@ -16,23 +16,22 @@ This is a web page that converts int to roman numerals to integers using html, c
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- Ensuring proper rendering and touch zooming on Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE compatibility -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman to Integer</title>
-    <head>
+    <title>Integer to Roman</title>
     <link id="blue-style" rel="stylesheet" href="styles.css" enabled>
 </head>
 
 <body>
-    <header>
-        <h1>Roman to Integer</h1>
-    </header>
-
     <main>
-        <input type="text" id="number" placeholder="Enter a Roman numeral">
-        <button id="convert-btn" type="button" onclick="intToRoman()">Convert</button>
-        <span><p id="output"></p></span>
-        <script src="script.js"></script>
+        <div class="container">
+        <h1>Integer to Roman</h1>
+        <input id="number" type="text" placeholder="Enter a number"/>
+        <button id = "convert-btn" type ="button" onclick="convertToRoman()">Convert</button> 
+        <p id="output"></p>
+        </div>
     </main>
-
+    <script src="script.js"></script>
 </body>
+
+</html>
