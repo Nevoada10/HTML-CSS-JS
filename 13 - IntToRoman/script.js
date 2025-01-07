@@ -32,9 +32,14 @@ function convertToRoman() { // (str) -> (int) -> (str)
     // Main logic
     let romanDict = {1000: "M", 900: "CM", 500: "D", 400: "CD", 100: "C", 90: "XC", 50: "L", 40: "XL", 10: "X", 9: "IX", 5: "V", 4: "IV", 1: "I"}
     
+
+    // b - a is used to sort the keys in descending order  
+    // map is used to return an array of integers, without it sort would return an array of strings.
+
     let result = "";
     const descendingKeys = Object.keys(romanDict).sort((a, b) => b - a).map(Number);  //[1000,900,500,400,100,90,50,40,10,9,5,4,1]
-        
+
+
     // We are going to iterate through the keys in dictionary in descending order
     // If the key is less than or equal to the number, we will add the value to the left of the result
     // We will subtract the key from the number.
