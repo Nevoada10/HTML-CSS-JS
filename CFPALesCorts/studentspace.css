@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.school-logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.student-dashboard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.subjects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subject-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.subject-stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.attendance {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.grade {
+    color: #2196F3;
+    font-weight: bold;
+}
