@@ -5,7 +5,7 @@ Phone Validator (Certificate Project 8)
 Author: Nevoada ( https://github.com/Nevoada10 )
 ================================================================================
 
-This is a web page that converts int to roman numerals to integers using html, css and javascript.
+This is a web page that checks if a given phone number is valid using html, css and javascript. 
 
 # represents an ID selector
 . represents a class selector
@@ -24,13 +24,15 @@ This is a web page that converts int to roman numerals to integers using html, c
 
 <body>
     <main>
-    <input id = "user-input" type = "text" placeholder = "Enter a phone number">
-    
-    </main>
+    <input id = "user-input" type = "text" placeholder = "Enter a phone number"> <!-- Input -->
+    <button id="check-btn" type="button" onclick="checkPhone()">Check</button> <!-- Output -->
+    <button id="clear-btn" type="button" onclick="clearAll()">Clear</button>
+</div>
+    <div id="results-div">
+        <p id="result"></p>
+    </div>
     <script src="script.js"></script>
-    <button id="check-btn" type="button">Check</button>
-    <button id="clear-btn" type="button">Clear</button>
-    <div id="results-div"></div>
+    </main>
 </body>
 
 </html>
