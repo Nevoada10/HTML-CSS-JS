@@ -1,3 +1,26 @@
+
+/* 
+- File Name: studentspace.css
+- Author: Uriel Neves Silva
+- Github: https://github.com/nevoada10
+- Function: Styling for student dashboard with white background and blue-gray letters
+*/
+
+
+/* RESET STYLES
+=======================================================================================================================
+*/
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL STYLES
+=======================================================================================================================
+*/
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -8,6 +31,8 @@ body {
     margin: 0;
     color: #333;
 }
+
+
 
 .logo-container {
     position: absolute;
@@ -25,8 +50,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    width: 80%;
-    max-width: 600px;
+    width: 150%;
+    max-width: 1000px;
 }
 
 .subjects-container {
@@ -48,8 +73,19 @@ body {
 }
 
 .attendance {
-    color: #4CAF50;
     font-weight: bold;
+}
+
+.attendance.good {
+    color: #4CAF50;
+}
+
+.attendance.warning {
+    color: #FFC107;
+}
+
+.attendance.bad {
+    color: #F44336;
 }
 
 .grade {
