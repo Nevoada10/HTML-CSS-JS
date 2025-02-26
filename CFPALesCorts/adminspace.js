@@ -1,12 +1,21 @@
-let student_data = [];
+console.log("JavaScript file is linked");
 
-function create_student() {
-    let newStudent = {
-        "full name": "",
-        "id": student_data.length + 1,
-        "password": "",
-        "subjects": {}
+let all_class_data = [];
+let all_students_data = [];
+
+function createClassroom() {
+    console.log("Button clicked!");  // Add this to verify click
+    const classroomNameElement = document.getElementById('classroomNameInput');
+    const className = classroomNameElement.value.trim();
+
+    console.log("Classroom name:", className);  // Log the input value
+
+    const classroom = {
+        name: className,
+        teacher: "",
+        students: [],
     };
-    student_data.push(newStudent);
-    console.log(student_data);
+
+    all_class_data.push(classroom);
+    console.log("Current classrooms:", all_class_data);
 }

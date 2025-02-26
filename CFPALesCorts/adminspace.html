@@ -25,9 +25,28 @@ This is a simple webpage that allows an admin to manage the system.
 <body>
     <h1>Student Administration</h1>
     
+    <!--- Creates a blank classroom with default values and appends it to the classroom_data list -->
     <form id="studentForm"> 
-        <button id="create-student-btn" type="button" onclick="addStudent()">Add Student</button> <!--- Creates a blank student with default values and appends it to the student_data list -->
+        <input type="text" id="classroomNameInput" placeholder="Enter classroom name">
+        <button id="create-classroom-btn" type="button" onclick="createClassroom()">Create Classroom</button> <!--- Creates a blank student with default values and appends it to the student_data list -->
     </form>
+
+    <!--- Updates the table with the current list of classrooms -->
+    <table id="classroomTable" border="1">
+        <thead>
+            <tr>
+                <th>Classroom Name</th>
+                <th>Teacher</th>
+                <th>Number of Students</th>
+            </tr>
+        </thead>
+        <tbody id="classroomTableBody">
+            <!-- Rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script src="adminspace.js"></script>
+
 
 <body>
     
