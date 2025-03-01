@@ -8,7 +8,7 @@ let all_class_data = [{ // Constant
 let all_students_data = []; // Constant
 
 function createClassroom() {
-    console.log("Button clicked!");  // Add this to verify click
+    console.log("Button clicked!");  // To verify click
     const classroomNameElement = document.getElementById('classroomNameInput');
     const className = classroomNameElement.value.trim();
 
@@ -28,8 +28,7 @@ function createClassroom() {
 function displayClassrooms() {
     // Get the table body where we'll insert rows
     const tableBody = document.getElementById('classroomTableBody');
-    
-    // Clear existing rows first (optional, but prevents duplicate entries)
+    // Clear existing rows first to prevent duplicates
     tableBody.innerHTML = '';
 
     // Iterate through each classroom in the list
