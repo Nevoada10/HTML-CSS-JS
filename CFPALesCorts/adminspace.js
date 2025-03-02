@@ -8,11 +8,8 @@ let all_class_data = [{ // Constant
 let all_students_data = []; // Constant
 
 function createClassroom() {
-    console.log("Button clicked!");  // To verify click
     const classroomNameElement = document.getElementById('classroomNameInput');
     const className = classroomNameElement.value.trim();
-
-    console.log("Classroom name:", className);  // Log the input value
 
     const classroom = {
         name: className,
@@ -25,26 +22,43 @@ function createClassroom() {
     console.log("Current classrooms:", all_class_data); // Log the updated list
 }
 
+/**
+ * Displays the list of classrooms in the table
+ */
 function displayClassrooms() {
-    // Get the table body where we'll insert rows
     const tableBody = document.getElementById('classroomTableBody');
-    // Clear existing rows first to prevent duplicates
     tableBody.innerHTML = '';
 
-    // Iterate through each classroom in the list
     all_class_data.forEach((classroom, index) => {
-        // Create a new row for each classroom
         const newRow = tableBody.insertRow();
         
-        // Add cells with classroom details
-        newRow.insertCell(0).textContent = classroom.name;
-        newRow.insertCell(1).textContent = classroom.teacher || "Not assigned";
-        newRow.insertCell(2).textContent = classroom.students.length;
-        
-        // Optional: Add a unique identifier or index
-        newRow.dataset.classroomId = index;
+        const fields = [
+            // Display the classroom name
+            { key: 'name', value: classroom.name },
+            // Display the teacher name
+            { key: 'teacher', value: classroom.teacher },
+            // Display the number of students
+            { key: 'students', value: classroom.students.length }
+        ];
+
+        fields.forEach(field => {
+            const cell = newRow.insertCell();
+            cell.textContent = field.value;
+
+            // Allow the user to edit the classroom name and teacher name
+            if (field.key !== 'students') {
+                cell.contentEditable = true;
+                cell.addEventListener('keydown', (event) => {
+                    // On Enter, update the value in the all_class_data array
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        all_class_data[index][field.key] = cell.textContent.trim();
+                        console.log("Current classrooms:", all_class_data); // Log the updated list
+                    }
+                });
+            }
+        });
     });
 }
 
-// Call this function when the page loads or when you want to refresh the table
 document.addEventListener('DOMContentLoaded', displayClassrooms);
