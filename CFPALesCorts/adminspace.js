@@ -1,5 +1,7 @@
 console.log("JavaScript file is linked");
 
+// 1) Defining the constants
+
 let all_class_data = [{ // Constant
     name: "English 0",
     teacher: "Ms. Carmen",
@@ -60,5 +62,8 @@ function displayClassrooms() {
         });
     });
 }
+
+
+// Main code:
 
 document.addEventListener('DOMContentLoaded', displayClassrooms);
