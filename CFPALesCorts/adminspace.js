@@ -1,61 +1,66 @@
 console.log("JavaScript file is linked");
 
-// 1) Defining the constants
+// ) Defining the constants
 
-let all_class_data = [{ // Constant
-    name: "English 0",
-    teacher: "Ms. Carmen",
-    students: ["Uriel Neves Silva"],}];
+const classrooms = [
+];
 
-let all_students_data = []; // Constant
+const students = []; 
+
+// ) Defining the functions
+
+function createStudent()
+{
+    const newStudent = {
+        name: StudentName,
+        subjects: [],
+    }
+}
+
 
 function createClassroom() {
-    const classroomNameElement = document.getElementById('classroomNameInput');
-    const className = classroomNameElement.value.trim();
+    const inputElement = document.getElementById('classroomNameInput');
+    const className = inputElement.value.trim();
 
-    const classroom = {
+    const newClassroom = {
         name: className,
         teacher: "",
         students: [],
+        link: "View Class",
     };
 
-    all_class_data.push(classroom);
+    classrooms.push(newClassroom);
     displayClassrooms();
-    console.log("Current classrooms:", all_class_data); // Log the updated list
+    console.log("Current classrooms:", classrooms); // Log the updated list
 }
 
-/**
- * Displays the list of classrooms in the table
- */
+
 function displayClassrooms() {
     const tableBody = document.getElementById('classroomTableBody');
     tableBody.innerHTML = '';
 
-    all_class_data.forEach((classroom, index) => {
+    // Insert a new row for each object in the classroom
+    classrooms.forEach((classroom, index) => {
         const newRow = tableBody.insertRow();
-        
-        const fields = [
-            // Display the classroom name
-            { key: 'name', value: classroom.name },
-            // Display the teacher name
-            { key: 'teacher', value: classroom.teacher },
-            // Display the number of students
-            { key: 'students', value: classroom.students.length }
-        ];
 
-        fields.forEach(field => {
-            const cell = newRow.insertCell();
-            cell.textContent = field.value;
+        // For each key in the classroom,  insert a new cell in the current row and set the text content of the cell to the default value
+        Object.keys(classroom).forEach(key => { 
+            const cell = newRow.insertCell(); 
+            cell.textContent = classroom[key];
+            cell.textContent = key === 'students' ? classroom[key].length : classroom[key]; 
 
-            // Allow the user to edit the classroom name and teacher name
-            if (field.key !== 'students') {
+            // Allow editing of the classroom name and teacher name, but not the students list
+            if (key !== 'students' ) {
                 cell.contentEditable = true;
+            
+                  // Add an event listener to handle the Enter key press
                 cell.addEventListener('keydown', (event) => {
-                    // On Enter, update the value in the all_class_data array
-                    if (event.key === 'Enter') {
-                        event.preventDefault();
-                        all_class_data[index][field.key] = cell.textContent.trim();
-                        console.log("Current classrooms:", all_class_data); // Log the updated list
+                    if (event.key === 'Enter') { 
+                        event.preventDefault(); // Prevent the default behavior (which would insert a newline)
+                       
+                        classrooms[index][key] = cell.textContent.trim();  // Update the corresponding property in the classrooms
+                        // Log the updated list of classrooms to the console
+                        console.log("Current classrooms:", classrooms);
                     }
                 });
             }
@@ -64,6 +69,11 @@ function displayClassrooms() {
 }
 
 
+
+
 // Main code:
 
 document.addEventListener('DOMContentLoaded', displayClassrooms);
+
+// Show classroom data, console log
+console.log("Current classrooms:", classrooms);

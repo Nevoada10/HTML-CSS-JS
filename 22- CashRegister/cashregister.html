@@ -1,0 +1,40 @@
+<!--
+================================================================================
+File Type: HTML
+Phone Validator (Certificate Project 9)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This is a webpage that simulates a cash register
+
+# represents an ID selector
+. represents a class selector
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="styles.css" disabled>
+</head>
+
+<body>
+    <h1>Cash Register</h1>
+
+    <!--
+    A label is a text that is associated with a form control. When the text is clicked, it will focus the associated form control.
+    -->
+    <label for="price">Cash:</label>
+    <input id="cash" type="number" placeholder="Enter cash">
+    <p id = "change-due"> </p>
+    <button id="purchase-btn" type="button" onclick="checkChangeDue()">Purchase</button>
+
+</body>
+
+
+<script src="script.js"></script>
+</html>

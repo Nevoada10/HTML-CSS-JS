@@ -11,46 +11,42 @@ let phoneNumberTA = document.getElementById("user-input"); // Input text area ob
 let outputP = document.getElementById("results-div"); // Target the entire results div
 let clearButton = document.getElementById("clear-btn"); // Clear button object
 
-function removeWhitespaces() { // (str) -> (str)
-    // Remove whitespaces
-    let phoneNumber = phoneNumberTA.value.trim() 
-
-    // Check if the input is empty
-    if(phoneNumber == ""){
-        outputP.innerHTML = "Please provide a phone number";
-        return;
-    }
-}
 
 function checkPhone() { // (str) -> (str)
 
-    let phoneNumber = phoneNumberTA.value;
-    removeWhitespaces();
+    console.log("checkPhone() was called")
+    console.log(`phoneNumberTA.value = ${phoneNumberTA.value}`)
 
-    // Remove all non-numeric characters from the string
-    phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
+    // Remove whitespaces at the beginning and end, them replace whitespaces with a no spaces
+    let phoneNumber = phoneNumberTA.value.trim(). replace(/\s+/g, "");
 
+    console.log(`phoneNumber = ${phoneNumber}`)
 
-    if (phoneNumber.length == 11 ){
-
-        // Check if the first digit is 1
-        if (phoneNumber.charAt(0) == "1"){
-
-            // Remove the first digit
-            phoneNumber = phoneNumber.slice(1);
-        }
+    if (phoneNumber == ""){
+        alert("Please provide a phone number");
+        return;
     }
 
-    // if there is any type of parenthesis  "(" or  ")"in the phoneNumber
-    
-    // Now all we have to do is check if the remaining string is a valid phone number
-    if (phoneNumber.length == 10){
-        
+    // Create a list of all accepted regex formats
+    const phonePatterns = 
+    [
+        /^1\d{3}-\d{3}-\d{4}$/, // 1 555-555-5555
+        /^1?\(\d{3}\)\d{3}-\d{4}$/,// 1 (555) 555-5555, 1(555)555-5555|| Both are "equal" there is no whitespaces between.
+        /^1?\d{10}$/, // 1 555 555 5555,  5555555555
+        /^\d{3}-\d{3}-\d{4}$/,// 555-555-5555 
+        /^\(\d{3}\)\d{3}-\d{4}$/,// (555)555-5555
+    ]
+       
+    // If the format is valid
+    if (phonePatterns.some(pattern => pattern.test(phoneNumber))){
+        console.log("The format is valid")
         outputP.innerHTML ="Valid US number: " + phoneNumberTA.value;
         return true;
     }
 
+    // If not valid
     else {
+        console.log("The format is not valid")
        outputP.innerHTML ="Invalid US number: " + phoneNumberTA.value; 
        return false;
     }
@@ -58,6 +54,8 @@ function checkPhone() { // (str) -> (str)
 };
 
 function clearAll() { 
+    console.log("clearAll() was called")
     phoneNumberTA.value = "";
     outputP.innerHTML = "";
+    outputP.className = "invalid"; // Apply invalid class
 };
