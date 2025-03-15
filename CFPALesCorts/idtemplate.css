@@ -1,0 +1,90 @@
+/* General Styles */
+:root {
+    --cfpa-orange: rgb(255, 102, 0); /* The CFPA's orange color */
+    --cfpa-blue: rgb(46, 77, 106); /* The CFPA's blue color */
+    --cfpa-grey: rgb(134, 134, 134); /* A dark grey color */
+    --cfpa-grey2: rgb(140, 140, 140); /* A slightly lighter grey color */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ID Card Container */
+#id-card {
+    width: 100%; /* Full width of the page */
+    max-width: 800px; /* Maximum width of the card */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: auto;
+    text-align: left;
+    box-sizing: border-box; /* Ensures padding is inside the width calculation */
+}
+
+/* Student Info */
+#id-info {
+    overflow: hidden;
+}
+
+#id-name {
+    color: black;
+    margin: 10px 0;
+}
+
+/* Table */
+#id-subjects {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed; /* Prevents column overflow */
+}
+
+#id-subjects th {
+    background-color: var(--cfpa-blue);
+    color: white;
+    padding: 8px;
+    text-align: center;
+}
+
+#id-subjects td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    word-wrap: break-word; /* Ensures content breaks to next line if it’s too long */
+}
+
+/* Row Colors */
+#id-subjects tbody tr:nth-child(odd) {
+    background-color: rgb(220, 220, 220);
+}
+
+#id-subjects tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+/* Attendance Percentage Highlight */
+#id-subjects td:last-child {
+    font-weight: bold;
+    color: rgb(255, 102, 0); /* Orange */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #id-card {
+        width: 90%;
+    }
+
+    #id-subjects th, #id-subjects td {
+        padding: 6px; /* Reduces padding for smaller screens */
+    }
+
+    #id-subjects td {
+        font-size: 12px; /* Smaller font for mobile screens */
+    }
+}
