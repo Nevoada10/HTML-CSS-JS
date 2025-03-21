@@ -4,6 +4,16 @@ const student1 = {
     name: "John Doe",
     subjects: [
         {
+            name: "All Students",
+            group: "None",
+            grade: "0",
+            missedSessions: 0,
+            unexcusedAbsences: 0,
+            excusedAbsences: 0,
+            lateArrivals: 0,
+            attendancePercentage: 100
+        },
+        {
             name: "Math",
             group: "A",
             grade: "A",
@@ -29,6 +39,16 @@ const student1 = {
 const student2 = {
     name: "Jane Doe",
     subjects: [
+        {
+            name: "All Students",
+            group: "None",
+            grade: "0",
+            missedSessions: 0,
+            unexcusedAbsences: 0,
+            excusedAbsences: 0,
+            lateArrivals: 0,
+            attendancePercentage: 100
+        },
         {
             name: "English",
             group: "C",
@@ -110,6 +130,7 @@ function displayStudents() {
 
     // Create a card for each student
     students.forEach(student => {
+        if (student.name.toLowerCase().includes(searchInput.value.toLowerCase())) {
         const studentDiv = document.createElement('div');
         studentDiv.classList.add('student-card');
 
@@ -162,7 +183,7 @@ function displayStudents() {
         // Append the table to the student card
         studentDiv.appendChild(subjectsTable);
         container.appendChild(studentDiv);
-    });
+    }});
 }
 
 // Call the function to display students when the page loads
