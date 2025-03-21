@@ -1,15 +1,56 @@
 // ) Defining the constants
 
-const students = [];
+const student1 = {
+    name: "John Doe",
+    subjects: [
+        {
+            name: "Math",
+            group: "A",
+            grade: "A",
+            missedSessions: 0,
+            unexcusedAbsences: 0,
+            excusedAbsences: 0,
+            lateArrivals: 0,
+            attendancePercentage: 100
+        },
+        {
+            name: "Science",
+            group: "B",
+            grade: "B",
+            missedSessions: 0,
+            unexcusedAbsences: 0,
+            excusedAbsences: 0,
+            lateArrivals: 0,
+            attendancePercentage: 100
+        }
+    ]
+};
+
+const student2 = {
+    name: "Jane Doe",
+    subjects: [
+        {
+            name: "English",
+            group: "C",
+            grade: "C",
+            missedSessions: 0,
+            unexcusedAbsences: 0,
+            excusedAbsences: 0,
+            lateArrivals: 0,
+            attendancePercentage: 100
+        }
+    ]
+};
 
 
+const students = [student1, student2];
 
 // class
 
 const classrooms = [{
     name: "All Students",
     teacher: "",
-    students: [],
+    students: [student1],
     link: "View Class",
 }];
 
@@ -18,12 +59,16 @@ const classrooms = [{
 function createStudent() {
     const inputElement = document.getElementById('studentNameInput');
     const studentName = inputElement.value.trim();
+    if (studentName === "") {
+        alert("Please enter a student name");
+        return;
+    }
     const newStudent = {
         name: studentName,
         subjects: [
             {
                 name: "All Students",
-                group: "",
+                group: "GES",
                 grades: [],
                 missed_sessions: 0,
                 unexcused_absences: 0,
@@ -34,7 +79,6 @@ function createStudent() {
         ],
     };
     students.push(newStudent);
-    classrooms[0].students.push(newStudent.name);
     console.log("Current students:", students); // Log the updated list
     displayClassrooms();
     displayStudents();
@@ -60,15 +104,25 @@ function displayStudents() {
     const container = document.getElementById('students-container');
     container.innerHTML = '';
 
+    // Sort the students by name
+    students.sort((a,b) => a.name.localeCompare(b.name));
+    
+
+    // Create a card for each student
     students.forEach(student => {
         const studentDiv = document.createElement('div');
         studentDiv.classList.add('student-card');
 
+        const searchInput = document.getElementById("searchInput")
+
+        // Display h2 element with the student name 
         const studentName = document.createElement('h2');
         studentName.textContent = student.name;
-        studentDiv.appendChild(studentName);
+        studentDiv.appendChild(studentName); // Append the h2 element to the student card
 
+        // Display a table with the student's data
         const subjectsTable = document.createElement('table');
+        subjectsTable.setAttribute('border', '1'); // Add a border of 1 to the table
         subjectsTable.innerHTML = `
             <thead>
                 <tr>
@@ -85,8 +139,11 @@ function displayStudents() {
             <tbody>
             </tbody>
         `;
+
+        // Get the tbody element
         const tbody = subjectsTable.querySelector('tbody');
 
+        // Create a row for each subject
         student.subjects.forEach(subject => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -102,6 +159,7 @@ function displayStudents() {
             tbody.appendChild(row);
         });
 
+        // Append the table to the student card
         studentDiv.appendChild(subjectsTable);
         container.appendChild(studentDiv);
     });
@@ -141,6 +199,9 @@ function displayClassrooms() {
     });
 }
 
+function filterStudents() {
+    displayStudents();
+}
 
 
 // Main code:
