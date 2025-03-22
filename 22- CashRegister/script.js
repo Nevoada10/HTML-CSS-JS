@@ -6,7 +6,7 @@
 // This is simple webpage that simulates a cash register
 
 // DEFINING GLOBAL VARIABLES:
-let price = 3.50;
+let price = 3.26;
 let priceInCents = Math.round(price * 100);
 
 // DEFINING REUSABLE POINTERS:
@@ -40,15 +40,7 @@ function checkChangeDue() {
         // Cash drawer array
         let cid = 
         [ 
-            ["PENNY", 1.01], // A penny is worth 1 cent
-            ["NICKEL", 2.05], // A nickel is worth 5 cents
-            ["DIME", 3.1], // A dime is worth 10 cents
-            ["QUARTER", 4.25], 
-            ["ONE", 90], 
-            ["FIVE", 55], 
-            ["TEN", 20], 
-            ["TWENTY", 60],
-            ["ONE HUNDRED", 100]
+            ["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]
         ];
 
         // Update cid in cents
@@ -71,7 +63,7 @@ function checkChangeDue() {
             cid[i][3] = 0;
         }
 
-        //console.log("Updated cash drawer in cents, and with coin values (AKA 0's):", cid);    
+        // console.log("Updated cash drawer in cents, and with coin values (AKA 0's):", cid);    
 
         // Calculate the change due
         let changeDue = cashInCents - priceInCents;
@@ -79,12 +71,12 @@ function checkChangeDue() {
         // Create a reversed loop that looks from the biggest to the smallest coin 
         for (let i=cid.length-1; i>=0; i--)
             {
-                while ( (cid[i][2] <= changeDue && cid[i][1] > 0) ) // While this condition is true the current coin will be used
+                while ( (cid[i][2] <= changeDue && cid[i][1] > 0) ) // While the current coin is less than or equal to the change due and the cash drawer has enough of that coin
                 {
-                    changeDue -= cid[i][2]; // Subtract the value of the current coin from the change due
                     cid[i][1] -= cid[i][2]; // Subtract the value of the current coin from the cash drawer
+                    changeDue -= cid[i][2]; // Subtract the value of the current coin from the change due
                     cid[i][3] += cid[i][2]; // Add the value of the current coin to the column that shows the total value of the coins that were used
-                    // console.log(`Using coin ${cid[i][0]} worth ${cid[i][2]} cents. Remaining change due: ${changeDue} cents.`);
+                    console.log(`Using coin ${cid[i][0]} worth ${cid[i][2]} cents. Remaining change due: ${changeDue} cents.`);
                 }
             }
         console.log("Final cash drawer:", cid); // LAST CHECKPOINT
@@ -115,7 +107,7 @@ function checkChangeDue() {
         for (let i=cid.length-1;i>=0 ; i--)
         {
             if (cid[i][3] > 0) {
-                statusMessage += ` ${cid[i][0]}: $${cid[i][3]}`;
+                statusMessage += ` ${cid[i][0]}: $${cid[i][3]/100}`;
             }
         }
 
