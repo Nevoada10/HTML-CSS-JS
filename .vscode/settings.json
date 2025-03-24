@@ -56,5 +56,6 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "explorer.sortOrder": "type"
+  "explorer.sortOrder": "type",
+  "livePreview.defaultPreviewPath": "/25 - PokemonApp/pokemon.html"
 }

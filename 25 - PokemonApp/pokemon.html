@@ -1,0 +1,145 @@
+<!--
+================================================================================
+File Type: HTML
+Pokémon Finder (Certificate Project 10)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This wepage allows users to search for Pokémon by name and view detailed information about them.
+- At the top we have a search bar and a button to search for a Pokémon.
+- Below that we have a display area that shows the Pokémon's name, image, and detailed information, in this order.
+-->
+
+<!--
+===========================
+Classes and IDs in pokemon.html
+===========================
+
+#IDs:
+    Form:
+        search-form: Container for the search form. 
+
+    Div:
+        display-area: Container for displaying Pokémon information.
+        name-and-id: Container for Pokémon's name and ID.
+        weight-and-height: Container for Pokémon's weight and height.
+        abilities: Container for Pokémon's abilities and stats.
+
+    Span:
+        pokemon-name: Element for displaying the name of the Pokémon.
+        pokemon-id: Element for displaying the ID of the Pokémon.
+        weight: Element for displaying the weight of the Pokémon.
+        height: Element for displaying the height of the Pokémon.
+        types: Element for displaying the types of the Pokémon.
+        pokemon-image: Element for displaying the image of the searched Pokémon.
+        abilities: Container for Pokémon's abilities and stats.
+        stats-table: Table displaying the Pokémon's stats.
+        hp: Displays the Pokémon's HP.
+        attack: Displays the Pokémon's Attack.
+        defense: Displays the Pokémon's Defense.
+        special-attack: Displays the Pokémon's Special Attack.
+        special-defense: Displays the Pokémon's Special Defense.
+        speed: Displays the Pokémon's Speed.
+
+    Table:
+        stats-table: Table displaying the Pokémon's stats.
+
+
+.Classes:
+- (No classes defined in the current document)
+
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" enabled>
+    <title>Pokémon Finder</title>
+</head>
+
+<body>
+    <main>  <!-- Main content -->
+        <h1>Pokémon Finder</h1>
+
+        <!-- Search input (SEARCH BAR) -->
+        <form id="search-form" onsubmit="searchPokemon(); return false;">
+            <label for="search-input">Pokémon Name:</label>
+            <input id="search-input" type="text" required placeholder="Search for a Pokémon">
+            <button id="search-button" type="submit">Search</button>
+        </form>
+
+        <!--- Display area (TOP CONTAINER) -->
+        <div id="display-area">
+
+            <div id="name-and-id">
+                <span id="pokemon-name">Name</span>
+                <span id="pokemon-id">#ID</span>
+            </div>
+
+            <!-- Space between (name and id) and (weight and height)-->
+
+            <div id="weight-and-height">
+                <span id="weight">Weight: ___</span>
+                <span id="height">Height: ___</span>
+            </div>
+
+            <img id="pokemon-image" src="" alt="A photo of the searched Pokémon">
+            <span id="types">Types: ___</span>
+
+            <!-- Display Area(BOTTOM CONTAINER)-->
+
+            <div id="abilities">
+            <table id="stats-table">
+                <thead>
+                    <tr>
+                        <th>Base</th>
+                        <th>Stats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HP</td>
+                        <td id="hp">___</td>
+                    </tr>
+                    <tr>
+                        <td>Attack</td>
+                        <td id="attack">___</td>
+                    </tr>
+                    <tr>
+                        <td>Defense</td>
+                        <td id="defense">___</td>
+                    </tr>
+                    <tr>
+                        <td>Special Attack</td>
+                        <td id="special-attack">___</td>
+                    </tr>
+                    <tr>
+                        <td>Special Defense</td>
+                        <td id="special-defense">___</td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td id="speed">___</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+           
+
+
+
+        </div>
+        
+        
+    </main>  <!-- End of main content -->
+    <script src="script.js"></script>
+</body>
+</html>

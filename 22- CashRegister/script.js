@@ -34,11 +34,7 @@ let cid = [
 
 // Create a deep copy of the cash drawer array for resetting the CID after a purchase
     // The map method creates a new array by applying a function to each element; in this case, the function is item.slice()
-    // item.slice() creates a new array with the same elements as the original array because slice() returns a shallow copy of the array
-        // A shallow copy means that the new array is a copy of the original array, but the elements themselves are not copied by reference
-        // What's the difference between a shallow copy and a deep copy? 
-        // A deep copy creates a new array where the elements are also copied by reference, meaning they point to new memory locations
-        // In contrast, a shallow copy means the new array's elements point to the same memory locations as the original array's elements
+    // item.slice() creates a new array with the same elements as the original array because slice() returns a copy of the array
 const cid_original = cid.map(item => item.slice());
 
 // DEFINING REUSABLE POINTERS (In the same order as the HTML elements)

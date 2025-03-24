@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="console-output" ></p>
+</body>
+<script>
+    function Hello1() {
+       document.getElementById('console-output').textContent += 'hello1';
+    }
+
+    const hello2 = function() {
+        document.getElementById('console-output').textContent += ' hello2';
+    }
+
+    const hello3 = () => { // variable, parameters, operation
+        document.getElementById('console-output').textContent += ' hello3';
+    }
+
+    const hello4 = (name) => { // variable, parameters, operation
+        document.getElementById('console-output').textContent += ' hello4 ' + name;
+    }
+        
+
+    // main
+    
+    Hello1();
+    hello2();
+    hello3();
+    hello4('Uriel');
+    
+</script>
+</html>
