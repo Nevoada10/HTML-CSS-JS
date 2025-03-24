@@ -33,18 +33,27 @@ fetch('https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json')
   // res.json() is a method that returns a promise that resolves to the JSON object
   .then(data => { 
     authorDataArr = data; // store the data in the authorDataArr variable
-    console.log("Author Data Array:", authorDataArr);
+    displayAuthors(authorDataArr.slice(startingIndex, endingIndex))
   })
   .catch((err) => {
     console.error(`There was an error: ${err}`);
   });
-  
+
+
+const fetchMoreAuthors = () => {
+    startingIndex += 8;
+    endingIndex += 8;
+    displayAuthors(authorDataArr.slice(startingIndex, endingIndex))
+}
 
 const displayAuthors = (authors) => {
     authors.forEach(({ author, image, url, bio}, index) => {
         authorContainer.innerHTML += `
           <div id="${index}" class="user-card">
           <h2 class="author-name">${author}</h2>
+          <img src="${image}" alt="${author} avatar" class="user-img">
+         <p class="bio">${bio}</p>
+         <a class="author-link" href="${url}" target="_blank">${author}'s author page</a>
 
 
 
@@ -53,6 +62,9 @@ const displayAuthors = (authors) => {
         `;
     });
 }
+
+loadMoreBtn.addEventListener("click", fetchMoreAuthors); // event listener is a function that is called when an event occurs
+
   
 
 /*
