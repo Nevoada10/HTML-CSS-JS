@@ -23,6 +23,8 @@ fetch('https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json')
 // callback function, arrow function, function
 // PARAMETERS, ARROW, OPERATION
 
+// API Metadata format example = {author: "Naomi Carrigan", image: "https://www.freecodecamp.org/news/content/images/size/w150/2022/11/profile.png", url: "https://www.freecodecamp.org/news/author/nhcarrigan/", bio: ""}
+
 
 // uses curly braces when you have more than one expression!
 
@@ -30,7 +32,8 @@ fetch('https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json')
   // metadata is the information about the data in the format of JSON
   // res.json() is a method that returns a promise that resolves to the JSON object
   .then(data => { 
-    console.log(data);
+    authorDataArr = data; // store the data in the authorDataArr variable
+    console.log("Author Data Array:", authorDataArr);
   })
   .catch((err) => {
     console.error(`There was an error: ${err}`);
