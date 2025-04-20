@@ -1,0 +1,53 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "C_Cpp.default.compilerPath": "/usr/bin/clang",
+    "workbench.editor.empty.hint": "hidden",
+    "explorer.confirmDelete": false,
+    "code-runner.runInTerminal": true,
+    "editor.language.colorizedBracketPairs": [], // Canônico. // Cor dos parenteses
+
+
+
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "string.quoted.double.html",
+                "settings": {
+                    "foreground": ""  // Cor do valor do atributo href
+                }
+            },
+            {
+                "scope": "source.html entity.other.attribute-name.html",
+                "settings": {
+                    "foreground": ""  // Cor dos atributos em geral, como src, alt, etc.
+                }
+            },
+            {
+                "scope": "entity.name.tag.html",
+                "settings": {
+                    "foreground": ""  // Cor das tags HTML, como <div>, <p>, etc.
+                }
+            },
+            {
+                "scope": "entity.name.tag.structure.any.html",
+                "settings": {
+                    "foreground": ""  // Cor das tags estruturais HTML, como <body>, <head>, etc.
+                }
+            },
+            {
+                "scope": "entity.other.attribute-name.id.html",
+                "settings": {
+                    "foreground": ""  // Cor do atributo id
+                }
+            },
+            {
+                "scope": "entity.other.attribute-name.class.html",
+                "settings": {
+                    "foreground": ""  // Cor do atributo class
+                }
+            },
+            // Adicione mais regras conforme desejado para outros elementos HTML
+        ]
+    }
+}
+

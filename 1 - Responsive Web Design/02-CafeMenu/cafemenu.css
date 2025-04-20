@@ -1,0 +1,115 @@
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+/* This is how you comment in CSS */
+
+h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.established {
+    font-style: italic;
+}
+
+h1, h2, p {text-align: center;}
+/* background-color: burlywood */
+.menu {
+    width: 80%;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+/* Suppose I have 2 elements:
+
+a , b {
+  font-size: number1;
+  property2: ___;
+  property: ____;
+}
+
+a {
+  font-size: number2;
+}
+
+In this scenario, if element `a` inherits all properties from element `b` except one, the `font-size` property of `a` will be set to 
+`number2`, as it will override the previous `font-size` definition from `b`.
+
+Regarding the hierarchy of properties in CSS, when there are conflicts, the more specific property takes precedence. Therefore, 
+when both rules apply to the same element and have the same specificity, the rule that appears last in the CSS file will take precedence.
+*/
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+}
+
+hr {
+    height: 3px;
+    background-color: brown;
+    border-color: brown;
+}
+
+h1, h2 {
+    font-family: Impact, serif;
+}
+
+.flavor, .dessert {
+    text-align: left;
+    width: 75%;
+}
+
+.price {
+    text-align: right;
+    width: 25%;
+  }
+
+.item p {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+bottom-line {
+    margin-top: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    font-size: 14px;
+}
+
+.address {
+    margin-bottom: 5px;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: brown;
+}
+
+a:active {
+    color: brown;
+}

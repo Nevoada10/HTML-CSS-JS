@@ -1,0 +1,314 @@
+/*
+================================================================================
+Personal Portfolio Website CSS (Certificate Project 5)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This is my personal portfolio website that showcases my work as a software developer.
+It features a fixed navigation bar, project showcase section, and contact information.
+The website is built with responsive design principles and semantic HTML5 elements.
+
+*/
+
+/* Variables */
+:root {
+    --main-blue: #e3f2fd;
+    --accent-blue: #2196f3;
+    --dark-blue: #1976d2;
+    --text-color: #333;
+    --white: #fff;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    width: 100%;
+    background: var(--white);
+    padding: 1vw;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 0.2vw 0.5vw rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2vw;
+}
+
+#navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: var(--accent-blue);
+}
+
+/* Welcome Section */
+#welcome-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, var(--main-blue), var(--accent-blue));
+    color: var(--white);
+    padding: 10vh 3vw;
+    gap: 2vh;
+}
+
+#welcome-section img {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    margin: 2vh 0;
+    transition: transform 0.3s;
+}
+
+#welcome-section p:nth-of-type(1) {
+    font-size: 1.5vw;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2vh;
+    opacity: 0.8;
+}
+
+.stats-container {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 2vw;
+    margin-left: 0vw;
+}
+
+.stats-text {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2vh 3vw;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.stats-text:hover {
+    transform: scale(1.02);
+}
+
+.stats-text p {
+    color: var(--white);
+    font-weight: 300;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 1.1vw;
+}
+
+.stats-text {
+    flex: 1;
+    font-size: 1.2vw;
+    font-weight: 500;
+    text-align: center;
+    max-width: 80%;
+    margin: 2vh auto;
+    line-height: 1.6;
+}
+
+#welcome-section h1 {
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}
+
+/* Projects Section */
+#projects {
+    padding: 5vw 2vw;
+    background: var(--white);
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 3vw;
+    font-size: 2.5vw;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+    gap: 2vw;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.project-tile {
+    background: var(--white);
+    border-radius: 0.5vw;
+    overflow: hidden;
+    box-shadow: 0 0.2vw 0.5vw rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s;
+}
+
+.project-tile:hover {
+    transform: translateY(-0.5vw);
+}
+
+.project-tile img {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+.project-title {
+    padding: 1vw;
+    font-size: 1.2vw;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Certificates Section */
+#certificates {
+    background-color: var(--main-blue);
+    padding: 6vh 3vw;
+    text-align: center;
+}
+
+#certificates h2 {
+    color: var(--dark-blue);
+    margin-bottom: 4vh;
+    font-size: 2.5vw;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2vw;
+    justify-content: center;
+}
+
+.certificate-tile {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.certificate-tile img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificate-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-tile:hover img {
+    transform: scale(1.1);
+}
+
+.certificate-title {
+    padding: 1vh 1vw;
+    text-align: center;
+    color: var(--dark-blue);
+    font-weight: 600;
+    background-color: rgba(33, 150, 243, 0.1);
+    margin: 0;
+}
+
+/* Contact Section */
+#contact-info {
+    padding: 5vw 2vw;
+    background: var(--main-blue);
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+    margin-top: 2vw;
+}
+
+.contact-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2vw;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #welcome-section h1 {
+        font-size: 4vw;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+    }
+    
+    #navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5vw;
+    }
+
+    .project-title {
+        font-size: 2vw;
+    }
+
+    .contact-links a {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #welcome-section {
+        --image-size: 40vw;
+    }
+
+    #welcome-section h1 {
+        font-size: 6vw;
+    }
+
+    .project-title {
+        font-size: 3vw;
+    }
+
+    .contact-links a {
+        font-size: 3vw;
+    }
+}

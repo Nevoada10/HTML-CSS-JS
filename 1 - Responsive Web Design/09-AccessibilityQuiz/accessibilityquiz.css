@@ -1,0 +1,239 @@
+
+/*
+
+================================================================================
+Accessibility Quiz CSS (Accessibility)`
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+*/
+
+/* The following CSS is used to style the entire webpage */
+
+/* Set the scroll behavior to smooth for all elements when the user prefers reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth; /* This means that scrolling will be smooth */
+  }
+}
+
+/* Set the background color, text color, font family, and margin for the body element */
+body {
+  background: #f5f6f7; /* Set the background color to a light gray */
+  color: #1b1b32; /* Set the text color to a dark gray */
+  font-family: Helvetica; /* Set the font family to Helvetica */
+  margin: 0; /* Remove any default margin */
+}
+
+/* Set the width, height, background color, display, and position for the header element */
+header {
+  width: 100%; /* Set the width to 100% of its parent element */
+  height: 50px; /* Set the height to 50 pixels */
+  background-color: #1b1b32; /* Set the background color to a dark gray */
+  display: flex; /* Use flexbox to control the layout of its children */
+  justify-content: space-between; /* Align the children to the left and right edges */
+  align-items: center; /* Align the children vertically in the center */
+  position: fixed; /* Set the position to fixed, so it stays in the same place even when scrolling */
+  top: 0; /* Set the top position to 0, so it stays at the top of the page */
+}
+
+/* Set the width, background color, aspect ratio, padding, and id for the logo element */
+#logo {
+  width: max(10rem, 18vw); /* Set the width to a maximum of 10 rem, or 18% of the viewport width */
+  background-color: #0a0a23; /* Set the background color to a darker gray */
+  aspect-ratio: 35 / 4; /* Set the aspect ratio to 35:4 */
+  padding: 0.4rem; /* Set the padding to 0.4 rem */
+}
+
+/* Set the text color, font size, and text alignment for the h1 element */
+h1 {
+  color: #f1be32; /* Set the text color to a yellow color */
+  font-size: min(5vw, 1.2em); /* Set the font size to a minimum of 5 vw, or 1.2 em */
+  text-align: center; /* Center the text */
+}
+
+/* Set the width, max-width, height, and display for the nav element */
+nav {
+  width: 50%; /* Set the width to 50% of its parent element */
+  max-width: 300px; /* Set the maximum width to 300 pixels */
+  height: 50px; /* Set the height to 50 pixels */
+}
+
+/* Set the display, justify-content, flex-wrap, align-items, padding-inline-start, margin-block, and height for the ul element */
+nav > ul {  /* This CSS selector targets all <ul> elements that are direct children of a <nav> element, doesn't affect the <li> elements */
+  display: flex; /* Use flexbox to control the layout of its children */
+  justify-content: space-evenly; /* Distribute the children evenly along the main axis */
+  flex-wrap: wrap; /* Allow the children to wrap onto multiple lines */
+  align-items: center; /* Align the children vertically in the center */
+  padding-inline-start: 0; /* Remove the default padding on the left side of the <ul> */
+  margin-block: 0; /* Remove the default margin on the top and bottom of the <ul> */
+  height: 100%; /* Make the <ul> take up the full height of the <nav> */
+}
+
+/* Set the color, margin, padding, display, and height for the li element */
+nav > ul > li { /* This CSS selector targets all <li> elements that are direct children of a <ul> element that are direct children of a <nav> element */
+  color: #dfdfe2; /* Set the text color to a light gray */
+  margin: 0 0.2rem; /* Set the left and right margin to 0.2 rem */
+  padding: 0.2rem; /* Set the padding to 0.2 rem */
+  display: block; /* Display the <li> as a block-level element */
+}
+
+/* Set the background color, text color, cursor, and hover styles for the li element */
+nav > ul > li:hover {
+  background-color: #dfdfe2; /* Set the background color to a light gray */
+  color: #1b1b32; /* Set the text color to a dark gray */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
+/* Set the text color and text decoration for the a element */
+li > a {
+  color: inherit; /* Set the text color to inherit from its parent */
+  text-decoration: none; /* Remove the default underline */
+}
+
+/* Set the padding-top for the main element */
+main { /* This CSS selector targets the <main> element */
+  padding-top: 50px; /* Set the top padding to 50 pixels */
+}
+
+/* Set the width, max-width, margin-top, margin-left, margin-right, and margin-bottom for the section element */
+section {
+  width: 80%; /* Set the width to 80% of its parent element */
+  max-width: 600px; /* Set the maximum width to 600 pixels */
+  margin-top: 0px; /* Set the top margin to 0 pixels */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+  margin-bottom: 10px; /* Set the bottom margin to 10 pixels */
+}
+
+/* Set the font family for the h1 and h2 elements */
+h1,
+h2 {
+  font-family: Verdana, Tahoma; /* Set the font family to Verdana or Tahoma */
+}
+
+/* Set the padding for the info element */
+.info {
+  padding: 10px 0 0 5px; /* Set the top padding to 10 pixels, bottom padding to 0 pixels, left padding to 5 pixels, and right padding to 0 pixels */
+}
+
+/* Set the margin-top and padding for the formrow element */
+.formrow {
+  margin-top: 30px; /* Set the top margin to 30 pixels */
+  padding: 0px 15px; /* Set the left and right padding to 15 pixels */
+}
+
+/* Set the font size for the input elements */
+input {
+  font-size: 16px;
+}
+
+/* Set the display, vertical alignment, and width for the input and label elements within the info class */
+.info input,
+.info label {
+  display: inline-block; /* Display the element as an inline block */
+  vertical-align: middle; /* Vertically align the element */
+}
+
+/* Set the width and text alignment for the input elements within the info class */
+.info input {
+  width: 50%; /* Set the width to 50% of its parent element */
+  text-align: left; /* Set the text alignment to left */
+}
+
+/* Set the width, minimum width, and text alignment for the label elements within the info class */
+.info label {
+  width: 10%; /* Set the width to 10% of its parent element */
+  min-width: 55px; /* Set the minimum width to 55 pixels */
+  text-align: right; /* Set the text alignment to right */
+}
+
+/* Set the text alignment, display, width, margin-top, and padding-top for the question-block class */
+.question-block {
+  text-align: left; /* Set the text alignment to left */
+  display: block; /* Display the element as a block */
+  width: 100%; /* Set the width to 100% of its parent element */
+  margin-top: 20px; /* Set the top margin to 20 pixels */
+  padding-top: 5px; /* Set the top padding to 5 pixels */
+}
+
+/* Set the margin-top, font size, padding-left for the p element */
+p {
+  margin-top: 5px; /* Set the top margin to 5 pixels */
+  padding-left: 15px; /* Set the left padding to 15 pixels */
+  font-size: 20px; /* Set the font size to 20 pixels */
+}
+
+/* Set the width and minimum width for the label elements within the info class */
+.info label {
+  width: 10%; /* Set the width to 10% of its parent element */
+  min-width: 55px; /* Set the minimum width to 55 pixels */
+}
+
+/* Set the border bottom, margin-top, and padding-top for the h2 element */
+h2 {
+  border-bottom: 4px solid #dfdfe2; /* Set the bottom border color and width */
+  margin-top: 0px; /* Set the top margin to 0 pixels */
+  padding-top: 60px; /* Set the top padding to 60 pixels */
+}
+
+/* Remove the border, padding-bottom for the question class */
+.question {
+  border: none; /* Remove the border */
+  padding-bottom: 0; /* Set the bottom padding to 0 pixels */
+}
+
+/* Remove the list-style, padding for the answers-list class */
+.answers-list {
+  list-style: none; /* Remove the list style */
+  padding: 0; /* Set the padding to 0 pixels */
+}
+
+/* Set the content before the p element */
+p::before {
+  content: "Question #"; /* Set the content before the p element */
+}
+
+/* Set the display, margin, width, padding, font-size, background, border, and border-width for the button element */
+button {
+  display: block; /* Display the element as a block */
+  margin: 40px auto; /* Set the top and bottom margin to 40 pixels, and the left and right margin to auto */
+  width: 40%; /* Set the width to 40% of its parent element */
+  padding: 15px; /* Set the padding to 15 pixels */
+  font-size: 23px; /* Set the font size to 23 pixels */
+  background: #d0d0d5; /* Set the background color */
+  border: 3px solid #3b3b4f; /* Set the border width, style, and color */
+}
+
+/* Set the background-color and display for the footer element */
+footer {
+  background-color: #2a2a40; /* Set the background color */
+  display: flex; /* Display the element as a flex container */
+  justify-content: center; /* Center the content horizontally within the flex container */
+}
+
+/* Set the colors for the footer and footer a elements */
+footer,
+footer a {
+  color: #fff; /* Set the text color to white */
+}
+
+/* Set the text alignment, padding, and address element */
+address {
+  text-align: center; /* Set the text alignment to center */
+  padding: 0.3em; /* Set the padding to 0.3em */
+}
+
+/* Set the position, width, height, padding, margin, overflow, clip, white-space, and border for the sr-only class */
+.sr-only {
+  position: absolute; /* Set the position to absolute */
+  width: 1px; /* Set the width to 1 pixel */
+  height: 1px; /* Set the height to 1 pixel */
+  padding: 0; /* Set the padding to 0 pixels */
+  margin: -1px; /* Set the margin to -1 pixel */
+  overflow: hidden; /* Hide the content that overflows */
+  clip: rect(0, 0, 0, 0); /* Clip the content to a rectangle with dimensions 0, 0, 0, and 0 */
+  white-space: nowrap; /* Prevent the content from wrapping to the next line */
+  border: 0; /* Remove the border */
+}
+

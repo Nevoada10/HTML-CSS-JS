@@ -1,0 +1,132 @@
+/*
+================================================================================
+Cat Photo Gallery Flexbox HTML
+Author: Nevoada ( https://github.com/Nevoada10 )
+==============================================================================
+
+Order inside-out::
+1) Content is the content inside the box
+2) Padding is the space between the border and the content.
+3) Border is the space around the padding.
+4) Margin is the space around the border.
+
+https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png"
+
+*/
+
+/* 
+  * is the universal selector. It matches all elements on the page.
+  * box-sizing is a property that is used to control how the width and height of an element are calculated.
+  * border-box is a box-sizing value that makes the width and height of an element include the padding and border.
+*/
+
+* {
+    box-sizing: border-box ;
+  }
+
+/* 
+  .gallery img is the selector for the images in the gallery.
+  width is set to 100% so that the images take up the full width of their parent.
+  max-width is set to 350px so that the images don't get too big.
+  height is set to 300px so that all of the images are the same height.
+  object-fit is a property that is used to control how the image is displayed inside of its container.
+  object-fit: cover will make the image cover the entire container, even if that means cropping it.
+  border-radius is a property that is used to add rounded corners to an element.
+  border-radius: 10px will add a 10px radius to the corners of the images.
+*/
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+/* 
+  body is the selector for the body element.
+  margin is a property that is used to add space between an element and its parent.
+  margin: 0 will remove any margin that is added by the browser.
+  font-family is a property that is used to set the font of an element.
+  sans-serif is a generic font family that will be applied to the body element.
+  background-color is a property that is used to set the background color of an element.
+  #f5f6f7 is a light gray color that will be used as the background color of the body element.
+*/
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f6f7;
+}
+
+/* 
+  .header is the selector for the header element.
+  text-align is a property that is used to set the alignment of text in an element.
+  text-align: center will center the text in the header.
+  text-transform is a property that is used to capitalize the text in an element.
+  text-transform: uppercase will capitalize all of the text in the header.
+  padding is a property that is used to add space between the content and border of an element.
+  padding: 32px will add 32px of padding to the header element.
+  background-color is a property that is used to set the background color of an element.
+  #0a0a23 is a dark gray color that will be used as the background color of the header element.
+  color is a property that is used to set the color of the text in an element.
+  #fff is white, which will be used as the color of the text in the header element.
+  border-bottom is a property that is used to add a border to the bottom of an element.
+  border-bottom: 4px solid #fdb347 will add a 4px solid border to the bottom of the header element with the color #fdb347.
+*/
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+  }
+
+/* 
+  .gallery is the selector for the gallery element.
+  display is a property that is used to set the type of display an element should have.
+  display: flex will make the gallery element a flex container.
+  flex-direction is a property that is used to set the direction of the flex container.
+  flex-direction: row will make the gallery element a horizontal row.
+  flex-wrap is a property that is used to control whether the flex items wrap to a new line.
+  flex-wrap: wrap will make the flex items wrap to a new line.
+  justify-content is a property that is used to set the alignment of the flex items on the main axis.
+  justify-content: center will center the flex items on the main axis.
+  align-items is a property that is used to set the alignment of the flex items on the cross axis.
+  align-items: center will center the flex items on the cross axis.
+  padding is a property that is used to add space between the content and border of an element.
+  padding: 20px 10px will add 20px of padding to the top and bottom of the gallery element and 10px of padding to the left and right.
+  max-width is a property that is used to set the maximum width of an element.
+  max-width: 1400px will set the maximum width of the gallery element to 1400px.
+  margin is a property that is used to add space between an element and its parent.
+  margin: 0 auto will center the gallery element horizontally.
+  gap is a property that is used to add space between the flex items.
+  gap: 16px will add 16px of space between the flex items.
+*/
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    padding: 20px 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+/* 
+  .gallery::after is the selector for the after pseudo-element of the gallery element.
+  content is a property that is used to set the content of the after pseudo-element.
+  content: "" will set the content of the after pseudo-element to an empty string.
+  width is a property that is used to set the width of an element.
+  width: 350px will set the width of the after pseudo-element to 350px.
+*/
+
+.gallery::after {
+      content: "";
+      width: 350px;
+  }

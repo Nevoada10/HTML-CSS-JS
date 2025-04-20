@@ -1,0 +1,141 @@
+<!-- ================================================================================
+File Type: HTML
+Creature Finder (Certificate Project 10)
+Author: Nevoada ( https://github.com/Nevoada10 )
+====================================================================================
+
+This wepage allows users to search for creature by name and view detailed information about them.
+- At the top we have a search bar and a button to search for a creature.
+- Below that we have a display area that shows the creature's name, ID, and detailed information, in this order.
+
+================================
+Classes and IDs in creature.html
+================================
+
+#IDs:
+    Form: (1)
+        search-form: Container for the search form. 
+
+    Input: (1)
+        search-input: Input field for creature name or ID.
+
+    Div: (4)
+        display-area: Container for displaying creature information.
+        name-and-id: Container for creature's name and ID.
+        weight-and-height: Container for creature's weight and height.
+        abilities: Container for creature's abilities and stats.
+
+    Span: (12)
+        creature-name: Element for displaying the name of the creature.
+        creature-id: Element for displaying the ID of the creature.
+        weight: Element for displaying the weight of the creature.
+        height: Element for displaying the height of the creature.
+        types: Element for displaying the types of the creature.
+        creature-image: Element for displaying the image of the searched creature.
+        abilities: Container for creature's abilities and stats.
+
+        hp: Displays the creature's HP.
+        attack: Displays the creature's Attack.
+        defense: Displays the creature's Defense.
+        special-attack: Displays the creature's Special Attack.
+        special-defense: Displays the creature's Special Defense.
+        speed: Displays the creature's Speed.
+
+    Table: (1)
+        stats-table: Table displaying the creature's stats.
+
+.Classes:
+- (No classes defined in the current document)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" enabled>
+    <title>Creature Finder</title>
+</head>
+
+<body>
+    <main>  <!-- Main content -->
+        <h1>CREATURE FINDER</h1>
+
+        <!-- Search input (SEARCH BAR) -->
+        <form id="search-form" onsubmit="searchCreature();">
+            <label for="search-input">Creature Name:</label>
+            <input id="search-input" type="text" required placeholder="Search for a creature">
+            <button id="search-button" type="submit">Search</button>
+        </form>
+
+        <!--- Display area (TOP CONTAINER) -->
+        <div id="display-area">
+
+            <div id="name-and-id">
+                <span id="creature-name">Name</span>
+                <span id="creature-id">#ID</span>
+            </div>
+
+            <!-- Space between (name and id) and (weight and height)-->
+
+            <div id="weight-and-height">
+                <span id="weight">Weight: ___</span>
+                <span id="height">Height: ___</span>
+            </div>
+
+            <!--<img id="creature-image" src="" alt="A photo of the searched creature">-->
+
+            <span id="types">Types: ___</span>
+
+            <!-- Display Area(BOTTOM CONTAINER)-->
+            <div id="abilities">
+            <table id="stats-table">
+                <thead>
+                    <tr>
+                        <th>Base</th>
+                        <th>Stats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HP</td>
+                        <td id="hp">___</td>
+                    </tr>
+                    <tr>
+                        <td>Attack</td>
+                        <td id="attack">___</td>
+                    </tr>
+                    <tr>
+                        <td>Defense</td>
+                        <td id="defense">___</td>
+                    </tr>
+                    <tr>
+                        <td>Special Attack</td>
+                        <td id="special-attack">___</td>
+                    </tr>
+                    <tr>
+                        <td>Special Defense</td>
+                        <td id="special-defense">___</td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td id="speed">___</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+           
+
+
+
+        </div>
+        
+        
+    </main>  <!-- End of main content -->
+    <script src="script.js"></script>
+</body>
+</html>

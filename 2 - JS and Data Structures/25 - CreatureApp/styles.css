@@ -1,0 +1,101 @@
+/* =================================================================================
+ * File Type: CSS
+ * Creature Finder (Certificate Project 10)
+ * Author: Uriel Neves Silva ( https://github.com/nevoada10 )
+ * =================================================================================
+
+This webpage allows users to search for creature by name and view detailed information about them.
+- At the top we have a search bar and a button to search for a creature.
+- Below that we have a display area that shows the creature's name, ID, and detailed information, in this order.
+
+==================================
+Classes and IDs in creature.html
+==================================
+
+#IDs:
+    Form: (1)
+        search-form: Container for the search form. 
+    
+    Input: (1)
+        search-input: Input field for creature name or ID.
+
+    Div: (4)
+        display-area: Container for displaying creature information.
+        name-and-id: Container for creature's name and ID.
+        weight-and-height: Container for creature's weight and height.
+        abilities: Container for creature's abilities and stats.
+
+    Span: (12)
+        creature-name: Element for displaying the name of the creature.
+        creature-id: Element for displaying the ID of the creature.
+        weight: Element for displaying the weight of the creature.
+        height: Element for displaying the height of the creature.
+        types: Element for displaying the types of the creature.
+        creature-image: Element for displaying the image of the searched creature.
+
+        hp: Displays the creature's HP.
+        attack: Displays the creature's Attack.
+        defense: Displays the creature's Defense.
+        special-attack: Displays the creature's Special Attack.
+        special-defense: Displays the creature's Special Defense.
+        speed: Displays the creature's Speed.
+
+    Table: (1)
+        stats-table: Table displaying the creature's stats.
+
+    .Classes: (No classes defined in the current document)
+*/
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Search Form */
+#search-form {
+    margin-bottom: 20px;
+}
+
+/* Display Area */
+#display-area {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+/* Internal Containers */
+#name-and-id,
+#weight-and-height,
+#abilities {
+    margin-bottom: 15px;
+}
+
+/* Spans for labels and texts */
+span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Stats Table */
+table#stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+
+table#stats-table th,
+table#stats-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table#stats-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}

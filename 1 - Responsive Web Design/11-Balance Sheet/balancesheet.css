@@ -1,0 +1,203 @@
+/*
+================================================================================
+Balance Sheet CSS
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+Em and Rem units of measurement in CSS.
+Em is relative to current font-size.
+Rem is relative to root element font-size (html class).
+Calc function is used to calculate em and rem values using reference values.
+*/
+
+/* Hide elements visually but keep them accessible to screen readers */
+span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+
+/* Set the box-sizing model for all elements */
+html {
+    /* Set the box-sizing model to border-box. This means that the width and
+     * height of an element includes the padding and border. */
+    box-sizing: border-box;
+}
+
+/* Base styling for the body element */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #0a0a23; /* Dark text color */
+}
+
+/* Styling for the main heading */
+h1 {
+    max-width: 37.25rem;
+    margin: 0 auto; /* Center the element */
+    padding: 1.5rem 1.25rem;
+}
+
+/* Flexbox layout for h1 spans */
+h1 .flex {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse the order */
+    gap: 1rem; /* Space between spans */
+}
+
+/* Smaller text size for the first span */
+h1 .flex span:first-of-type {
+    font-size: 0.7em;
+}
+
+/* Larger text size for the last span */
+h1 .flex span:last-of-type { /* Select the last span element within the flex container inside the h1 element */
+    font-size: 1.2em;
+}
+
+/* Styling for the main section */
+section {
+    max-width: 40rem;
+    margin: 0 auto; /* Center the section */
+    border: 2px solid #d0d0d5; /* Light border */
+}
+
+/* Styling for the years display */
+#years {
+    display: flex;
+    justify-content: flex-end; /* Align items to the end */
+    position: sticky; /* Stick to the top on scroll */
+    top: 0;
+    color: #fff;
+    background: #0a0a23; /* Dark background */
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+    z-index: 999; /* Ensure it's above other elements */
+}
+
+/* Bold styling for year spans */
+#years span[class] {
+    font-weight: bold;
+    width: 4.5rem; /* Fixed width */
+    text-align: right;
+}
+
+/* Padding for table wrapper */
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+}
+
+/* Caption styling for tables */
+table caption {
+    color: #356eaf; /* Blue-ish color */
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+}
+
+/* Width settings for table cells */
+tbody td {
+    width: 100%;
+    min-width: 4rem;
+    max-width: 4rem;
+    width: 100vw; /* Full viewport width */
+}
+
+/* Width calculation for table header cells */
+tbody th {
+    width: calc(100% - 12rem);
+}
+
+/* Total row styling */
+tr[class="total"] {
+    border-bottom: 4px double #0a0a23; /* Double border */
+    font-weight: bold;
+}
+
+/* Total row header cell styling */
+tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+/* Total row data cell styling */
+tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+}
+
+/* Adjust padding for the third data cell in total row */
+tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+}
+
+/* Hover effect for total rows */
+tr.total:hover {
+    background-color: #99c9ff; /* Light blue */
+}
+
+/* Styling for current data cells */
+td[class="current"] {
+    font-style: italic;
+}
+
+/* Data row styling with gradient background */
+tr[class="data"] {
+    /* The gradient is a linear gradient that goes from top to bottom (to bottom).
+     * The first argument, #dfdfe2, is the starting color of the gradient.
+     * The second argument, 1.845rem, is the length of the gradient. The gradient will
+     * be rendered up to this length, and then the background color of the element
+     * will take over.
+     * The third argument, white, is the ending color of the gradient.
+     * The fourth argument, 1.845rem, is the length of the gradient again. This is
+     * necessary because the gradient is repeating, and we want it to repeat every
+     * 1.845rem. */
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+
+}
+
+/* Data row header cell styling */
+tr.data th {
+    text-align: left;
+    padding: 0.3rem 0 0 0.5rem;
+}
+
+/* Description styling within data row header */
+tr.data th .description {
+    display: block;
+    font-style: italic;
+    font-weight: normal;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+}
+
+/* Data row data cell styling */
+tr.data td {
+    vertical-align: top;
+    text-align: right;
+    padding: 0.3rem 0.25rem 0;
+}
+
+/* Adjust padding for the last data cell in data rows */
+tr.data td:last-of-type {
+    padding-right: 0.5rem;
+}
+

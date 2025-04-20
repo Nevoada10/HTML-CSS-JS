@@ -1,0 +1,44 @@
+<!--
+================================================================================
+File Type: HTML
+Phone Validator (Certificate Project 9)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This is a webpage that simulates a cash register
+
+# represents an ID selector
+. represents a class selector
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- IE compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" enabled>
+    <title>Cash Register</title>
+</head>
+
+<body>
+    <main>  <!-- Main content -->
+        <h1>Cash Register  </h1>
+
+        <!-- Input elements -->
+        <input id="cash" type="number" placeholder="Enter cash">  <!-- Cash input -->
+        <button id="purchase-btn" type="button" onclick="checkChangeDue()">Purchase</button>  <!-- Purchase button -->
+
+        <!-- Single Display elements -->
+        <p id = "price-display"></p>  <!-- Price display -->
+        <p id="cash-display"></p>  <!-- Cash display -->
+        <p id="change-value"></p>  <!-- Change value display -->
+
+        <!-- CID Display elements -->
+        <p id = "change-due"> </p>  <!-- Change due display in the format (Status: OPEN/CLOSED) -->
+        <p id = "cash-in-drawer"></p>  <!-- Cash in drawer (Updated CID) display -->
+    </main>  <!-- End of main content -->
+    <script src="script.js"></script>
+</body>
+</html>

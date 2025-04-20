@@ -1,0 +1,107 @@
+/*
+================================================================================
+File Type: CSS
+Palindrome Checker  (Certificate Project 6)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+This is a simple stylesheet that styles the html page
+*/
+
+/* Blue-ish style sheet */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 60px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto  ;
+}
+
+/* Add a margin between the first and second paragraph */
+.container p:nth-of-type(2) {
+    margin-top: 40px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4757;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    word-wrap: break-word;  /* Allows long words to break */
+    overflow-wrap: break-word;  /* Modern alternative */
+    max-width: 100%;
+    white-space: normal;  /* Prevents text from staying on one line */
+    overflow: hidden;  /* Hides any remaining overflow */
+    text-overflow: ellipsis;  /* Adds ... if text is too long */
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 30px;
+        width: 95%;
+        margin: 10px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    input, button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        padding: 20px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}

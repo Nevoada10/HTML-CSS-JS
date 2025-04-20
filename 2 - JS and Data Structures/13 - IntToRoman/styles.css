@@ -1,0 +1,66 @@
+/* File Name: styles.css
+ * Author: Uriel Neves Silva
+ * Github: https://github.com/nevoada10
+ * Function: Provides a green-themed styling for the Int to Roman Numeral Converter
+ */
+
+:root {
+    --primary-green: #2ecc71;
+    --dark-green: #27ae60;
+    --light-green: #90ee90;
+    --background-green: #e8f5e9;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px -10px;
+    border: 2px solid var(--primary-green);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, button:focus {
+    border-color: var(--dark-green);
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+button {
+    background-color: var(--primary-green);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--dark-green);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--dark-green);
+    font-weight: bold;
+}

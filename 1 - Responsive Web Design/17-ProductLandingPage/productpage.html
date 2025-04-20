@@ -1,0 +1,185 @@
+<!--
+
+================================================================================
+Product Landing Page HTML (Certificate Project 4)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This project is a responsive product landing page, a premium mechanical keyboard company.
+The page includes features, how it works, pricing, and a video review.
+The page is designed to be accessible to users with disabilities, and includes a form for email subscription.
+The page is also designed to be responsive, and will adapt to different screen sizes and devices.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        This is the head section of the HTML document. It contains metadata about the document, 
+        such as the character encoding, the title of the page, and links to external stylesheets.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyCraft - Premium Mechanical Keyboards</title>
+    <!-- 
+        This is a link to an external stylesheet. The href attribute specifies the location of the stylesheet.
+        The rel attribute specifies the relationship between the current document and the linked document.
+    -->
+    <link href="styles.css" rel="stylesheet" >
+    <!-- 
+        This is a link to an external font. The href attribute specifies the location of the font.
+        The rel attribute specifies the relationship between the current document and the linked document.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        This is the header section of the HTML document. It contains the logo, title and navigation menu.
+    -->
+    <header id="header">
+        <div class="logo-container">
+            <!-- 
+                This is the logo of the company. The src attribute specifies the location of the image.
+                The alt attribute specifies the text to be displayed if the image cannot be loaded.
+            -->
+            <img id="header-img" src="https://cf.shopee.co.th/file/094f029c06c10fa594b696c0b3ac3a3d" alt="KeyCraft Logo">
+            <h1>KeyCraft</h1>
+        </div>
+        <!-- 
+            This is the navigation menu. It contains links to different sections of the page.
+        -->
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+        This is the main content section of the HTML document. It contains the hero section, features section, how it works section, and pricing section.
+    -->
+    <main>
+        <!-- 
+            This is the hero section. It contains the title, subtitle, and a call-to-action button.
+        -->
+        <section class="hero">
+            <h2>Craft Your Perfect Typing Experience</h2>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <!-- 
+                    This is a form element that contains an input field and a submit button.
+                    The name attribute specifies the name of the form element.
+                    The id attribute specifies the id of the form element.
+                    The type attribute specifies the type of the form element.
+                    The placeholder attribute specifies the text to be displayed in the input field when it is empty.
+                    The required attribute specifies that the input field must be filled in before the form can be submitted.
+                -->
+                <input 
+                    name="email" 
+                    id="email" 
+                    type="email" 
+                    placeholder="Enter your email for exclusive offers" 
+                    required
+                >
+                <!-- 
+                    This is a submit button. The value attribute specifies the text to be displayed on the button.
+                    The class attribute specifies the class of the button.
+                -->
+                <input id="submit" type="submit" value="Get Started" class="btn">
+            </form>
+        </section>
+
+        <!-- 
+            This is the features section. It contains a list of features.
+        -->
+        <section id="features">
+            <div class="feature">
+                <div class="icon">⌨️</div>
+                <div class="desc">
+                    <h3>Premium Switches</h3>
+                    <p>Cherry MX switches ensure unparalleled typing precision and durability.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">🎨</div>
+                <div class="desc">
+                    <h3>Customizable RGB</h3>
+                    <p>16.8 million colors with dynamic lighting effects and custom profiles.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">🛠️</div>
+                <div class="desc">
+                    <h3>Hot-Swappable</h3>
+                    <p>Change switches without soldering for the ultimate customization.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            This is the how it works section. It contains a video review.
+        -->
+        <section id="how-it-works">
+            <iframe 
+                id="video"
+                src="https://www.youtube.com/embed/IfSm1qYj-X8" 
+                frameborder="0" 
+                allowfullscreen
+            ></iframe>
+        </section>
+
+        <!-- 
+            This is the pricing section. It contains a list of products.
+        -->
+        <section id="pricing">
+            <div class="product">
+                <div class="level">Starter</div>
+                <h2>$129</h2>
+                <ul>
+                    <li>TKL Layout</li>
+                    <li>Basic RGB</li>
+                    <li>Red Switches</li>
+                    <li>1 Year Warranty</li>
+                </ul>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product">
+                <div class="level">Pro</div>
+                <h2>$199</h2>
+                <ul>
+                    <li>Full Size</li>
+                    <li>Advanced RGB</li>
+                    <li>Brown Switches</li>
+                    <li>2 Year Warranty</li>
+                </ul>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product">
+                <div class="level">Ultimate</div>
+                <h2>$299</h2>
+                <ul>
+                    <li>Custom Layout</li>
+                    <li>Per-Key RGB</li>
+                    <li>Any Switch Type</li>
+                    <li>Lifetime Warranty</li>
+                </ul>
+                <button class="btn">Select</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+        This is the footer section of the HTML document. It contains a list of links and a copyright notice.
+    -->
+    <footer>
+        <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <span>Copyright 2024, KeyCraft</span>
+    </footer>
+</body>
+</html>

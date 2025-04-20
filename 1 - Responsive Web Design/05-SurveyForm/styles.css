@@ -1,0 +1,165 @@
+/*
+================================================================================
+Survey Form CSS (Certificate Project 1)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+*/
+
+/* Tech Career Survey Stylesheet */
+:root {
+    --primary-color: #2c3e50;      /* Deep blue-gray, reminiscent of tech sophistication */
+    --secondary-color: #3498db;    /* Bright blue, representing innovation */
+    --background-color: #ecf0f1;   /* Light gray-white, clean and professional */
+    --text-color: #34495e;         /* Dark slate gray for readability */
+    --accent-color: #2ecc71;       /* Green, symbolizing growth and opportunity */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+#survey-form {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Creates space between stacked elements */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+#title {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+#description {
+    color: var(--text-color);
+    font-style: italic;
+}
+
+fieldset {
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between elements within fieldset */
+}
+
+legend {
+    color: var(--secondary-color);
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+/* Checkbox and Radio Button Containers */
+fieldset:has(input[type="checkbox"]),
+fieldset:has(input[type="radio"]) {
+    gap: 0.75rem;
+}
+
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"], 
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus, 
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    #survey-form {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+/* Accessibility Enhancements */
+input:required {
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Tech-inspired Subtle Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+input[type="submit"]:hover {
+    animation: pulse 0.5s ease-in-out;
+}

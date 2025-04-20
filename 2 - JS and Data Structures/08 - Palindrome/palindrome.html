@@ -1,0 +1,41 @@
+<!--
+================================================================================
+File Type: HTML
+Palindrome Checker  (Certificate Project 6)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This is a simple web page that checks if a given string is a palindrome
+and displays the result using html, css and javascript.
+
+# represents an ID selector
+. represents a class selector
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- Ensuring proper rendering and touch zooming on Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <head>
+    <link id="blue-style" rel="stylesheet" href="styles.css" enabled>
+    <link id="pink-style" rel="stylesheet" href="styles2.css" disabled>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Palindrome Checker</h1>
+            <p>Enter a string to check if it's a palindrome:</p>
+            <input type="text" id="text-input" onkeypress="handleEnterKey(event)">
+            <button id="check-btn" onclick="checkPalindrome()">Check</button>
+            <p>Try typing "pink" or "blue" to see something cool! 🌈✨</p>
+            <p id="result"></p>
+            <script src="script.js"></script>
+        </div>
+    </main>
+</body>
+</html>

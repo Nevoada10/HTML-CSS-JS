@@ -1,0 +1,70 @@
+/*
+===============================================================================================
+Tribute Page CSS (Certificate Project 2)
+Author: Nevoada ( https://github.com/Nevoada10 )
+===============================================================================================
+*/
+
+:root {
+  --dark-grunge: #1c1c1c;
+  --grunge-accent: #8b0000;
+  --text-color: #e0e0e0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5vw;
+}
+
+body {
+    background-color: var(--dark-grunge);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+#main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.8);
+    padding: 2rem;
+    border-left: 5px solid var(--grunge-accent);
+    border-right: 5px solid var(--grunge-accent);
+}
+
+#image {
+    filter: grayscale(70%) contrast(120%);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    display: block;
+    max-width: 100%; /* prevents image from overflowing the size of it's container */
+    margin-bottom: 1rem;
+}
+
+#image:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+#tribute-info {
+    background-color: rgba(30,30,30,0.9);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+#tribute-link {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  width: fit-content;
+  color: var(--grunge-accent);
+}
+
+#tribute-link:visited {
+  color: rgb(92, 0, 0);
+  opacity: 0.8;
+}
+
+#tribute-link:hover {
+  color: #ef4747;
+  transform: scale(1.05);
+}

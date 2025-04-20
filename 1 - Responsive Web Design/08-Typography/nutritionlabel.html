@@ -1,0 +1,100 @@
+<!--
+================================================================================
+Nutrition Label HTML (Typography)`
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+Typography is the practice of using fonts, colors, and other design elements to create a cohesive and visually appealing design.
+This HTML code represents a nutrition label for a food product. It includes the following sections:
+
+1. The `<!DOCTYPE html>` declaration specifies the document type as HTML5.
+2. The `<html>` element is the root element of the HTML document.
+3. The `<head>` element contains metadata about the document, such as the character encoding, viewport settings, and the title of the page.
+4. The `<meta charset="UTF-8">` tag specifies the character encoding for the document.
+5. The `<meta http-equiv="X-UA-Compatible" content="IE=edge">` tag is used to specify the version of Internet Explorer to use for rendering the page.
+6. The `<meta name="viewport" content="width=device-width, initial-scale=1.0">` tag sets the viewport settings for responsive design.
+7. The `<title>` element specifies the title of the page, which is "Nutrition Label".
+8. The `<link>` elements in the `<head>` section link to external CSS stylesheets for fonts and the custom CSS file.
+9. The `<body>` element contains the visible content of the page.
+10. The `<div class="label">` element represents the nutrition label area.
+11. The `<header>` element contains the title of the nutrition label and some additional information.
+12. The `<div class="divider">` elements are used for visual separation.
+13. The `<div class="calories-info">` element contains the amount of calories per serving.
+14. The `<p>` elements display the nutritional information, such as fat, cholesterol, sodium, carbohydrates, dietary fiber, total sugars, protein, vitamins, and calcium.
+15. The `<p class="note">` element contains a note about the % Daily Value (DV) and the number of calories per day used for general nutrition advice.
+
+Overall, this code represents a nutrition label with various sections and information about the nutritional content of a food product.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- The http-equiv attribute is used to specify a response header for the browser. In this case, it is being used to set the X-UA-Compatible header, which is used to specify the version of Internet Explorer to use to render the page. The value "IE=edge" is used to make sure that the browser uses the latest version of Internet Explorer available. -->
+    <!-- This is done to ensure that the page is rendered consistently across different versions of Internet Explorer. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <link href="nutritionlabel.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="label"> <!-- Label area -->
+        <header>
+            <h1 class="bold">Nutritional Values</h1>
+            <div class="divider"></div>
+            <p>8 servings per container</p>
+            <p class="bold">Serving size <span>2/3 cup (55g)</span></p>
+        </header>
+        <div class="divider large"></div>
+
+        <div class="calories-info">
+            <div class="left-container">
+                <h2 class="bold small-text">Amount per serving</h2>
+                <p>Calories</p>
+            </div>
+
+            <p class="bold right-container">230 kcal</p>
+        </div>
+
+        <div class="divider medium"></div>
+
+        <div class="daily-value small-text">
+            <p class="bold right no-divider">% Daily Value *</p>
+            <div class="divider"></div>
+            <p><span><span class="bold">Total Fat</span> 8g</span> <span class="bold">10%</span></p>
+            <div class="divider"></div>
+            <p class="indent no-divider">Saturated Fat 1g <span class="bold">5%</span></p>
+            <div class="divider"></div>
+            <p class="indent no-divider"><span><i>Trans</i> Fat 0g</span></p>
+            <div class="divider"></div>
+            <p><span><span class="bold">Cholesterol</span> 0mg</span> <span class="bold">0%</span></p>
+            <div class="divider"></div>
+            <p><span><span class="bold">Sodium</span> 160mg</span> <span class="bold">7%</span></p>
+            <div class="divider"></div>
+            <p><span><span class="bold">Total Carbohydrate</span> 37g</span> <span class="bold">13%</span></p>
+            <div class="divider"></div>
+            <p class="indent no-divider">Dietary Fiber 4g</p>
+            <div class="divider"></div>
+            <p class="indent no-divider">Total Sugars 12g</p>
+            <div class="divider double-indent"></div>
+            <p class="double-indent no-divider">Includes 10g Added Sugars <span class="bold right">20%</span></p>
+            <div class="divider"></div>
+            <p class="no-divider"><span><span class="bold">Protein</span> 3g</span></p>
+            <div class="divider large"></div>
+            <p>Vitamin D 2mcg <span>10%</span></p>
+            <p>Calcium 260mg <span>20%</span></p>
+            <p>Iron 8mg <span>45%</span></p>
+            <p class="no-divider">Potassium 235mg <span>6%</span></p>
+        </div>
+            <div class="divider medium"></div>
+            <p class="note">
+                * The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice.
+            </p>
+
+    </div> <!-- Label area -->
+</body>
+</html>

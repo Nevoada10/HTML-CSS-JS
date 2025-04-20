@@ -1,0 +1,182 @@
+<!--
+================================================================================
+Balance Sheet CSS (Pseudo Selectors)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This document is a basic balance sheet for a small business. It includes the company's name, address, and current balance of assets and liabilities.
+The balance sheet is divided into two sections: assets and liabilities. 
+The assets section includes the company's cash, accounts receivable, and inventory. 
+The liabilities section includes the company's accounts payable and long-term debt. 
+This is a very basic balance sheet and does not include all of the information that a company would typically include in their balance sheet.
+
+This document approaches these concepts by using HTML and CSS: 
+- Uses Responsive Design to create a page that adapts to different screen sizes via CSS.
+- This is done with CSS media queries and pseudo selectors.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Sheet</title>
+    <link rel="stylesheet" href="balancesheet.css">
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <!-- Company name and balance sheet title -->
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <!-- Year selection for balance sheet data -->
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <!-- Liabilities Table -->
+          <table> <!-- a table is a structured element used to display data in a grid-like format. -->
+            <!-- Table caption for liabilities -->
+            <caption>Liabilities</caption>
+            <thead>  <!-- The <thead> element defines a group of one or more header rows at the beginning of a table.  -->
+              <!-- Table header row for years -->
+              <tr> <!-- a table row is a set of cells in a table. -->
+                <td></td> <!-- a table cell is a single cell in a table. -->
+                <!-- Year 2019 -->
+                <th><span class="sr-only year">2019</span></th> <!-- It is used to specify the header text for a particular column. -->
+                <!-- Year 2020 -->
+                <th><span class="sr-only year">2020</span></th>
+                <!-- Current Year 2021 -->
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data row for Loans -->
+              <tr class="data">
+                <th>
+                  Loans
+                  <!-- Description of Loans -->
+                  <span class="description">The outstanding balance on our startup loan.</span>
+                </th>
+                <!-- Values for each year -->
+                <td>$500</td>
+                <td>$250</td>
+                <td class="current">$0</td>
+              </tr>
+              <!-- Data row for Expenses -->
+              <tr class="data">
+                <th>
+                  Expenses
+                  <!-- Description of Expenses -->
+                  <span class="description">Annual anticipated expenses, such as payroll.</span>
+                </th>
+                <!-- Values for each year -->
+                <td>$200</td>
+                <td>$300</td>
+                <td class="current">$400</td>
+              </tr>
+              <!-- Data row for Taxes -->
+              <tr class="data">
+                <th>
+                  Taxes
+                  <!-- Description of Taxes -->
+                  <span class="description">Current year's tax liabilities.</span>
+                </th>
+                <!-- Values for each year -->
+                <td>$150</td>
+                <td>$200</td>
+                <td class="current">$180</td>
+              </tr>
+              <!-- Total row for Liabilities -->
+              <tr class="total">
+                <th>Total <span class="sr-only">Liabilities</span></th>
+                <!-- Total values for each year -->
+                <td>$850</td>
+                <td>$750</td>
+                <td class="current">$580</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Liabilities Table, 2nd table --> 
+          <table>
+            <caption>Liabilities</caption>
+            <thead> 
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>
+                  Loans
+                  <span class="description">The outstanding balance on our startup loan.</span>
+                </th>
+                <td>$500</td>
+                <td>$250</td>
+                <td class="current">$0</td>
+              </tr>
+              <tr class="data">
+                <th>
+                  Expenses
+                  <span class="description">Annual anticipated expenses, such as payroll.</span>
+                </th>
+                <td>$200</td>
+                <td>$300</td>
+                <td class="current">$400</td>
+              </tr>
+              <tr class="data">
+                <th>
+                  Credit
+                  <span class="description">The outstanding balance on our credit card.</span>
+                </th>
+                <td>$50</td>
+                <td>$50</td>
+                <td class="current">$75</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Liabilities</span></th>
+                <td>$750</td>
+                <td>$600</td>
+                <td class="current">$475</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Net Worth Table, 3rd table -->
+          <table>
+            <caption>Net Worth</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total">
+                <th>Total <span class="sr-only">Net Worth</span></th>
+                <td>$-171</td>
+                <td>$136</td>
+                <td class="current">$334</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+

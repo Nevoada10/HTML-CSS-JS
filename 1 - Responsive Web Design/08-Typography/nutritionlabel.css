@@ -1,0 +1,191 @@
+/*
+================================================================================
+Nutrition Label CSS
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+is a CSS file that defines the styles for a nutrition label. Here's a brief explanation of what each section does:
+
+- `* { box-sizing: border-box; }`: This sets the box-sizing property for all elements to border-box, which includes the padding and border in the element's total width and height.
+- `html { font-size: 16px; }`: This sets the base font size for the HTML document to 16 pixels.
+- `body { font-family: "Open Sans", sans-serif; }`: This sets the font family for the body of the document to "Open Sans" and falls back to a generic sans-serif font if "Open Sans" is not available.
+- `.label { ... }`: This defines the style for the nutrition label container. It has a black border, a width of 270 pixels, and some padding and margin.
+- `header h1 { ... }`: This defines the style for the title of the nutrition label. It is centered and has a negative top margin to align it with the border of the label.
+- `p { ... }`: This defines the style for all paragraph elements. It has no margin and is displayed as a flex container with space between its children.
+- `.divider { ... }`: This defines the style for the divider element. It has a height of 2 pixels and a bottom border of 1 pixel solid black.
+- `.bold { font-weight: 800; }`: This defines the style for elements with the class "bold". It sets the font weight to 800, which is extra bold.
+- `.large { ... }`: This defines the style for elements with the class "large". It has a height of 10 pixels and a black background color with no border.
+- `.medium { ... }`: This defines the style for elements with the class "medium". It has a height of 5 pixels and a black background color with no border.
+- `.small-text { font-size: 0.85rem; }`: This defines the style for elements with the class "small-text". It sets the font size to 0.85 times the base font size.
+- `.calories-info { ... }`: This defines the style for the calories information container. It is displayed as a flex container with space between its children and aligned at the bottom.
+- `.calories-info h2 { margin: 0; }`: This defines the style for the `h2` element inside the calories information container. It has no margin.
+- `.left-container p { ... }`: This defines the style for `p` elements inside the left container. It has negative margins and a large font size and weight.
+- `.calories-info span { ... }`: This defines the style for `span` elements inside the calories information container. It has a large font size and weight.
+- `.right-container { font-size: 20px; }`: This defines the style for the right container. It sets the font size to 20 pixels.
+- `.right { justify-content: flex-end; }`: This defines the style for elements with the class "right". It aligns its children to the end of the container.
+- `.indent { margin-left: 1em; }`: This defines the style for elements with the class "indent". It adds a left margin of 1em.
+- `.double-indent { margin-left: 2em; }`: This defines the style for elements with the class "double-indent". It adds a left margin of 2em.
+- `.daily-value p:not(.no-divider) { ... }`: This defines the style for `p` elements inside the daily value container that do not have the class "no-divider". It adds a bottom border.
+- `.note { ... }`: This defines the style for elements with the class "note". It has a small font size, padding, and a negative text indent.
+
+Font weight refers to the thickness or darkness of a font. It determines how 
+bold or light a font appears. Font weights are typically represented by a 
+numerical value, with higher values indicating a bolder font. For example, a 
+font weight of 400 is considered regular, while a font weight of 700 is considered bold. 
+
+*/
+
+/* Set the box-sizing property to border-box for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Set the font size for the html element to 16px */
+html {
+    font-size: 16px;
+}
+
+/* Set the font family for the body element to "Open Sans", sans-serif */
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Define the styles for the label container */
+.label {
+    /* Add a border around the container */
+    border: 2px solid black;
+    /* Set the width of the container to 270px */
+    width: 270px;
+    /* Center the container horizontally */
+    margin: 20px auto;
+    /* Remove the padding from the left and right sides of the container */
+    padding: 0 7px;
+}
+
+/* Define the styles for the header */
+header h1 {
+    /* Center-align the text */
+    text-align: center;
+    /* Remove the top margin */
+    margin-top: 0;
+    /* Add a small amount of letter spacing */
+    letter-spacing: 0.15px;
+}
+
+/* Define the styles for paragraphs */
+p {
+    /* Remove the margin */
+    margin: 0;
+    /* Display the paragraphs as flex containers with space between their children */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Define the styles for the divider */
+.divider {
+    /* Set the height of the divider to 2px */
+    height: 2px;
+    /* Add a bottom border to the divider */
+    border-bottom: 1px solid #888989;
+    /* Add some margin to the bottom of the divider */
+    margin-bottom: 2px;
+}
+
+/* Define the styles for bold text */
+.bold {
+    /* Set the font weight to 800 */
+    font-weight: 800;
+}
+
+/* Define the styles for large elements */
+.large {
+    /* Set the height of the element to 10px */
+    height: 10px;
+}
+
+/* Define the styles for medium elements */
+.medium {
+    /* Set the height of the element to 5px */
+    height: 5px;
+}
+
+/* Define the styles for small text */
+.small-text {
+    /* Set the font size to 0.85 times the base font size */
+    font-size: 0.85rem;
+}
+
+/* Define the styles for the calories information container */
+.calories-info {
+    /* Display the container as a flex container with space between its children and aligned at the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* Define the styles for the calories information header */
+.calories-info h2 {
+    /* Remove the margin */
+    margin: 0;
+}
+
+/* Define the styles for paragraphs inside the left container */
+.left-container p {
+    /* Remove the negative margins */
+    margin: 0;
+    /* Set the font size to 2em */
+    font-size: 2em;
+    /* Set the font weight to 700 */
+    font-weight: 700;
+}
+
+/* Define the styles for the calories information span */
+.calories-info span {
+    /* Set the font size to 2.4em */
+    font-size: 2.4em;
+    /* Set the font weight to 700 */
+    font-weight: 700;
+}
+
+/* Define the styles for the right container */
+.right-container {
+    /* Set the font size to 20px */
+    font-size: 20px;
+}
+
+/* Define the styles for the right container */
+.right {
+    /* Align the children of the container to the end */
+    justify-content: flex-end;
+}
+
+/* Define the styles for elements with the class "indent" */
+.indent {
+    /* Add a left margin of 1em */
+    margin-left: 1em;
+}
+
+/* Define the styles for elements with the class "double-indent" */
+.double-indent {
+    /* Add a left margin of 2em */
+    margin-left: 2em;
+}
+
+/* Define the styles for paragraphs inside the daily value container that do not have the class "no-divider" */
+.daily-value p:not(.no-divider) {
+    /* Add a bottom border */
+    border-bottom: 1px solid #888989;
+}
+
+/* Define the styles for elements with the class "note" */
+.note {
+    /* Set the font size to 0.6rem */
+    font-size: 0.6rem;
+    /* Add some padding */
+    padding: 0 8px;
+    /* Add some margin */
+    margin: 5px 0;
+    /* Negative text indent to position the text to the left */
+    text-indent: -8px;
+}
+

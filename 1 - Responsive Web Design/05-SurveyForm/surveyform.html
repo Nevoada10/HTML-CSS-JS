@@ -1,0 +1,82 @@
+<!--
+================================================================================
+Survey Form HTML (Certificate Project 1)
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+This file contains the HTML code for a simple survey form with multiple fields.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Survey Form</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Tech Career Exploration Survey</h1>
+            <p id="description">Help us understand your technology career goals, interests, and aspirations. Your insights will contribute to personalized career development resources.</p>
+        </header>
+
+        <form id="survey-form" method="post" action='https://register-demo.freecodecamp.org'>
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name" id="name-label">
+                    Full Name:<input id="name" type="text" placeholder="Your full name" required name="name">
+                </label>
+                <label for="email" id="email-label">
+                    Email Address:<input id="email" type="email" placeholder="your.email@example.com" required>
+                </label>
+                <label for="number" id="number-label"> 
+                    Age:<input id="number" type="number" min="16" max="65" placeholder="Your current age" required>
+                </label>               
+            </fieldset>
+
+            <fieldset>  
+                <legend>Career Stage</legend>
+                <label for="dropdown">Current Career Stage:
+                    <select id="dropdown" name="career-stage" required>
+                        <option value="">Select your current stage</option>
+                        <option value="student">Student</option>
+                        <option value="entry-level">Entry-Level Professional</option>
+                        <option value="mid-career">Mid-Career Professional</option>
+                        <option value="career-changer">Career Changer</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Technology Interests</legend>
+                <p>Select the technology domains that interest you:</p>
+                <label><input type="checkbox" name="interests" value="web-dev"> Web Development</label>
+                <label><input type="checkbox" name="interests" value="ai-ml"> Artificial Intelligence & Machine Learning</label>
+                <label><input type="checkbox" name="interests" value="cybersecurity"> Cybersecurity</label>
+                <label><input type="checkbox" name="interests" value="cloud-computing"> Cloud Computing</label>
+                <label><input type="checkbox" name="interests" value="data-science"> Data Science</label>
+                <label><input type="checkbox" name="interests" value="blockchain"> Blockchain</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Career Goals</legend>
+                <p>What is your primary career goal in technology?</p>
+                <label><input type="radio" name="career-goal" value="startup" required> Launch a Tech Startup</label>
+                <label><input type="radio" name="career-goal" value="corporate" required> Advance in Corporate Tech Roles</label>
+                <label><input type="radio" name="career-goal" value="freelance" required> Become a Freelance Tech Professional</label>
+                <label><input type="radio" name="career-goal" value="research" required> Pursue Tech Research</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Insights</legend>
+                <label for="challenges">What challenges are you facing in your tech career journey?
+                    <textarea id="challenges" name="challenges" rows="4" placeholder="Share your thoughts..."></textarea>
+                </label>
+            </fieldset>
+
+            <input type="submit" id="submit" value="Submit" class="submit-btn">
+        </form>
+    </body>
+</html>

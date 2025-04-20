@@ -1,0 +1,78 @@
+/* 
+- File Name: styles.css
+- Author: Uriel Neves Silva
+- Github: https://github.com/nevoada10
+- Function: Styling for phone validator
+*/
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Field */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Buttons */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Results Display */
+#results-div {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+/* Clear Button */
+#clear-btn {
+    background-color: #dc3545;
+}
+
+#clear-btn:hover {
+    background-color: #c82333;
+}
+
+/* Valid Result */
+.valid {
+    color: green;
+}
+
+/* Invalid Result */
+.invalid {
+    color: red;
+}
