@@ -1,0 +1,86 @@
+<!-- 
+File Type: HTML
+Student Space
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This is a simple web page that displays student grades and attendance using html, css and javascript.
+
+# represents an ID selector
+. represents a class selector
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Space</title>
+    <link rel="stylesheet" href="studentspace.css">
+</head>
+<body>
+    <main>
+        <!-- Logo Container -->
+        <div class="logo-container">
+            <img src="https://th.bing.com/th/id/OIP.sGxReCjBEgx8dEZtI7IlEQAAAA?rs=1&pid=ImgDetMain" alt="CFPA Les Corts Logo" class="school-logo">
+        </div>
+
+        <!-- The whole box of the student dashboard -->
+        <div class="student-dashboard">
+            <h1>Student Dashboard</h1>
+            
+            <!-- A container containing all the subjects of the student -->
+            <div class="subjects-container">
+                <h2>My Subjects</h2>
+                <!-- 1st -->
+                <div class="subject-card">
+                    <h3>Mathematics</h3>
+                    <div class="subject-stats">
+                        <p>Attendance: <span class="attendance good">92%</span></p>
+                        <p>Grade: <span class="grade">B+</span></p>
+                    </div>
+                </div>
+                <!-- 2nd -->
+                <div class="subject-card">
+                    <h3>Computer Science</h3>
+                    <div class="subject-stats">
+                        <p>Attendance: <span class="attendance warning">58%</span></p>
+                        <p>Grade: <span class="grade">A</span></p>
+                    </div>
+                </div>
+                <!-- 3rd -->
+                <div class="subject-card">
+                    <h3>Physics</h3>
+                    <div class="subject-stats">
+                        <p>Attendance: <span class="attendance good">78%</span></p>
+                        <p>Grade: <span class="grade">B</span></p>
+                    </div>
+                </div>
+                <!-- 4th -->
+                <div class="subject-card">
+                    <h3>English</h3>
+                    <div class="subject-stats">
+                        <p>Attendance: <span class="attendance good">95%</span></p>
+                        <p>Grade: <span class="grade">A+</span></p>
+                    </div>
+                </div>
+                <!-- 5th -->
+                <div class="subject-card">
+                    <h3>History</h3>
+                    <div class="subject-stats">
+                        <p>Attendance: <span class="attendance warning">50%</span></p>
+                        <p>Grade: <span class="grade">B+</span></p>
+                    </div>
+                </div>
+                <!-- 6th -->
+                <div class="subject-card">
+                    <h3>Spanish</h3>
+                    <div class="subject-stats">
+                        <p>Attendance: <span class="attendance bad">12%</span></p>
+                        <p>Grade: <span class="grade">A</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

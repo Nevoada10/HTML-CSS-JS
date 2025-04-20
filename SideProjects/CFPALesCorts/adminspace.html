@@ -1,0 +1,67 @@
+<!--
+================================================================================
+File Type: HTML
+Login Page
+Author: Nevoada ( https://github.com/Nevoada10 )
+================================================================================
+
+This is a simple webpage that allows an admin to manage the system.
+
+# represents an ID selector
+. represents a class selector
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- Ensuring proper rendering and touch zooming on Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Space</title>
+    <link rel="stylesheet" href="adminspace.css" enabled>
+</head>
+
+<body>
+    <h1>Student Administration</h1>
+    
+    <!--- Creates a blank classroom with default values and appends it to the classroom_data list -->
+    <form id="studentForm"> 
+        <input type="text" id="classroomNameInput" placeholder="Enter classroom name">
+        <button id="create-classroom-btn" type="button" onclick="createClassroom()">Create Classroom</button> <!--- Creates a blank student with default values and appends it to the student_data list -->
+
+        <input type="text" id="studentNameInput" placeholder="Enter student name">
+        <button id="create-student-btn" type="button" onclick="createStudent()">Create Student</button> <!--- Creates a blank student with default values and appends it to the student_data list -->
+    </form>
+
+    <!--- Updates the table with the current list of classrooms -->
+    <table id="classroomTable" border="1">
+        <thead>
+            <tr>
+                <th>Classroom Name</th>
+                <th>Teacher</th>
+                <th>Number of Students</th>
+                <th>Class Overview</th>
+            </tr>
+        </thead>
+        <tbody id="classroomTableBody">
+            <!-- Rows will be dynamically added here -->
+            </tr>
+             
+        </tbody>
+    </table>
+
+   
+    <h2>Student ID Card</h2>
+
+    <!-- Search bar to filter students by name -->
+    <input type="text" id="searchInput" placeholder="Search students by name" oninput="filterStudents()">
+
+    <div id = "students-container"></div>
+
+    <script src="adminspace.js"></script>
+</body>
+
+
+    
+    

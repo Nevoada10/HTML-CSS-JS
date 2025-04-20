@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #histogram {
+        max-width: 400px;
+        max-height: 200px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    
+    <h1>Tabla de Estadísticas</h1>
+    <input type="number" id="value" name="value" placeholder="Enter a value">
+    <input type="number" id="frequency" name="frequency" placeholder="Enter frequency" min="1" value="1">
+    <button type="button" onclick="addValue()">Add Value</button>
+
+    <table id="statistics-table">
+        <thead>
+            <tr>
+                <th>Valor</th>
+                <th>Frecuencia Absoluta (f) </th>
+                <th>Frecuencia Relativa (f/n * %) </th>
+                <th>Desviación (Xi - x̄)</th>
+                <th>Desviación Cuadrada (Xi - x̄)²</th>
+                <th>Desviación cuadrada ponderada por la frecuencia f *(Xi - x̄)²</th>
+            </tr>
+        </thead>
+        <tbody id="statistics-table-body">
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Frecuencia Total (∑f) :</th>
+                <td id="total-frequency"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Promedio (x̄) :</th>
+                <td id="average"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Mediana (X̃) :</th>
+                <td id="median"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Varianza (𝜎²) :</th>
+                <td id="variance"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Desviación Estandar (𝜎) :</th>
+                <td id="standard-deviation"></td> <!-- Novo campo para o desvio padr o -->
+            </tr>
+            <tr>
+                <th colspan="2">Suma de Desviación Cuadrada Ponderada (∑f *(Xi - x̄)²) :</th>
+                <td id="weighted-squared-deviation-sum"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Orden Ascendente:</th>
+                <td id="ascending-order"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>Histograma</h2>
+    <canvas id="histogram" width="400" height="200"></canvas>
+
+    <script>
+        let values = [];
+        let absoluteFrequencies = {};
+        let histogramChart;
+
+        function addValue() {
+        const valueInput = document.getElementById("value");
+        const frequencyInput = document.getElementById("frequency");
+        const value = Number(valueInput.value);
+        const frequency = Number(frequencyInput.value);
+    
+        if (isNaN(value) || valueInput.value.trim() === "") {
+            alert("Please enter a valid number for the value.");
+            valueInput.value = "";
+            return;
+        }
+    
+        if (isNaN(frequency) || frequency < 1) {
+            alert("Please enter a valid frequency (minimum 1).");
+            frequencyInput.value = "1";
+            return;
+        }
+    
+        // Adiciona o valor o número de vezes especificado pela frequência
+        for (let i = 0; i < frequency; i++) {
+            values.push(value);
+        }
+    
+        values.sort((a, b) => a - b); // Ordena os valores
+        updateTable(); // Atualiza a tabela
+        valueInput.value = ""; // Limpa o campo de valor
+        frequencyInput.value = "1"; // Reseta a frequência para 1
+        }
+
+        function updateTable() {
+            const table = document.getElementById("statistics-table-body");
+            table.innerHTML = "";
+            let totalFrequency = 0;
+            let sum = 0;
+            let sumSquares = 0;
+            let weightedSquaredDeviationSum = 0;
+            const data = [];
+        
+            for (let value of values) {
+                totalFrequency++;
+                sum += value;
+                sumSquares += value * value;
+                const found = data.find(item => item.value === value);
+                if (found) {
+                    found.absoluteFrequency += 1;
+                } else {
+                    data.push({ value, absoluteFrequency: 1 });
+                }
+            }
+        
+            const average = sum / totalFrequency;
+            const variance = (sumSquares / totalFrequency) - (average * average);
+            const standardDeviation = Math.sqrt(variance); // Calcula o desvio padrão
+        
+            const middleIndex = Math.floor(totalFrequency / 2);
+            let median;
+            if (totalFrequency % 2 === 0) {
+                median = (values[middleIndex - 1] + values[middleIndex]) / 2;
+            } else {
+                median = values[middleIndex];
+            }
+        
+            for (let item of data) {
+                const relativeFrequency = (item.absoluteFrequency / totalFrequency) * 100;
+                const xiMinusX = (item.value - average).toFixed(2);
+                const xiMinusXSquared = Math.pow(item.value - average, 2).toFixed(2);
+                const weightedSquaredDeviation = (xiMinusXSquared * item.absoluteFrequency).toFixed(2);
+        
+                weightedSquaredDeviationSum += parseFloat(weightedSquaredDeviation);
+        
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.value}</td>
+                    <td>${item.absoluteFrequency}</td>
+                    <td>${relativeFrequency.toFixed(2)}%</td>
+                    <td>${xiMinusX}</td>
+                    <td>${xiMinusXSquared}</td>
+                    <td>${weightedSquaredDeviation}</td>
+                `;
+                table.appendChild(row);
+            }
+        
+            document.getElementById("total-frequency").innerText = totalFrequency;
+            document.getElementById("average").innerText = average.toFixed(2);
+            document.getElementById("median").innerText = median.toFixed(2);
+            document.getElementById("variance").innerText = variance.toFixed(2);
+            document.getElementById("weighted-squared-deviation-sum").innerText = weightedSquaredDeviationSum.toFixed(2);
+            document.getElementById("standard-deviation").innerText = standardDeviation.toFixed(2); // Exibe o desvio padrão
+        
+            updateHistogram();
+        }
+
+        function updateHistogram() {
+            const ctx = document.getElementById("histogram").getContext("2d");
+
+            const labels = values.filter((v, i, a) => a.indexOf(v) === i);
+            const frequencies = labels.map(label => {
+                return values.filter(value => value === label).length;
+            });
+
+            if (histogramChart) {
+                histogramChart.destroy();
+            }
+
+            histogramChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: "Frequency",
+                            data: frequencies,
+                            backgroundColor: "rgba(75, 192, 192, 0.2)",
+                            borderColor: "rgba(75, 192, 192, 1)",
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: "Values",
+                            },
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: "Frequency",
+                            },
+                        },
+                    },
+                },
+            });
+        }
+
+        document.querySelectorAll("#value, #frequency").forEach(el => {
+            el.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") {
+                    addValue();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

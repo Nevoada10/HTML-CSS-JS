@@ -1,0 +1,109 @@
+/* 
+- File Name: styles.css
+- Author: Uriel Neves Silva
+- Github: https://github.com/nevoada10
+- Function: Styling for login page with white background and blue-gray letters
+*/
+
+/* GLOBAL STYLES
+=======================================================================================================================
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #4A6D7C;
+}
+
+/* SCHOOL LOGO STYLES
+=======================================================================================================================
+*/
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.school-logo {
+    max-width: 200px;  /* Adjust size as needed */
+    height: auto;      /* Maintain aspect ratio */
+    margin-left: -35px;
+
+}
+
+/* HEADER STYLES 
+=======================================================================================================================
+*/
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* CONTAINER STYLES 
+======================================================================================================================
+*/
+
+/* Message Container Styles*/
+
+.message-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.message-container p {
+    font-size: 0.75em;
+    opacity: 0.8;
+    color: #4A6D7C;
+    margin-right: 20px;
+}
+
+/* Login Container Styles */
+
+.login-container {
+    background-color: #F9F9F9;  /* Slight off-white for container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Form Styles */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4A6D7C;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4A6D7C;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #5A7D8C;
+}
+
