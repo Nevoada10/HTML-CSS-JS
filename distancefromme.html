@@ -236,22 +236,21 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 600px) {
-  .form-group {
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-  }
-  .form-group input {
-    flex: 2;
-    min-width: 200px;
-  }
+/* Aumenta o tamanho do input e botão em telas pequenas */
+@media (max-width: 599px) {
+  .form-group input,
   .form-group button {
-    flex: 1;
-    min-width: 120px;
-    max-width: 200px;
+    font-size: 1.3rem;
+    min-height: 3.2rem;
+    padding: 1rem 1.2rem;
+  }
+  .form-group input::placeholder {
+    font-size: 1.1rem;
+    color: #ffd6d6;
+    opacity: 1;
   }
 }
+
 /* ...existing code... */
   
   /* ===== Responsive Design ===== */
@@ -341,7 +340,7 @@
   <h3>⚠️ Notes importants</h3>
   <ul>
     <li><strong>No és Google Maps</strong> (Calcula distàncias en "línia recta") .</li>
-     <li><strong>Aplicació segura</strong>: Només compara adreces sense accedir a la teva localització.</li>
+     <li><strong>Aplicació segura</strong>: Només compara adreces, <strong>sense accedir a la teva localització.</strong></li>
     <li>HTML + JS + <em>fetch</em> a <strong>Nominatim API</strong>.</li>
     <li> Alguns establiments tenen adreces que no es troben o estan mal escrites, però aquests s'ignoraran.</li>
   </ul>
