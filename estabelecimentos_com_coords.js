@@ -1,174 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Catalan Practices</title>
-  <style>
-    :root {
-      --primary-bg: #1a0000;
-      --secondary-bg: #2a0a0a;
-      --accent-color: #ffffff;
-      --highlight: #ffffff;
-      --text-color: #f0e6e6;
-      --text-muted: #c9b6b6;
-      --border-color: #4a1a1a;
-    }
-    
-    body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: var(--primary-bg);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: background-color 0.3s ease;
-    }
-    
-    h2, h3 {
-      color: #ff6b6b;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 8px;
-      margin-top: 30px;
-    }
-    
-    input, button {
-      padding: 10px 15px;
-      margin: 10px 10px 10px 0;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      background-color: var(--secondary-bg);
-      color: var(--text-color);
-      transition: all 0.3s ease;
-    }
-    
-    input:focus {
-      outline: none;
-      border-color: var(--highlight);
-      box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.3);
-    }
-    
-    button {
-      background-color: var(--accent-color);
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    
-    button:hover {
-      background-color: var(--highlight);
-      transform: translateY(-1px);
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    th, td {
-      border: 1px solid var(--border-color);
-      padding: 12px 15px;
-      text-align: left;
-    }
-    
-    th {
-      background-color: var(--accent-color);
-      color: white;
-      font-weight: 600;
-    }
-    
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-    
-    tr:hover {
-      background-color: rgba(139, 0, 0, 0.1);
-    }
-    
-    a {
-      color: #ff8c8c;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    a:hover {
-      color: #ff6b6b;
-      text-decoration: underline;
-    }
-    
-    ul, ol {
-      padding-left: 20px;
-    }
-    
-    li {
-      margin-bottom: 8px;
-    }
-    
-    strong {
-      color: #ff8c8c;
-    }
-    
-    #consolelog {
-      color: var(--text-muted);
-      font-style: italic;
-      margin: 10px 0;
-    }
-  </style>
-</head>
-<body>
-
-<h2>Troba establiments per fer les <strong>pràctiques lingüístiques del CPNL</strong> prop teu (386 establiments a Barcelona)</h2>
-
-<div>
-  <h3>✅ Com utilitzar</h3>
-<ol>
-  <li><strong>Escriu</strong> la teva adreça (ex: casa o feina).</li>
-  <li><strong>Clica</strong> "Buscar".</li>
-  <li><strong>Consulta</strong> la taula ordenada pels llocs més propers.</li>
-  <li><strong>Obre</strong> els establiments al Google Maps, <strong>fes la ruta</strong>, practica català, aconsegueix el teu <strong>segell</strong> i sigues feliç!</li>
-</ol>
-
-  <h3>⚠️ Notes importants</h3>
-  <ul>
-    <li><strong>No és Google Maps</strong> (Calcula distàncias en "línia recta") .</li>
-     <li><strong>Aplicació segura</strong>: Només compara adreces sense accedir a la teva localització.</li>
-    <li>HTML + JS + <em>fetch</em> a <strong>Nominatim API</strong>.</li>
-  </ul>
-
-  <h3>📌 Exemples d'adreces</h3>
-  <ul>
-    <li><strong>Sagrada Família:</strong> Carrer de Mallorca, 401</li>
-    <li><strong>Park Güell:</strong> Carrer d'Olot, 5</li>
-    <li><strong>Casa Batlló:</strong> Passeig de Gràcia, 43</li>
-    <li><strong>La Boqueria:</strong> La Rambla, 91</li>
-  </ul>
-
-  <h3>✍️ Autor</h3>
-  <ul>
-    <li><a href="https://github.com/nevoada10" target="_blank">github.com/nevoada10 (Uriel Neves)</a></li>
-  </ul>
-
-  <p id="consolelog"></p> 
-</div>
-  <input type="text" id="endereco" placeholder="Entra una adreça">
-  <button onclick="buscarLocais()">Buscar</button>
-
-  <table id="tabelaResultados" style="display:none;">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Nom d'establiment</th>
-        <th>Adreça</th>
-        <th>Distància en "línia recta" (Km)</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-  <script>
 const estabelecimentos = [
     {
         "nome": "4 Grapes",
@@ -228,10 +57,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Albert Calçats",
-        "endereco": "Dos de Maig, 223",
+        "endereco": "Dos de Maig, 221, A-22 bis, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4064151,
-        "long": 2.1827126
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Alcúdia",
@@ -263,17 +92,17 @@ const estabelecimentos = [
     },
     {
         "nome": "ANJU",
-        "endereco": "Carrer de Pons i Gallarza, 5 - 7, Barcelona",
+        "endereco": "C. Pons i Gallarza, 5-7, local 4, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4354785,
-        "long": 2.1865468
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Arkham Còmics",
-        "endereco": "Carrer Xuclà, 16, Barcelona",
+        "endereco": "Carrer Xuclà, 16, local, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3836592,
-        "long": 2.1696414
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Armand Òptics",
@@ -291,17 +120,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Art i Decoració",
-        "endereco": "Mineria, 17, Barcelona",
+        "endereco": "Mineria, 17, botiga 1, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3648762,
-        "long": 2.1378959
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Artcants",
-        "endereco": "Mercat dels Encants, Carrer de los Castillejos, 158, Barcelona",
+        "endereco": "Mercat dels Encants, Carrer de los Castillejos, 158, Local 635-636, 08013 Barcelona, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4010304,
-        "long": 2.1861738
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Arxé Moda",
@@ -340,10 +169,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Associació de Ball Alocubano",
-        "endereco": "C. Joncar, 27, Barcelona",
+        "endereco": "C. Joncar, 27, local 2, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4010239,
-        "long": 2.2041319
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Associació de Mestres Rosa Sensat",
@@ -375,17 +204,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Associació sociocultural La Formiga",
-        "endereco": "Elkano, 74, Barcelona",
+        "endereco": "Elkano, 74, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3740518,
-        "long": 2.1603815
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Associació Xarxa Dos Deu, per la Millora del Barri de la Sagrada Família",
-        "endereco": "Padilla, 210, Barcelona",
+        "endereco": "Padilla, 210, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.403893,
-        "long": 2.1797617
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Ateneu Popular de les Corts",
@@ -501,17 +330,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Bell Estiu",
-        "endereco": "Verdi, 8, Barcelona",
+        "endereco": "Verdi, 8, local 2, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4031764,
-        "long": 2.1576848
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Belles Arts Ferran SL",
-        "endereco": "C. Ferran, 39, Barcelona",
+        "endereco": "C. Ferran, 39, local 2, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3818247,
-        "long": 2.1759276
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Biblioteca Gabriel García Márquez (Biblioteques de Barcelona)",
@@ -613,17 +442,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Cansaladeries Aldomà",
-        "endereco": "Carrer Creu Coberta, 93, Barcelona",
+        "endereco": "Mercat d'Hostafrancs, carrer Creu Coberta, 93, parada 169-198, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3751208,
-        "long": 2.1439626
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carmen Decoración",
-        "endereco": "C. Bilbao, 33-35, Barcelona",
+        "endereco": "C. Bilbao, 33-35, local 12, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4805178,
-        "long": 2.3098722
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carnisseria Ana Pilar",
@@ -634,24 +463,24 @@ const estabelecimentos = [
     },
     {
         "nome": "Carnisseria Andreu",
-        "endereco": "Pl. Mercadal, 41, Barcelona",
+        "endereco": "Pl. Mercadal, 41 (mercat, p.11), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4348972,
-        "long": 2.1885069
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carnisseria Marina",
-        "endereco": "c/ Tajo, 75, Barcelona",
+        "endereco": "c/ Tajo, 75 (mercat d'Horta parades 18-21), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4295869,
-        "long": 2.1595308
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carnisseries Solé",
-        "endereco": "Mercat de les Corts, Travessera de les Corts, 215, Barcelona",
+        "endereco": "Mercat de les Corts, Travessera de les Corts, 215, parada 97-101, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839825,
-        "long": 2.1297804
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carns Banach",
@@ -662,17 +491,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Carns Batllori",
-        "endereco": "Mercat de la Barceloneta Barcelona",
+        "endereco": "Mercat de la Barceloneta, parada 23-24, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3803956,
-        "long": 2.1891948
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carns Gasull",
-        "endereco": "Carrer Sant Jordi 6, Barcelona",
+        "endereco": "Mercat de Sants (carrer Sant Jordi, 6), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3543126,
-        "long": 1.9789587
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Carns Juan i Loli. Mercat de Canyelles",
@@ -725,17 +554,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Casal de Barri la Palmera. Associació de veïns La Palmera Centre",
-        "endereco": "C/ de Duoda, 6 - 22, Barcelona",
+        "endereco": "c/ de Duoda, 6 - 22, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4208637,
-        "long": 2.2055509
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Casal de Persones Grans Quatre Cantons",
-        "endereco": "Camí Antic de València, 116, Barcelona",
+        "endereco": "Camí Antic de València, 116, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4067744,
-        "long": 2.2039584
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Cases Alcanar, pesca i tradició del Delta de l'Ebre",
@@ -767,10 +596,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Centre de Teràpies Espai3om",
-        "endereco": "Pallars, 303-305, Barcelona",
+        "endereco": "Pallars, 303-305, local 2, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4054008,
-        "long": 2.2032059
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Centre de Teràpies Sàlvia",
@@ -781,10 +610,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Collita pròpia i ecològica Tugas i companyia. Mercat de Sant Andreu",
-        "endereco": "Plaça del Mercadal, 41, Barcelona",
+        "endereco": "Plaça del Mercadal, 41 (Mercat de Sant Andreu, Parada 20), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4348972,
-        "long": 2.1885069
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Comercial Kare",
@@ -879,31 +708,31 @@ const estabelecimentos = [
     },
     {
         "nome": "EGE llibres i cosetes",
-        "endereco": "Benet Mercadé, 22, Barcelona",
+        "endereco": "Benet Mercadé, 22, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.400714,
-        "long": 2.1521574
+        "lat": null,
+        "long": null
     },
     {
         "nome": "El cau de la Naira",
-        "endereco": "Avinguda de Rio de Janeiro, 75 , Barcelona",
+        "endereco": "Av. Rios de Janeiro, 75 local 2, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4385031,
-        "long": 2.1809664
+        "lat": null,
+        "long": null
     },
     {
         "nome": "El cau de les herbes",
-        "endereco": "Calle de Rosalía de Castro, 19",
+        "endereco": "c/ Rosalia de Castro, 19, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.4106967,
         "long": 2.1708639
     },
     {
         "nome": "El Celler de la Ribera",
-        "endereco": "Cigne, 12,  Barcelona",
+        "endereco": "Cigne, 12, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4005648,
-        "long": 2.1538494
+        "lat": null,
+        "long": null
     },
     {
         "nome": "El Gat Pelut",
@@ -977,10 +806,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Endansa't",
-        "endereco": "Carrer del Ter, 18, Barcelona",
+        "endereco": "Ter, 18, baixos 3a, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.6099451,
-        "long": 1.8727778
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Escoda. Decoracions Alessandra",
@@ -991,10 +820,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Escofet Oliver",
-        "endereco": "Mallorca, 133-157, Barcelona",
+        "endereco": "Mallorca, 133-157, parades núm. 7, 8, 9, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3878249,
-        "long": 2.1543985
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Escola-Taller Novart",
@@ -1012,10 +841,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Espai Mallorca",
-        "endereco": "Plaça Vicenç Martorell. 1,  Barcelona",
+        "endereco": "Plaça Vicenç Martorell. 1, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3841535,
-        "long": 2.1694296
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Espaiflors",
@@ -1054,10 +883,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Farmàcia Bonany Jané",
-        "endereco": "Carrer de Sant Antoni Maria Claret, 97, Barcelona",
+        "endereco": "c/ Sant Antoni M. Claret, 97, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4083979,
-        "long": 2.1704221
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Farmàcia de la Creu",
@@ -1110,10 +939,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Farmàcia Jaume Giró Loperena",
-        "endereco": "Marià Aguiló, 53, Barcelona",
+        "endereco": "Marià Aguiló, 53, bxs, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4024016,
-        "long": 2.201486
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Farmàcia March Puigoriol",
@@ -1201,10 +1030,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Flors Dolors",
-        "endereco": "Creu Coberta, 93, Barcelona",
+        "endereco": "Mercat d'Hostafrancs, Creu Coberta, 93, Parada exterior núm. 86, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3751208,
-        "long": 2.1439626
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Flowrspace",
@@ -1256,25 +1085,18 @@ const estabelecimentos = [
         "long": 2.1998984
     },
     {
-        "nome": "Forn Trinitat 1",
-        "endereco": "Plaça de la Trinitat, 14, Barcelona",
+        "nome": "Forn Trinitat",
+        "endereco": "Plaça de la Trinitat, 14 / carrer Bartrina 52-54 08030, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4497113,
-        "long": 2.1903263
-    },
-    {
-        "nome": "Forn Trinitat 2",
-        "endereco": "Carrer Bartrina, 52-54, Barcelona",
-        "cidade": "Barcelona",
-        "lat": 41.4408613,
-        "long": 2.1869814
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Forners & Pastissers Puig",
-        "endereco": "c/ Àngel Marquès, 14-18,  Barcelona",
+        "endereco": "c/ Àngel Marquès, 14-18 baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4318683,
-        "long": 2.1431794
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Foto 100",
@@ -1306,24 +1128,24 @@ const estabelecimentos = [
     },
     {
         "nome": "Fruites i verdures Lluís Macià",
-        "endereco": "Mallorca, 133-157,  Barcelona",
+        "endereco": "Mallorca, 133-157, parades núm. 50, 74, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3878249,
-        "long": 2.1543985
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Fruites i verdures Maria",
-        "endereco": "Mercat de Santa Caterina, Barcelona",
+        "endereco": "Francesc Cambó, s/n (Mercat Santa Caterina), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3861362,
-        "long": 2.1785048
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Fruites i verdures Oms",
-        "endereco": "Travessera de les Corts, 215 Barcelona",
+        "endereco": "Mercat de les Corts, Travessera de les Corts, 215, parada 46-48, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839075,
-        "long": 2.1304224
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Fruites Víctor. Mercat de la Guineueta",
@@ -1453,17 +1275,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Herbes i Mel dietètica Glòria",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "c/Tajo, 75 (mercat d'Horta parada 68-89), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Herbolari Milfulles",
-        "endereco": "Carrer de l'Agricultura, 252, Barcelona",
+        "endereco": "C. Agricultura, 252, local 1, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4185143,
-        "long": 2.2010576
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Herboristeria Margarida Castaño",
@@ -1544,24 +1366,24 @@ const estabelecimentos = [
     },
     {
         "nome": "Isabel",
-        "endereco": "Plaça La Font, Barcelona",
+        "endereco": "Plaça La Font, s/n, parada 7 exterior, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3750413,
-        "long": 2.1491446
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Isidro Cosmetic Shop",
-        "endereco": "C. Marià Aguiló, 83,  Barcelona",
+        "endereco": "C. Marià Aguiló, 83, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4012645,
-        "long": 2.2032269
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Joguines i regals Moliné",
-        "endereco": "Plaça Eivissa, 6, Barcelona",
+        "endereco": "plaça Eivissa, 6 (galeries Horta, botiga número 3), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4301577,
-        "long": 2.1606087
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Joguines La Rosalia",
@@ -1586,17 +1408,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Juguijuga",
-        "endereco": "Passeig Sant Joan, 35,  Barcelona",
+        "endereco": "Passeig Sant Joan, 35, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3935861,
-        "long": 2.1768514
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Júlia Fruites i Verdures",
-        "endereco": "Mercat de Sants, Barcelona",
+        "endereco": "Mercat de Sants (carrer Sant Jordi, 6), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3746729,
-        "long": 2.1333875
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Karnipolis. Mercat de la Guineueta",
@@ -1628,17 +1450,17 @@ const estabelecimentos = [
     },
     {
         "nome": "L'Herbolari de Casp",
-        "endereco": "Carrer de Casp, 139, Barcelona",
+        "endereco": "c. Casp, 139 - local 4, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.397226,
-        "long": 2.1810239
+        "lat": null,
+        "long": null
     },
     {
         "nome": "L'Hortet Seleccions",
-        "endereco": "Sanpere i Miquel, 39, Barcelona",
+        "endereco": "Sanpere i Miquel, 39, local, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4304518,
-        "long": 2.1589489
+        "lat": null,
+        "long": null
     },
     {
         "nome": "LA BACANAL - BARCELONA",
@@ -1747,10 +1569,10 @@ const estabelecimentos = [
     },
     {
         "nome": "La Maquinària",
-        "endereco": "Carrer del Llenguadoc, 82, Barcelona",
+        "endereco": "C. de Llenguadoc 82, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5651223,
-        "long": 2.0892023
+        "lat": null,
+        "long": null
     },
     {
         "nome": "La Marga Moda Infantil",
@@ -1774,11 +1596,11 @@ const estabelecimentos = [
         "long": 2.1507781
     },
     {
-        "nome": "La Pera",
-        "endereco": "Travessera de les Corts, 215, Barcelona, Barcelona",
+        "nome": "La pera",
+        "endereco": "Mercat de les Corts, parada 80-85, Travessera de les Corts, 215, Barcelona, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839075,
-        "long": 2.1304224
+        "lat": null,
+        "long": null
     },
     {
         "nome": "La Piccola Llibreria Italiana",
@@ -1788,7 +1610,7 @@ const estabelecimentos = [
         "long": 2.12403
     },
     {
-        "nome": "La Ragatzza. Mercat de la Guineueta",
+        "nome": "La ragatzza. Mercat de la Guineueta",
         "endereco": "Pg Valldaura, 186, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.4386451,
@@ -1838,10 +1660,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Les Cosines",
-        "endereco": "Carrer de Santa Rosa, 14, Barcelona",
+        "endereco": "Rosa Puig-Rodon Pla (antic Santa Rosa), 14 bis, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5406505,
-        "long": 2.206038
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Les ocasions",
@@ -1859,10 +1681,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Llegums Porta-Novau",
-        "endereco": "Mallorca, 133-157, Barcelona",
+        "endereco": "Mallorca, 133-157, parades núm. 31-32, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3878249,
-        "long": 2.1543985
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Llenceria Maria",
@@ -2026,11 +1848,11 @@ const estabelecimentos = [
         "long": 2.1602574
     },
     {
-        "nome": "Londji (londjiborn@gmail.com),",
-        "endereco": "Carrer de la Princesa, 49, Barcelona",
+        "nome": "Londji",
+        "endereco": "londjiborn@gmail.com, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3865402,
-        "long": 2.1818825
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Lusajo Esports SL",
@@ -2062,10 +1884,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Masclans Artesans del Bacallà",
-        "endereco": "Travessera de les Corts, 215, Barcelona",
+        "endereco": "Mercat de les Corts, Travessera de les Corts, parada 87-89, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839075,
-        "long": 2.1304224
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Matalasseria A. Mercader",
@@ -2090,17 +1912,17 @@ const estabelecimentos = [
     },
     {
         "nome": "MCM Fruites i Verdures",
-        "endereco": "Mallorca, 133-157, Barcelona",
+        "endereco": "Mallorca, 133-157, parada núm. 64, 65, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3878249,
-        "long": 2.1543985
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Menuts Lídia",
-        "endereco": "Plaça Font, Barcelona",
+        "endereco": "Plaça Font, s/n (Mercat de la Barceloneta, parada 51-53), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3750413,
-        "long": 2.1491446
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Mercè del Prat",
@@ -2111,10 +1933,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Merceria Barceloneta",
-        "endereco": "Plaça la Font, Barcelona",
+        "endereco": "Plaça la Font, s/n  (parada exterior Mercat Barceloneta 4-6), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3750413,
-        "long": 2.1491446
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Merceria Esmar",
@@ -2174,10 +1996,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Mònica Alba",
-        "endereco": "Carrer de Sant Antoni Maria Claret, 67, Barcelona",
+        "endereco": "Sant Antoni M. Claret, 65, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4072347,
-        "long": 2.1688753
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Mr. Brown Store",
@@ -2229,11 +2051,11 @@ const estabelecimentos = [
         "long": 2.1110816
     },
     {
-        "nome": "Només Planxa",
-        "endereco": "Carrer de Sant Antoni Maria Claret, 81, Barcelona",
+        "nome": "Només planxa",
+        "endereco": "Sant Antoni M. Claret, 81, bis, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4077186,
-        "long": 2.16952
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Normafilms",
@@ -2251,10 +2073,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Oh Oh Andrea",
-        "endereco": "Mercat de Sants, Barcelona",
+        "endereco": "Mercat de Sants- parada ext. 4, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3746729,
-        "long": 2.1333875
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Ona Llibres",
@@ -2321,17 +2143,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Ous Susana",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "c/Tajo, 75 (mercat d'Horta parada 72-73), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Papereria 1000 Fulls",
-        "endereco": "C. Cantàbria, 22, Barcelona",
+        "endereco": "C. Cantàbria, 22, local 4, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4192297,
-        "long": 2.202311
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Papereria Canut",
@@ -2412,17 +2234,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Peix de proximitat la Barqueta",
-        "endereco": "Travessera de les Corts, 215, Barcelona",
+        "endereco": "Mercat de les Corts, Travessera de les Corts, 215, parada 105-108, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839075,
-        "long": 2.1304224
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peix i Marisc Montse i Sònia",
-        "endereco": "Mercat de la Barceloneta, Barcelona",
+        "endereco": "Mercat de la Barceloneta, parada 48-50, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3803956,
-        "long": 2.1891948
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peix i marisc Neus. Mercat de la Guineueta",
@@ -2433,38 +2255,38 @@ const estabelecimentos = [
     },
     {
         "nome": "Peixateria Marisqueria La Mar de Fresc",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "c/Tajo, 75 (mercat d'Horta- parada 140, 141, 142), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peixateria Mary",
-        "endereco": "Mallorca, 133-157, Barcelona",
+        "endereco": "Mallorca, 133-157, parada núm. 72, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3878249,
-        "long": 2.1543985
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peixateria Olga",
-        "endereco": "C/ Llobregós, 147, Barcelona",
+        "endereco": "C/ Llobregós 147 (mercat del Carmel, parades 23-24-26-28), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4240669,
-        "long": 2.1559051
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peixateria Ribera",
-        "endereco": "Mallorca, Barcelona",
+        "endereco": "Mallorca, 133-157, parades núm. 10, 11, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4139968,
-        "long": 2.1896638
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peixos Jack",
-        "endereco": "C. Jaume Huguet, 38, Barcelona",
+        "endereco": "C. Jaume Huguet, 38 (Mercat Besòs), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4191958,
-        "long": 2.2151086
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Peixos Martí",
@@ -2482,17 +2304,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Perdins",
-        "endereco": "c/ Sant Antoni Maria Claret, 139, Barcelona",
+        "endereco": "c/ Sant Antoni Ma Claret, 139, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.4132572,
         "long": 2.1749271
     },
     {
         "nome": "Perruqueria Binèfar",
-        "endereco": "Binèfar, 4, Barcelona",
+        "endereco": "Binèfar, 4 (botiga 2), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4244086,
-        "long": 2.2034455
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Petit gegant",
@@ -2524,31 +2346,31 @@ const estabelecimentos = [
     },
     {
         "nome": "Polleria Caça Francesc",
-        "endereco": "Mercat de la Barceloneta, Barcelona",
+        "endereco": "Mercat de la Barceloneta, parada 27-28, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3803956,
-        "long": 2.1891948
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Polleria Eulàlia. Mercat de Sant Andreu",
-        "endereco": "Pl. Mercadal, 41, Barcelona",
+        "endereco": "Mercat de Sant Andreu, parades 21-22. Pl. Mercadal, 41, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4348972,
-        "long": 2.1885069
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Rellotgeria J. Buetas",
-        "endereco": "C. Camp Arriassa, 81, Barcelona",
+        "endereco": "C. Camp Arriassa, 81 (entrada per Rbla. Prim), Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4236374,
-        "long": 2.2037751
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Reparat Millor que Nou",
-        "endereco": "Carrer de Sepúlveda, 45-47,  Barcelona",
+        "endereco": "C. Sepúlveda, 45-47, baixos, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3828901,
-        "long": 2.1620984
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Rocafort Modelisme SL",
@@ -2650,10 +2472,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Sol&Deco",
-        "endereco": "Passeig Maragall, 178-180 , Barcelona",
+        "endereco": "Passeig Maragall, 178-180 Local 3, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4272811,
-        "long": 2.169406
+        "lat": null,
+        "long": null
     },
     {
         "nome": "STENCIL BARCELONA",
@@ -2727,10 +2549,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Terranova 80",
-        "endereco": "Carrer del Segre, 55, Barcelona",
+        "endereco": "C/Segre, 55, local 1 bis, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4326507,
-        "long": 2.1933992
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Tito Fresh Fruit",
@@ -2748,10 +2570,10 @@ const estabelecimentos = [
     },
     {
         "nome": "TOSSUDA STUDIO",
-        "endereco": "C. Vallirana, 63, Barcelona",
+        "endereco": "C. Vallirana, 63, local dret, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.404722,
-        "long": 2.1467032
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Totart",
@@ -2762,24 +2584,24 @@ const estabelecimentos = [
     },
     {
         "nome": "Tradició peixatera",
-        "endereco": "Carrer del Comte d'Urgell, 1, Barcelona",
+        "endereco": "c. Comte d'Urgell, 1 - parada 131 Mercat de Sant Antoni, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3789516,
-        "long": 2.1622764
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Vagi de gust SCP",
-        "endereco": "Travessera de les Corts, 215, Barcelona",
+        "endereco": "Mercat de les Corts, parada 70-71, Travessera de les Corts, 215, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839075,
-        "long": 2.1304224
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Valls, Roba per la llar",
-        "endereco": "València, 542, Barcelona",
+        "endereco": "València, 542, A51, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4090601,
-        "long": 2.1851472
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Venivinum",
@@ -2832,17 +2654,17 @@ const estabelecimentos = [
     },
     {
         "nome": "Xarcuteria Alfred Moliner",
-        "endereco": "Mallorca, 133-157, Barcelona",
+        "endereco": "Mallorca, 133-157, parades núm. 69, 70, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3878249,
-        "long": 2.1543985
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Xarcuteria Castelló",
-        "endereco": "Travessera de les Corts, 215, Barcelona",
+        "endereco": "Travessera de les Corts, 215. Mercat de les Corts, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3839075,
-        "long": 2.1304224
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Xarcuteria M. Guerrero. Mercat de la Guineueta",
@@ -2887,111 +2709,3 @@ const estabelecimentos = [
         "long": 2.1908163
     }
 ];
-
-  async function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  async function buscarLocais() {
-    const enderecoInput = document.getElementById('endereco').value;
-    
-    console.log("Endereço digitado:", enderecoInput);
-
-    // Verifica se o endereço foi digitado
-    if (!enderecoInput.trim()) {
-      console.log("Endereço vazio. Abortando busca.");
-      alert("Por favor, digite um endereço válido.");
-      return;
-    }
-
-    // Geocodifica o endereço do usuário para obter as coordenadas
-    const coords = await geocodificarEndereco(enderecoInput);
-    if (!coords) {
-      console.log("Endereço não encontrado. Abortando busca.");
-      alert("Endereço não encontrado. Tente novamente.");
-      return;
-    }    
-
-    const resultados = [];
-    for (const est of estabelecimentos) {
-      let estCoords = null;
-    
-      // Se já tem lat/lon, usa direto, sem delay
-      if (
-        est.lat !== null && est.long !== null &&
-        est.lat !== undefined && est.long !== undefined
-      ) {
-        estCoords = { lat: est.lat, lon: est.long };
-
-        document.getElementById('consolelog').innerHTML = `Coordenades de ${est.nome} ja trobades: ${estCoords.lat}, ${estCoords.lon}`;
-    
-        // Calcula a distância entre o usuário e o estabelecimento
-        const distancia = calcularDistancia(coords.lat, coords.lon, estCoords.lat, estCoords.lon);
-        resultados.push({ ...est, distancia });
-        const filtrados = resultados.sort((a, b) => a.distancia - b.distancia);
-        mostrarResultados(filtrados);
-        // Delay de 1 segundo entre cada estabelecimento
-        await delay(1);
-      } else {
-        // Se não tem lat/lon, geocodifica e aplica delay
-        estCoords = await geocodificarEndereco(est.endereco);
-        if (estCoords) {
-          const distancia = calcularDistancia(coords.lat, coords.lon, estCoords.lat, estCoords.lon);
-          resultados.push({ ...est, distancia });
-          const filtrados = resultados.sort((a, b) => a.distancia - b.distancia);
-          mostrarResultados(filtrados);
-        } else {
-          console.log(`Coordenadas de ${est.nome} não encontradas via geocodificação.`);
-        }
-        await delay(1100); // Atraso entre as requisições só quando usa a API
-      }
-    }
-    document.getElementById('consolelog').innerHTML = "Procés finalitzat.";
-  }
-
-    async function geocodificarEndereco(endereco) {
-      try {
-        const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}`;
-        const response = await fetch(url, { headers: { 'User-Agent': 'CatalanPracticeApp/1.0' } });
-        const data = await response.json();
-        if (data.length === 0) return null;
-        return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
-      } catch (error) {
-        console.timeEnd(`Tempo para geocodificar: ${endereco}`); //  Finaliza o temporizador em caso de erro.
-        console.error("Erro ao geocodificar:", error);
-        return null;
-      }
-    }
-
-    function calcularDistancia(lat1, lon1, lat2, lon2) {
-      const R = 6371; // km
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                Math.sin(dLon/2) * Math.sin(dLon/2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      return (R * c).toFixed(2);
-    }
-
-    
-
-    function mostrarResultados(locais) {
-      const tabela = document.getElementById('tabelaResultados');
-      const tbody = tabela.querySelector('tbody');
-      tbody.innerHTML = '';
-        locais.slice(0, 20).forEach((loc, idx) => {
-      const row = `<tr>
-        <td>#${idx + 1}</td>
-        <td>${loc.nome}</td>
-        <td>${loc.endereco}</td>
-        <td>${loc.distancia}</td>
-      </tr>`;
-      tbody.innerHTML += row;
-    });
-      tabela.style.display = '';
-}
-
-  </script>
-</body>
-</html>
