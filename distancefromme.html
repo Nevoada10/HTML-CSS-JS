@@ -24,8 +24,15 @@
       transition: background-color 0.3s ease;
     }
     
-    h2, h3 {
+    h2 {
       color: #ffffff;
+      padding-bottom: 8px;
+      margin-top: 30px;
+    }
+    
+    h3 {
+      color: #ffffff;
+      border-bottom: 2px solid var(--accent-color);
       padding-bottom: 8px;
       margin-top: 30px;
     }
@@ -119,7 +126,13 @@
 </head>
 <body>
 
-<h2>Troba establiments per fer les <strong>pràctiques lingüístiques del CPNL</strong> prop teu (386 establiments a Barcelona)</h2>
+<h2 style="position: absolute; top: 0; left: 0; width: 100vw; background: linear-gradient(to right, var(--accent-color), #bb4040); border-bottom: 2px solid var(--accent-color); padding: 10px; box-sizing: border-box;"><strong>Troba establiments per fer les pràctiques lingüístiques del CPNL</strong> prop teu (386 establiments a Barcelona)</h2>
+
+<h3>✍️ Autor</h3>
+  <ul>
+    <li><a href="https://github.com/nevoada10" target="_blank">github.com/nevoada10 (Uriel Neves Silva)</a></li>
+    <li><a href="https://nevoada10.github.io/HTML-CSS-JS/distancefromme.html" target="_blank">Link </a></li>
+  </ul>
 
 <div>
   <h3>✅ Com utilitzar</h3>
@@ -143,11 +156,6 @@
     <li><strong>Park Güell:</strong> Carrer d'Olot, 5</li>
     <li><strong>Casa Batlló:</strong> Passeig de Gràcia, 43</li>
     <li><strong>La Boqueria:</strong> La Rambla, 91</li>
-  </ul>
-
-  <h3>✍️ Autor</h3>
-  <ul>
-    <li><a href="https://github.com/nevoada10" target="_blank">github.com/nevoada10 (Uriel Neves)</a></li>
   </ul>
 
   <p id="consolelog"></p> 
@@ -185,10 +193,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Abacus Urquinaona",
-        "endereco": "c/ Ausiàs Marc, 16, Barcelona",
+        "endereco": "Carrer d'Ausiàs Marc, 16, Barcelona",
         "cidade": "Barcelona",
-        "lat": 42.0176231,
-        "long": 2.2438983
+        "lat": 41.3907283,
+        "long": 2.1749744
     },
     {
         "nome": "Abracadabra Llibres",
@@ -465,10 +473,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Bar Restaurant Núria Pous",
-        "endereco": "C. Santander, 16, Barcelona",
+        "endereco": "Carrer de Santander, 16, Barcelona",
         "cidade": "Barcelona",
-        "lat": 10.148092,
-        "long": -64.685691
+        "lat": 41.4237728,
+        "long": 2.1981211
     },
     {
         "nome": "Bar-celona",
@@ -836,10 +844,10 @@ const estabelecimentos = [
     },
     {
         "nome": "De Fang",
-        "endereco": "Berga, 12, Barcelona",
+        "endereco": "Carrer de Berga, 12, Barcelona",
         "cidade": "Barcelona",
-        "lat": 42.1011456,
-        "long": 1.8454758
+        "lat": 41.4004685,
+        "long": 2.1532635
     },
     {
         "nome": "Del Be a la Manta",
@@ -934,10 +942,10 @@ const estabelecimentos = [
     },
     {
         "nome": "El racó de la Rosa",
-        "endereco": "c. Rocafort, 12, Barcelona",
+        "endereco": "C/ de Rocafort, 12, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.79433,
-        "long": 1.9450978
+        "lat": 41.3800963,
+        "long": 2.1522333
     },
     {
         "nome": "El rei de la màgia",
@@ -1228,7 +1236,7 @@ const estabelecimentos = [
     },
     {
         "nome": "Foment Sardanista Andreuenc",
-        "endereco": "c. Cuba, 2, Barcelona",
+        "endereco": "C/ de Cuba, 2, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.2213931,
         "long": 1.7258592
@@ -1620,10 +1628,10 @@ const estabelecimentos = [
     },
     {
         "nome": "L'herbolari",
-        "endereco": "c. Rocafort, 50, Barcelona",
+        "endereco": "C/ de Rocafort, 50, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.7968813,
-        "long": 1.9503631
+        "lat": 41.3800963,
+        "long": 2.1522333
     },
     {
         "nome": "L'Herbolari de Casp",
@@ -1655,7 +1663,7 @@ const estabelecimentos = [
     },
     {
         "nome": "La botiga de la Pepi",
-        "endereco": "c. Mercat, 4, Barcelona",
+        "endereco": "Carrer del Mercat, 4, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.5915139,
         "long": 2.5802953
@@ -1837,10 +1845,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Les Cosines",
-        "endereco": "Carrer de Santa Rosa, 14, Barcelona",
+        "endereco": "14 bis, Calle de Sta. Rosa, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5406505,
-        "long": 2.206038
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Les ocasions",
@@ -2973,23 +2981,46 @@ const estabelecimentos = [
       return (R * c).toFixed(2);
     }
 
-    
-
+    // Mostrar 20 primeiros resultados  
+    /*  
     function mostrarResultados(locais) {
       const tabela = document.getElementById('tabelaResultados');
       const tbody = tabela.querySelector('tbody');
       tbody.innerHTML = '';
-        locais.slice(0, 20).forEach((loc, idx) => {
-      const row = `<tr>
-        <td>#${idx + 1}</td>
-        <td>${loc.nome}</td>
-        <td>${loc.endereco}</td>
-        <td>${loc.distancia}</td>
-      </tr>`;
-      tbody.innerHTML += row;
-    });
+      // Mostra apenas os 20 primeiros resultados
+      locais.slice(0, 20).forEach((loc, idx) => {
+        const row = `<tr>
+          <td>${idx + 1}</td>  
+          <td>${loc.nome}</td>
+          <td>${loc.endereco}</td>
+          <td>${loc.distancia}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
       tabela.style.display = '';
-}
+    }
+    */
+
+    // Mostrar os 25 últimos resultados
+    
+    function mostrarResultados(locais) {
+      const tabela = document.getElementById('tabelaResultados');
+      const tbody = tabela.querySelector('tbody');
+      tbody.innerHTML = '';
+      // Mostra apenas os 25 últimos resultados
+      const ultimos = locais.slice(-25);
+      ultimos.forEach((loc, idx) => {
+        const row = `<tr>
+          <td>#${locais.length - ultimos.length + idx + 1}</td>
+          <td>${loc.nome}</td>
+          <td>${loc.endereco}</td>
+          <td>${loc.distancia}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+      tabela.style.display = '';
+    }
+    
 
   </script>
 </body>

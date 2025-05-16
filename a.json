@@ -15,10 +15,10 @@
     },
     {
         "nome": "Abacus Urquinaona",
-        "endereco": "c/ Ausiàs Marc, 16, Barcelona",
+        "endereco": "Carrer d'Ausiàs Marc, 16, Barcelona",
         "cidade": "Barcelona",
-        "lat": 42.0176231,
-        "long": 2.2438983
+        "lat": 41.3907283,
+        "long": 2.1749744
     },
     {
         "nome": "Abracadabra Llibres",
@@ -295,10 +295,10 @@
     },
     {
         "nome": "Bar Restaurant Núria Pous",
-        "endereco": "C. Santander, 16, Barcelona",
+        "endereco": "Carrer de Santander, 16, Barcelona",
         "cidade": "Barcelona",
-        "lat": 10.148092,
-        "long": -64.685691
+        "lat": 41.4237728,
+        "long": 2.1981211
     },
     {
         "nome": "Bar-celona",
@@ -666,10 +666,10 @@
     },
     {
         "nome": "De Fang",
-        "endereco": "Berga, 12, Barcelona",
+        "endereco": "Carrer de Berga, 12, Barcelona",
         "cidade": "Barcelona",
-        "lat": 42.1011456,
-        "long": 1.8454758
+        "lat": 41.4004685,
+        "long": 2.1532635
     },
     {
         "nome": "Del Be a la Manta",
@@ -694,10 +694,10 @@
     },
     {
         "nome": "EBA Estudi de Belles Arts",
-        "endereco": "C. Agricultura, 225, Barcelona",
+        "endereco": "Carrer de l'Agricultura, 225, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5534969,
-        "long": 2.0994342
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Edan Vedruna. Mercat de la Guineueta",
@@ -764,10 +764,10 @@
     },
     {
         "nome": "El racó de la Rosa",
-        "endereco": "c. Rocafort, 12, Barcelona",
+        "endereco": "C/ de Rocafort, 12, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.79433,
-        "long": 1.9450978
+        "lat": 41.3800963,
+        "long": 2.1522333
     },
     {
         "nome": "El rei de la màgia",
@@ -1058,7 +1058,7 @@
     },
     {
         "nome": "Foment Sardanista Andreuenc",
-        "endereco": "c. Cuba, 2, Barcelona",
+        "endereco": "C/ de Cuba, 2, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.2213931,
         "long": 1.7258592
@@ -1450,10 +1450,10 @@
     },
     {
         "nome": "L'herbolari",
-        "endereco": "c. Rocafort, 50, Barcelona",
+        "endereco": "C/ de Rocafort, 50, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.7968813,
-        "long": 1.9503631
+        "lat": 41.3800963,
+        "long": 2.1522333
     },
     {
         "nome": "L'Herbolari de Casp",
@@ -1485,7 +1485,7 @@
     },
     {
         "nome": "La botiga de la Pepi",
-        "endereco": "c. Mercat, 4, Barcelona",
+        "endereco": "Carrer del Mercat, 4, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.5915139,
         "long": 2.5802953
@@ -1667,10 +1667,10 @@
     },
     {
         "nome": "Les Cosines",
-        "endereco": "Carrer de Santa Rosa, 14, Barcelona",
+        "endereco": "14 bis, Calle de Sta. Rosa, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5406505,
-        "long": 2.206038
+        "lat": null,
+        "long": null
     },
     {
         "nome": "Les ocasions",
