@@ -4,134 +4,329 @@
   <meta charset="UTF-8">
   <title>Catalan Practices</title>
   <style>
-    :root {
-      --primary-bg: #1a0000;
-      --secondary-bg: #2a0a0a;
-      --accent-color: #8B0000;
-      --highlight: #b22222;
-      --text-color: #f0e6e6;
-      --text-muted: #c9b6b6;
-      --border-color: #4a1a1a;
+  /* ===== Base Variables ===== */
+  :root {
+    /* Color Palette */
+    --primary-bg: #1a0000;
+    --secondary-bg: #2a0a0a;
+    --accent-color: #8B0000;
+    --highlight: #b22222;
+    --text-color: #f0e6e6;
+    --text-muted: #c9b6b6;
+    --border-color: #4a1a1a;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    
+    /* Border Radius */
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+  }
+  
+  /* ===== Base Styles ===== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  body { 
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    min-height: 100vh;
+  }
+  
+  /* ===== Typography ===== */
+  h2, h3 {
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    padding: var(--spacing-sm) 0;
+    background: linear-gradient(to right, var(--accent-color), #bb4040);
+    border-bottom: 2px solid var(--accent-color);
+    text-align: center;
+    width: 100%;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+.banner-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: linear-gradient(to right, var(--accent-color), #bb4040);
+  border-bottom: 2px solid var(--accent-color);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.banner-full h2 {
+  margin: 0;
+  padding: var(--spacing-sm) 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.75rem;
+  width: 100%;
+  background: none;
+  border: none;
+}
+  
+  h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: var(--spacing-xs);
+    margin-top: var(--spacing-lg);
+  }
+  
+  strong {
+    color: #ede8e8;
+    font-weight: 600;
+  }
+  
+  /* ===== Form Elements ===== */
+  input, button {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  input {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.3);
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: var(--highlight);
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  /* ===== Table Styles ===== */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: var(--spacing-md) 0;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensures table doesn't get too narrow */
+  }
+  
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+  }
+  
+  th {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+  
+  tr:hover {
+    background-color: rgba(139, 0, 0, 0.1);
+  }
+  
+  /* ===== Links & Lists ===== */
+  a {
+    color: #ff8c8c;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+  }
+  
+  ul, ol {
+    padding-left: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+  }
+  
+  li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  /* ===== Utility Classes ===== */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .grid {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+  
+  .flex {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+
+/* Melhor responsividade para o form-group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.form-group input,
+.form-group button {
+  width: 100%;
+  font-size: 1.1rem;
+  min-height: 2.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .form-group input {
+    flex: 2;
+    min-width: 200px;
+  }
+  .form-group button {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+  }
+}
+/* ...existing code... */
+  
+  /* ===== Responsive Design ===== */
+  @media (min-width: 768px) {
+    html {
+      font-size: 17px;
     }
     
-    body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: var(--primary-bg);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: background-color 0.3s ease;
+    .container {
+      padding: 0 var(--spacing-lg);
     }
     
-    h2 {
-      color: #ffffff;
-      padding-bottom: 8px;
-      margin-top: 30px;
-    }
-    
-    h3 {
-      color: #ffffff;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 8px;
-      margin-top: 30px;
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     
     input, button {
-      padding: 10px 15px;
-      margin: 10px 10px 10px 0;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      background-color: var(--secondary-bg);
-      color: var(--text-color);
-      transition: all 0.3s ease;
+      width: auto;
+      margin-bottom: 0;
     }
     
-    input:focus {
-      outline: none;
-      border-color: var(--highlight);
-      box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.3);
+    .form-group {
+      display: flex;
+      gap: var(--spacing-sm);
+      align-items: center;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
     }
     
-    button {
-      background-color: var(--accent-color);
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
+    .container {
+      padding: 0;
+    }
+  }
+  
+  /* ===== Print Styles ===== */
+  @media print {
+    body {
+      background: white;
+      color: black;
+      padding: 0;
     }
     
-    button:hover {
-      background-color: var(--highlight);
-      transform: translateY(-1px);
+    .no-print {
+      display: none;
     }
     
     table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    th, td {
-      border: 1px solid var(--border-color);
-      padding: 12px 15px;
-      text-align: left;
+      border: 1px solid #ccc;
     }
     
     th {
-      background-color: var(--accent-color);
-      color: white;
-      font-weight: 600;
+      background-color: #f5f5f5 !important;
+      color: black !important;
     }
-    
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-    
-    tr:hover {
-      background-color: rgba(139, 0, 0, 0.1);
-    }
-    
-    a {
-      color: #ff8c8c;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    a:hover {
-      color: #ff6b6b;
-      text-decoration: underline;
-    }
-    
-    ul, ol {
-      padding-left: 20px;
-    }
-    
-    li {
-      margin-bottom: 8px;
-    }
-    
-    strong {
-      color: #ede8e8;
-    }
-    
-    #consolelog {
-      color: var(--text-muted);
-      font-style: italic;
-      margin: 10px 0;
-    }
+  }
   </style>
 </head>
 <body>
 
-<h2 style="position: absolute; top: 0; left: 0; width: 100vw; background: linear-gradient(to right, var(--accent-color), #bb4040); border-bottom: 2px solid var(--accent-color); padding: 10px; box-sizing: border-box;"><strong>Troba establiments per fer les pràctiques lingüístiques del CPNL</strong> prop teu (386 establiments a Barcelona)</h2>
+<div class="container">
+  <header>
+    <div class="banner-full">
+      <h2><strong>Troba establiments per fer les pràctiques lingüístiques del CPNL</strong> prop teu (386 establiments a Barcelona)</h2>
+    </div>
+  </header>
+</div>
 
 <h3>✍️ Autor</h3>
   <ul>
     <li><a href="https://github.com/nevoada10" target="_blank">github.com/nevoada10 (Uriel Neves Silva)</a></li>
-    <li><a href="https://nevoada10.github.io/HTML-CSS-JS/distancefromme.html" target="_blank">Link </a></li>
+    <li><a href="https://github.com/Nevoada10/HTML-CSS-JS/blob/main/distancefromme.html" target="_blank">Codi font </a></li>
   </ul>
 
 <div>
@@ -139,7 +334,7 @@
 <ol>
   <li><strong>Escriu</strong> la teva adreça (ex: casa o feina).</li>
   <li><strong>Clica</strong> "Buscar".</li>
-  <li><strong>Consulta</strong> la taula ordenada pels llocs més propers.</li>
+  <li><strong>Consulta</strong> la taula ordenada dels 20 llocs més propers.</li>
   <li><strong>Obre</strong> els establiments al Google Maps, <strong>fes la ruta</strong>, practica català, aconsegueix el teu <strong>segell</strong> i sigues feliç!</li>
 </ol>
 
@@ -148,6 +343,7 @@
     <li><strong>No és Google Maps</strong> (Calcula distàncias en "línia recta") .</li>
      <li><strong>Aplicació segura</strong>: Només compara adreces sense accedir a la teva localització.</li>
     <li>HTML + JS + <em>fetch</em> a <strong>Nominatim API</strong>.</li>
+    <li> Alguns establiments tenen adreces que no es troben o estan mal escrites, però aquests s'ignoraran.</li>
   </ul>
 
   <h3>📌 Exemples d'adreces</h3>
@@ -160,8 +356,11 @@
 
   <p id="consolelog"></p> 
 </div>
+
+<div class="form-group" >
   <input type="text" id="endereco" placeholder="Entra una adreça">
   <button onclick="buscarLocais()">Buscar</button>
+</div>
 
   <table id="tabelaResultados" style="display:none;">
     <thead>
@@ -235,7 +434,7 @@ const estabelecimentos = [
     },
     {
         "nome": "Albert Calçats",
-        "endereco": "Dos de Maig, 223",
+        "endereco": "Dos de Maig, 223, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.4064151,
         "long": 2.1827126
@@ -571,10 +770,10 @@ const estabelecimentos = [
     },
     {
         "nome": "C. Art",
-        "endereco": "C. Menorca, 8-10, Barcelona",
+        "endereco": "Carrer de Menorca, 8, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4669729,
-        "long": 2.0444333
+        "lat": 41.4172018,
+        "long": 2.193941
     },
     {
         "nome": "Cake House",
@@ -627,10 +826,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Carmen Decoración",
-        "endereco": "C. Bilbao, 33-35, Barcelona",
+        "endereco": "Carrer de Bilbao, 33, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4805178,
-        "long": 2.3098722
+        "lat": 41.4018173,
+        "long": 2.2047302
     },
     {
         "nome": "Carnisseria Ana Pilar",
@@ -872,10 +1071,10 @@ const estabelecimentos = [
     },
     {
         "nome": "EBA Estudi de Belles Arts",
-        "endereco": "C. Agricultura, 225, Barcelona",
+        "endereco": "Carrer de l'Agricultura, 225, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5534969,
-        "long": 2.0994342
+        "lat": 41.417432,
+        "long": 2.2021793
     },
     {
         "nome": "Edan Vedruna. Mercat de la Guineueta",
@@ -1243,10 +1442,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Formatges i mantegues Simó",
-        "endereco": "C/ Sant Pere Més Alt, 40, Barcelona",
+        "endereco": "Carrer de Sant Pere Més Alt, 40, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5416941,
-        "long": 2.44471
+        "lat": 41.3883466,
+        "long": 2.1766106
     },
     {
         "nome": "Forn Elias",
@@ -1460,10 +1659,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Herbes i Mel dietètica Glòria",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "Carrer del Tajo, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": 41.4295869,
+        "long": 2.1595308
     },
     {
         "nome": "Herbolari Milfulles",
@@ -1901,10 +2100,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Llibreria Ça Porta",
-        "endereco": "C. Sant Pere Més Alt, 20, Barcelona",
+        "endereco": "Carrer de Sant Pere Més Alt, 20, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5416941,
-        "long": 2.44471
+        "lat": 41.3878576,
+        "long": 2.1760737
     },
     {
         "nome": "Llibreria Calders",
@@ -2328,10 +2527,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Ous Susana",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "Carrer del Tajo, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": 41.4295869,
+        "long": 2.1595308
     },
     {
         "nome": "Papereria 1000 Fulls",
@@ -2440,10 +2639,10 @@ const estabelecimentos = [
     },
     {
         "nome": "Peixateria Marisqueria La Mar de Fresc",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "Carrer del Tajo, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": 41.4295869,
+        "long": 2.1595308
     },
     {
         "nome": "Peixateria Mary",
@@ -2982,7 +3181,6 @@ const estabelecimentos = [
     }
 
     // Mostrar 20 primeiros resultados  
-    /*  
     function mostrarResultados(locais) {
       const tabela = document.getElementById('tabelaResultados');
       const tbody = tabela.querySelector('tbody');
@@ -2999,10 +3197,10 @@ const estabelecimentos = [
       });
       tabela.style.display = '';
     }
-    */
 
     // Mostrar os 25 últimos resultados
     
+    /*
     function mostrarResultados(locais) {
       const tabela = document.getElementById('tabelaResultados');
       const tbody = tabela.querySelector('tbody');
@@ -3020,6 +3218,7 @@ const estabelecimentos = [
       });
       tabela.style.display = '';
     }
+    */
     
 
   </script>

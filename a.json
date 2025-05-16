@@ -57,7 +57,7 @@
     },
     {
         "nome": "Albert Calçats",
-        "endereco": "Dos de Maig, 223",
+        "endereco": "Dos de Maig, 223, Barcelona",
         "cidade": "Barcelona",
         "lat": 41.4064151,
         "long": 2.1827126
@@ -393,10 +393,10 @@
     },
     {
         "nome": "C. Art",
-        "endereco": "C. Menorca, 8-10, Barcelona",
+        "endereco": "Carrer de Menorca, 8, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4669729,
-        "long": 2.0444333
+        "lat": 41.4172018,
+        "long": 2.193941
     },
     {
         "nome": "Cake House",
@@ -449,10 +449,10 @@
     },
     {
         "nome": "Carmen Decoración",
-        "endereco": "C. Bilbao, 33-35, Barcelona",
+        "endereco": "Carrer de Bilbao, 33, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.4805178,
-        "long": 2.3098722
+        "lat": 41.4018173,
+        "long": 2.2047302
     },
     {
         "nome": "Carnisseria Ana Pilar",
@@ -696,8 +696,8 @@
         "nome": "EBA Estudi de Belles Arts",
         "endereco": "Carrer de l'Agricultura, 225, Barcelona",
         "cidade": "Barcelona",
-        "lat": null,
-        "long": null
+        "lat": 41.417432,
+        "long": 2.2021793
     },
     {
         "nome": "Edan Vedruna. Mercat de la Guineueta",
@@ -1065,10 +1065,10 @@
     },
     {
         "nome": "Formatges i mantegues Simó",
-        "endereco": "C/ Sant Pere Més Alt, 40, Barcelona",
+        "endereco": "Carrer de Sant Pere Més Alt, 40, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5416941,
-        "long": 2.44471
+        "lat": 41.3883466,
+        "long": 2.1766106
     },
     {
         "nome": "Forn Elias",
@@ -1282,10 +1282,10 @@
     },
     {
         "nome": "Herbes i Mel dietètica Glòria",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "Carrer del Tajo, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": 41.4295869,
+        "long": 2.1595308
     },
     {
         "nome": "Herbolari Milfulles",
@@ -1723,10 +1723,10 @@
     },
     {
         "nome": "Llibreria Ça Porta",
-        "endereco": "C. Sant Pere Més Alt, 20, Barcelona",
+        "endereco": "Carrer de Sant Pere Més Alt, 20, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.5416941,
-        "long": 2.44471
+        "lat": 41.3878576,
+        "long": 2.1760737
     },
     {
         "nome": "Llibreria Calders",
@@ -2150,10 +2150,10 @@
     },
     {
         "nome": "Ous Susana",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "Carrer del Tajo, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": 41.4295869,
+        "long": 2.1595308
     },
     {
         "nome": "Papereria 1000 Fulls",
@@ -2262,10 +2262,10 @@
     },
     {
         "nome": "Peixateria Marisqueria La Mar de Fresc",
-        "endereco": "c/Tajo, 75, Barcelona",
+        "endereco": "Carrer del Tajo, 75, Barcelona",
         "cidade": "Barcelona",
-        "lat": 41.3438716,
-        "long": 1.9010601
+        "lat": 41.4295869,
+        "long": 2.1595308
     },
     {
         "nome": "Peixateria Mary",
