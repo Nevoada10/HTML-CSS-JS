@@ -502,7 +502,7 @@ h3 {
 .hero__frame--image {
   min-height: 320px;
   background: linear-gradient(to bottom, rgba(10, 10, 9, 0.12), rgba(10, 10, 9, 0.56)),
-    url("/data/peuls_black_tee_hanger_close.png");
+    url("../../data/peuls_black_tee_hanger_close.png");
   background-size: cover;
   background-position: center;
   transform: translateY(var(--parallax-shift, 0px));
