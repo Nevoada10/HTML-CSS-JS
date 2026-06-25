@@ -1,0 +1,114 @@
+# Privacy (privacy.html)
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peuls Project | Privacy</title>
+    <meta name="description" content="Privacy Policy / Datenschutzerklärung for Peuls Project — Drop 01 · SS26 · Munich." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body data-page="legal">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="ambient ambient--left" aria-hidden="true"></div>
+    <div class="ambient ambient--right" aria-hidden="true"></div>
+
+    <div class="shell">
+      <header class="topbar reveal">
+        <a class="brand" href="homepage.html" aria-label="Peuls Project home">
+          <span class="brand__mark">PP</span>
+          <span>Peuls Project</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
+          <a href="homepage.html" data-page="home">Home</a>
+          <a href="collection.html" data-page="collection">Collection</a>
+          <a href="about.html" data-page="about">About</a>
+          <a href="contact.html" data-page="contact">Contact</a>
+          <a href="prelaunch.html" data-page="waitlist" class="cta-chip cta-chip--gold">Join Waitlist</a>
+        </nav>
+      </header>
+
+      <main id="main-content" class="reveal legal-page panel">
+        <p class="kicker">Privacy Policy / Datenschutzerklärung</p>
+        <h1>Peuls Project</h1>
+        <p>ENGLISH / ENGLISCH</p>
+        <h2>1. Data Controller</h2>
+        <p>The controller responsible for the processing of personal data in accordance with the General Data Protection Regulation (GDPR) and other applicable data protection laws is:</p>
+        <div class="meta" data-sym="div.meta">
+          <div class="label">Company</div>
+          <div class="value">Peulsproject</div>
+          <div class="label">Legal Form</div>
+          <div class="value">Partnership</div>
+          <div class="label">Address</div>
+          <div class="value">Drehergasse 36<br />
+          87629 Fuessen, Germany</div>
+          <div class="label">Representative</div>
+          <div class="value">Managing Director: Mamoudou Abdoulaye Diallo</div>
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:info@peulsproject.com">info@peulsproject.com</a></div>
+        </div>
+        <h2>2. Website Hosting and Log Files</h2>
+        <p>When you visit our website for informational purposes only, our hosting provider Shopify automatically collects data that your browser transmits to Shopify's servers. This is technically necessary to display our website to you and to ensure stability and security.</p>
+        <p>Processed Data: IP address, date and time of the request, time zone difference to Greenwich Mean Time (GMT), content of the request (specific page), access status/HTTP status code, volume of data transferred, website making the request, browser type, operating system, language, and version of the browser software.</p>
+        <p>Legal Basis: Art. 6 (1) (f) GDPR (Legitimate interest in the correct functioning and security of the website).</p>
+        <p>Retention Period: Log files are stored for security reasons for a limited period and are then automatically deleted.</p>
+        <h2>3. Email Newsletter &amp; Drop Updates</h2>
+        <p>On our website, you have the option to subscribe to a free newsletter to receive updates regarding upcoming product drops, brand news, and future collections.</p>
+        <p>Processed Data: Email address (and name, if voluntarily provided).</p>
+        <p>Legal Basis: Art. 6 (1) (a) GDPR (Consent).</p>
+        <p>Double Opt-In Process: Registration utilizes a Double Opt-In procedure. After signing up, you will receive an email asking you to confirm your registration. This prevents unauthorized third parties from signing up using your email address.</p>
+        <p>Withdrawal &amp; Unsubscribing: You can revoke your consent to receive the newsletter at any time with effect for the future. An unsubscribe link is included in every newsletter. Alternatively, you can send your withdrawal via email to info@peulsproject.com.</p>
+        <p>Retention Period: Your data will be processed for newsletter delivery until you withdraw your consent or unsubscribe.</p>
+        <h2>4. Data Sharing and Service Providers (Shopify)</h2>
+        <p>Our website is hosted on the e-commerce platform Shopify. For newsletter delivery and subscriber list management, we use the integrated tool Shopify Messaging.</p>
+        <p>Recipient: Shopify International Limited (Intercom Space, 2nd Floor, Main Street, Blackrock, Co. Dublin, A94 T820, Ireland) acts as our data processor.</p>
+        <p>International Data Transfers: Since Shopify is a Canadian company with global infrastructure, data may be transferred to servers outside the EU/EEA (specifically the USA and Canada). Canada has been granted an Adequacy Decision by the EU Commission. For transfers to the US, Shopify relies on the EU-US Data Privacy Framework or standard contractual clauses (SCCs) approved by the EU Commission to guarantee an equivalent level of data protection. A Data Processing Addendum (DPA) has been executed with Shopify.</p>
+        <h2>5. Cookies and Performance Measurement (Shopify Analytics)</h2>
+        <p>This website utilizes the integrated, native analytics features of the Shopify e-commerce platform. For this purpose, Shopify stores first-party cookies on your device to collect basic statistical data regarding the usage of our store (e.g., tracking which products are viewed or the volume of page visits).</p>
+        <p>Legal Basis: Art. 6 (1) (a) GDPR (Consent via the cookie banner) and Section 25 (1) TDDDG.</p>
+        <p>Withdrawal: You can adjust your cookie preferences at any time via the website's cookie banner or withdraw your consent with effect for the future.</p>
+        <h2>6. Your Rights as a Data Subject</h2>
+        <p>You have the following rights regarding your personal data under the GDPR:</p>
+        <p>Right of access (Art. 15 GDPR)<br />
+        Right to rectification (Art. 16 GDPR)<br />
+        Right to erasure / "Right to be forgotten" (Art. 17 GDPR)<br />
+        Right to restriction of processing (Art. 18 GDPR)<br />
+        Right to data portability (Art. 20 GDPR)<br />
+        Right to object to processing (Art. 21 GDPR)</p>
+        <p>You also have the right to lodge a complaint with a data protection supervisory authority regarding the processing of your personal data by us (Art. 77 GDPR).</p>
+        <p>DEUTSCH / GERMAN</p>
+        <h2>1. Verantwortlicher (Controller)</h2>
+        <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze der Mitgliedstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist:</p>
+        <div class="meta" data-sym="div.meta">
+          <div class="label">Firma</div>
+          <div class="value">Peulsproject</div>
+          <div class="label">Rechtsform</div>
+          <div class="value">Partnership</div>
+          <div class="label">Adresse</div>
+          <div class="value">Drehergasse 36<br />
+          87629 Füssen, Deutschland</div>
+          <div class="label">Vertreten durch</div>
+          <div class="value">Geschäftsführer: Mamoudou Abdoulaye Diallo</div>
+          <div class="label">E-Mail</div>
+          <div class="value"><a href="mailto:info@peulsproject.com">info@peulsproject.com</a></div>
+        </div>
+        <h2>2. Bereitstellung der Website und Erstellung von Logfiles</h2>
+        <p>Bei der bloßen informatorischen Nutzung unserer Website erhebt unser Hosting-Anbieter Shopify automatisch Daten, die Ihr Browser an den Server von Shopify übermittelt. Dies ist technisch erforderlich, um Ihnen unsere Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten.</p>
+        <p>Verarbeitete Daten: IP-Adresse, Datum und Uhrzeit der Anfrage, Zeitzonendifferenz zur Greenwich Mean Time (GMT), Inhalt der Anforderung (konkrete Seite), Zugriffsstatus/HTTP-Statuscode, jeweils übertragene Datenmenge, Website, von der die Anforderung kommt, Browser, Betriebssystem und dessen Oberfläche, Sprache und Version der Browsersoftware.<br />
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse an der fehlerfreien Funktion und Sicherheit der Website).<br />
+        Speicherdauer: Logfiles werden aus Sicherheitsgründen für eine begrenzte Dauer gespeichert und anschließend automatisiert gelöscht.</p>
+        <h2>3. E-Mail-Newsletter &amp; Drop-Updates</h2>
+        <p>Auf unserer Website besteht die Möglichkeit, einen kostenfreien Newsletter zu abonnieren, um Updates zu Produkt-Drops, Marken-News und künftigen Kollektionen zu erhalten.</p>
+        <p>Verarbeitete Daten: E-Mail-Adresse (sowie Name, sofern freiwillig angegeben).</p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+        <p>Double-Opt-In-Verfahren: Die Anmeldung erfolgt über ein sogenanntes Double-Opt-In-Verfahren. Sie erhalten nach der Anmeldung eine E-Mail, in der Sie um die Bestätigung Ihrer Anmeldung gebeten werden. Dies verhindert, dass sich unbefugte Dritte mit Ihrer E-Mail-Adresse anmelden.</p>
+        <p>Widerruf &amp; Abmeldung: Sie können Ihre Einwilligung zum Erhalt des Newsletters jederzeit mit Wirkung für die Zukunft widerrufen. In jedem Newsletter befindet sich hierzu ein entsprechender Abmeldelink. Alternativ können Sie Ihren Widerruf per E-Mail an info@peulsproject.com senden.</p>
+        <p>Speicherdauer: Ihre Daten werden für den Newsletter-Versand gespeichert, bis Sie Ihre Einwilligung widerrufen bzw. sich vom Newsletter abmelden.</p>

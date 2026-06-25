@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peuls Project | Waitlist</title>
+    <meta name="description" content="Pre-launch waitlist access for Peuls Project Drop 01." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body data-page="waitlist">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="ambient ambient--left" aria-hidden="true"></div>
+    <div class="ambient ambient--right" aria-hidden="true"></div>
+
+    <div class="shell">
+      <header class="topbar reveal">
+        <a class="brand" href="homepage.html" aria-label="Peuls Project home">
+          <span class="brand__mark">PP</span>
+          <span>Peuls Project</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="nav" id="site-nav" aria-label="Main navigation">
+          <a href="homepage.html" data-page="home">Home</a>
+          <a href="collection.html" data-page="collection">Collection</a>
+          <a href="about.html" data-page="about">About</a>
+          <a href="contact.html" data-page="contact">Contact</a>
+          <a href="prelaunch.html" data-page="waitlist" class="cta-chip cta-chip--gold">Join Waitlist</a>
+        </nav>
+      </header>
+
+      <main id="main-content" class="reveal">
+        <section class="prelaunch panel">
+          <div>
+            <p class="kicker">Website Build · Next Step</p>
+            <h1>From concept<br />to launch.</h1>
+            <p class="lead">Join the waitlist for private release updates and launch instructions.</p>
+            <div class="pill-row">
+              <span>DROP 01 · SS26 · MUNICH</span>
+              <span>100 pieces only</span>
+            </div>
+          </div>
+
+          <form class="js-waitlist-form" data-source="prelaunch-page" action="#" method="post" novalidate>
+            <label for="email-waitlist" class="sr-only">Email address</label>
+            <input id="email-waitlist" name="email" type="email" placeholder="name@email.com" required />
+            <label class="consent-line">
+              <input type="checkbox" name="consent" required />
+              <span>I agree to receive launch and product availability updates in accordance with the <a href="privacy.html">Privacy Policy</a>.</span>
+            </label>
+            <button class="btn btn--gold" type="submit">Request Access</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="panel steps-card">
+          <p class="kicker">Launch Roadmap</p>
+          <ol>
+            <li>Join private waitlist</li>
+            <li>Receive product drop notice</li>
+            <li>Access launch page when available</li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Peuls Project</span>
+        <span>DROP 01 · SS26 · MUNICH</span>
+        <a href="https://www.instagram.com/peulsproject?igsh=MXE4OGNudTNrY2xqNg%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="impressum.html">Impressum</a>
+      </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
