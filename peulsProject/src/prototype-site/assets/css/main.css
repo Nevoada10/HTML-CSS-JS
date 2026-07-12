@@ -2001,6 +2001,46 @@ label {
     padding: 14px;
   }
 
+  /* Center hero visual and present image as a square product tile on mobile */
+  .hero__visual {
+    justify-items: center;
+  }
+
+  .hero__frame--image {
+    width: min(74vw, 320px);
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    margin: 20px auto 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 14px;
+    background-color: rgba(17, 17, 20, 0.7);
+  }
+
+  .card > a {
+    display: block;
+  }
+
+  .card__media {
+    width: min(74vw, 300px);
+    aspect-ratio: 1 / 1;
+    max-height: none;
+    margin: 12px auto 0;
+    border-radius: 12px;
+    background-position: center;
+  }
+
+  /* Match journal gallery images to product square treatment on mobile */
+  .journal__media {
+    width: min(74vw, 300px);
+    aspect-ratio: 1 / 1;
+    margin: 12px auto 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+  }
+
   main {
     gap: 16px;
   }
@@ -2039,9 +2079,53 @@ label {
     grid-template-columns: 1fr;
   }
 
+  .product-gallery .thumb-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .product-gallery .product-main-image {
+    width: 96%;
+    margin-inline: auto;
+  }
+
+  .product-gallery .thumb {
+    min-height: 64px;
+    border-radius: 8px;
+  }
+
   .limited {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  /* Make about closing section feel like desktop: tighter pills and centered actions */
+  .about-art-closing {
+    padding: clamp(18px, 3vw, 40px);
+  }
+
+  .about-art-pillars {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 6px;
+  }
+
+  .about-art-pillars span {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(232, 226, 213, 0.03);
+    border: 1px solid var(--line);
+  }
+
+  .about-closing__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 18px;
+    flex-wrap: wrap;
   }
 
   .teaser-card {
@@ -2057,7 +2141,7 @@ label {
   }
 
   .sticky-mobile-cta {
-    display: block;
+    display: none;
   }
 
   .about-art-hero__index li {
